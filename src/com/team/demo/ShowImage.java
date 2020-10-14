@@ -24,11 +24,6 @@ public class ShowImage extends HttpServlet {
 		this.imageDao = new ImageDaoImpl();
 	}
 
-	public ShowImage() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Image img = imageDao.get(4);
