@@ -29,12 +29,12 @@ public class ShowImage extends HttpServlet {
 		// TODO Auto-generated constructor stub
 	}
 
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Image img = imageDao.get(4);
 		System.out.println(img.getUrl());
-		String url = img.getUrl().substring(52, img.getUrl().length()).replace("\\","//");
+		String addressTemp = "C:\\Users\\Admin\\eclipse-workspace\\WebTest\\WebContent\\";
+		String url = img.getUrl().substring(addressTemp.length(), img.getUrl().length()).replace("\\", "//");
 		System.out.println(url);
 		request.setAttribute("image", url);
 		request.getRequestDispatcher("/show_image.jsp").forward(request, response);
