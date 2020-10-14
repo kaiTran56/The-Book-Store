@@ -31,6 +31,8 @@ public class ShowImage extends HttpServlet {
 		String addressTemp = "C:\\Users\\Admin\\eclipse-workspace\\WebTest\\WebContent\\";
 		String url = img.getUrl().substring(addressTemp.length(), img.getUrl().length()).replace("\\", "//");
 		System.out.println(url);
+		String path = this.getServletContext().getRealPath("/hello");
+		System.out.println("Address: " + path);
 		request.setAttribute("image", url);
 		request.getRequestDispatcher("/show_image.jsp").forward(request, response);
 	}
