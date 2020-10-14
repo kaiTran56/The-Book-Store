@@ -19,10 +19,6 @@ public class ShowImage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ImageDaoImpl imageDao;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-
 	@Override
 	public void init() throws ServletException {
 		this.imageDao = new ImageDaoImpl();
