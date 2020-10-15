@@ -22,13 +22,13 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Danh sách User</h5>
+                <h5 class="card-title">List User</h5>
                 <div class="table-responsive">
                   <table class="table table-striped">
                     <thead>
                       <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Tên</th>
+                        <th scope="col">Name</th>
                         <th scope="col">Email</th>
                         <th scope="col">Số điện thoại</th>
                         <th scope="col">Username</th>
