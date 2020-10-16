@@ -28,11 +28,11 @@
                     <thead>
                       <tr>
                         <th scope="col">#</th>
-                       <th scope="col">ID Đơn Hàng</th>
-                        <th scope="col">ID Sản Phẩm</th>
-                        <th scope="col">Tên Sản Phẩm</th>
-                        <th scope="col">Giá</th>
-                         <th scope="col">Số lượng</th>
+                       <th scope="col">ID of Order</th>
+                        <th scope="col">ID of Product</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                         <th scope="col">Quantity</th>
                       </tr>
                     </thead>
                     <tbody>

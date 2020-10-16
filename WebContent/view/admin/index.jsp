@@ -24,7 +24,7 @@
                   <div class="progress my-3" style="height:3px;">
                     <div class="progress-bar" style="width:55%"></div>
                   </div>
-                  <p class="mb-0 text-white small-font">Đơn hàng (theo tuần)<span class="float-right">+4.2% <i
+                  <p class="mb-0 text-white small-font">Order/Week<span class="float-right">+4.2% <i
                         class="zmdi zmdi-long-arrow-up"></i></span></p>
                 </div>
               </div>
@@ -34,7 +34,7 @@
                   <div class="progress my-3" style="height:3px;">
                     <div class="progress-bar" style="width:55%"></div>
                   </div>
-                  <p class="mb-0 text-white small-font">Lợi nhuận (theo tuần)<span class="float-right">+1.2% <i
+                  <p class="mb-0 text-white small-font">Profit<span class="float-right">+1.2% <i
                         class="zmdi zmdi-long-arrow-up"></i></span></p>
                 </div>
               </div>
@@ -44,7 +44,7 @@
                   <div class="progress my-3" style="height:3px;">
                     <div class="progress-bar" style="width:55%"></div>
                   </div>
-                  <p class="mb-0 text-white small-font">Ghé trang (theo tuần)<span class="float-right">+5.2% <i
+                  <p class="mb-0 text-white small-font">Traffic<span class="float-right">+5.2% <i
                         class="zmdi zmdi-long-arrow-up"></i></span></p>
                 </div>
               </div>
@@ -54,7 +54,7 @@
                   <div class="progress my-3" style="height:3px;">
                     <div class="progress-bar" style="width:55%"></div>
                   </div>
-                  <p class="mb-0 text-white small-font">Bán ra (theo tuần)<span class="float-right">+2.2% <i
+                  <p class="mb-0 text-white small-font">Sold<span class="float-right">+2.2% <i
                         class="zmdi zmdi-long-arrow-up"></i></span></p>
                 </div>
               </div>
@@ -64,7 +64,7 @@
         <div class="row">
           <div class="col-12 col-lg-4 col-xl-4">
             <div class="card">
-              <div class="card-header">Danh mục bán chạy
+              <div class="card-header">Trend
               </div>
               <div class="card-body">
                 <div class="chart-container-2">
@@ -75,22 +75,22 @@
                 <table class="table align-items-center">
                   <tbody>
                     <tr>
-                      <td><i class="fa fa-circle text-white mr-2"></i>Rau sạch</td>
+                      <td><i class="fa fa-circle text-white mr-2"></i>Book</td>
                       <td>58.000 VNĐ</td>
                       <td>+55%</td>
                     </tr>
                     <tr>
-                      <td><i class="fa fa-circle text-light-1 mr-2"></i>Củ quả</td>
+                      <td><i class="fa fa-circle text-light-1 mr-2"></i>Book/td>
                       <td>110.000 VNĐ</td>
                       <td>+25%</td>
                     </tr>
                     <tr>
-                      <td><i class="fa fa-circle text-light-2 mr-2"></i>Hạt</td>
+                      <td><i class="fa fa-circle text-light-2 mr-2"></i>Book</td>
                       <td>215.500 VNĐ</td>
                       <td>+15%</td>
                     </tr>
                     <tr>
-                      <td><i class="fa fa-circle text-light-3 mr-2"></i>Mật ong</td>
+                      <td><i class="fa fa-circle text-light-3 mr-2"></i>Book</td>
                       <td>310.000 VNĐ</td>
                       <td>+5%</td>
                     </tr>
@@ -108,7 +108,7 @@
         <i class="zmdi zmdi-settings zmdi-hc-spin"></i>
       </div>
       <div class="right-sidebar-content">
-        <p class="mb-0">Màu nền admin</p>
+        <p class="mb-0">Background</p>
         <hr>
         <ul class="switcher">
           <li id="theme1"></li>
@@ -118,7 +118,7 @@
           <li id="theme5"></li>
           <li id="theme6"></li>
         </ul>
-        <p class="mb-0">Màu nền gradient</p>
+        <p class="mb-0">Gradient</p>
         <hr>
         <ul class="switcher">
           <li id="theme7"></li>

@@ -22,23 +22,23 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Danh sách đơn hàng</h5>
+                <h5 class="card-title">List Orders</h5>
                 <div class="table-responsive">
                   <table class="table table-striped">
                     <thead>
                       <tr>
                         <th scope="col">#</th>
-                       <th scope="col">Tài khoản User</th>
-                        <th scope="col">Họ Tên</th>
+                       <th scope="col">User</th>
+                        <th scope="col">Name</th>
                         <th scope="col">Email</th>
-                        <th scope="col">SĐT</th>
-                         <th scope="col">Địa chỉ</th>
-                         <th scope="col">Ghi chú</th>
-                         <th scope="col">Tổng tiền</th>
-                         <th scope="col">Phương thức thanh toán</th>
-                         <th scope="col">Trạng thái</th>
-                          <th scope="col">Ngày tạo</th>
-                           <th scope="col">Hành động</th>
+                        <th scope="col">Phone</th>
+                         <th scope="col">Address</th>
+                         <th scope="col">Note</th>
+                         <th scope="col">Payment</th>
+                         <th scope="col">Ways</th>
+                         <th scope="col">Status</th>
+                          <th scope="col">Created Day</th>
+                           <th scope="col">Actions</th>
                         
                       </tr>
                     </thead>
@@ -58,7 +58,7 @@
 	                        	<c:out value="COD"/>
 	                       	</c:when>
 	                       	<c:otherwise>
-						        <c:out value="Thẻ nội địa ATM"/>
+						        <c:out value="ATM"/>
 						    </c:otherwise>
                        	</c:choose>
                           
@@ -66,10 +66,10 @@
                           <td>
                           	  <c:choose>
 	                        <c:when test="${order.status == NULL}"> 
-	                        	<c:out value="Chưa thanh toán"/>
+	                        	<c:out value="Pay"/>
 	                       	</c:when>
 	                       	<c:otherwise>
-						        <c:out value="Đã thanh toán"/>
+						        <c:out value="Not"/>
 						    </c:otherwise>
                        	</c:choose>
                           </td>
@@ -77,9 +77,9 @@
                            
         				
         				 <td>
-                         <button class="btn btn-danger"><a href="${pageContext.request.contextPath}/admin/order/delete?id=${order.id}">Xóa</a></button>
+                         <button class="btn btn-danger"><a href="${pageContext.request.contextPath}/admin/order/delete?id=${order.id}">Remove</a></button>
                          
-                          <button class="btn btn-success"><a href="${pageContext.request.contextPath}/admin/order/edit?id=${order.id}">Sửa</a></button>
+                          <button class="btn btn-success"><a href="${pageContext.request.contextPath}/admin/order/edit?id=${order.id}">Edit</a></button>
                         </td>
                      </tr>
                     </c:forEach>

@@ -24,17 +24,17 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Danh sách tin tức</h5>
+                <h5 class="card-title">List News</h5>
                 <div class="table-responsive">
                   <table class="table table-striped">
                     <thead>
                       <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Tiêu đề</th>
-                        <th scope="col">Hình ảnh</th>
-                        <th scope="col">Người đăng</th>
-                        <th scope="col">Ngày đăng</th>
-                         <th scope="col">Hành động</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Date</th>
+                         <th scope="col">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -46,9 +46,9 @@
         				<td>${boardnew.author}</td>
         				<td>${boardnew.created}</td>
         				 <td>
-                         <button class="btn btn-danger"><a href="${pageContext.request.contextPath}/admin/new/delete?id=${boardnew.id}">Xóa</a></button>
+                         <button class="btn btn-danger"><a href="${pageContext.request.contextPath}/admin/new/delete?id=${boardnew.id}">Remove</a></button>
                          
-                          <button class="btn btn-success"><a href="${pageContext.request.contextPath}/admin/new/edit?id=${boardnew.id}">Sửa</a></button>
+                          <button class="btn btn-success"><a href="${pageContext.request.contextPath}/admin/new/edit?id=${boardnew.id}">Edit</a></button>
                         </td>
                      </tr>
                     </c:forEach>

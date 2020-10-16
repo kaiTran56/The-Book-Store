@@ -9,18 +9,18 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Danh sách Review</h5>
+                <h5 class="card-title">Review</h5>
                 <div class="table-responsive">
                   <table class="table table-striped">
                     <thead>
                       <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Tên</th>
+                        <th scope="col">Name</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Id Sản Phẩm</th>
-                        <th scope="col">Nội dung</th>
-                        <th scope="col">Ngày đánh giá</th>
-                        <th scope="col">Hành động</th>
+                        <th scope="col">Id</th>
+                        <th scope="col">Content</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -33,7 +33,7 @@
         				<td>${review.content}</td>
         				<td>${review.created}</td>
         				 <td>
-                         <button class="btn btn-danger"><a href="${pageContext.request.contextPath}/admin/review/delete?id=${review.id}">Xóa</a></button>
+                         <button class="btn btn-danger"><a href="${pageContext.request.contextPath}/admin/review/delete?id=${review.id}">Remove</a></button>
                         </td>
                      </tr>
                     </c:forEach>

@@ -24,15 +24,15 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Danh sách chuyên mục</h5>
+                <h5 class="card-title">List Topic</h5>
                 <div class="table-responsive">
                   <table class="table table-striped">
                     <thead>
                       <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Tên chuyên mục</th>
-                        <th scope="col">Chuyên mục cha</th>
-                        <th scope="col">Hành động</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Parent</th>
+                        <th scope="col">Action</th>
                         
                       </tr>
                     </thead>
@@ -47,14 +47,14 @@
 	                        	<c:out value="NULL"/>
 	                       	</c:when>
 	                       	<c:otherwise>
-						        <c:out value="Sản phẩm mới"/>
+						        <c:out value="new product"/>
 						    </c:otherwise>
                        	</c:choose>
         				</td>
         				 <td>
-                         <button class="btn btn-danger"><a href="${pageContext.request.contextPath}/admin/cate/delete?id=${cate.id}">Xóa</a></button>
+                         <button class="btn btn-danger"><a href="${pageContext.request.contextPath}/admin/cate/delete?id=${cate.id}">Remove</a></button>
                          
-                          <button class="btn btn-success"><a href="${pageContext.request.contextPath}/admin/cate/edit?id=${cate.id}">Sửa</a></button>
+                          <button class="btn btn-success"><a href="${pageContext.request.contextPath}/admin/cate/edit?id=${cate.id}">Edit</a></button>
                         </td>
                      </tr>
                     </c:forEach>
