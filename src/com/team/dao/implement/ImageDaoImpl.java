@@ -72,7 +72,7 @@ public class ImageDaoImpl extends JDBCConnection implements ImageDao<Image> {
 
 	@Override
 	public void edit(Image t) {
-		// TODO Auto-generated method stub
+		String sql = "update image set url = ? where id = ?;";
 
 	}
 
