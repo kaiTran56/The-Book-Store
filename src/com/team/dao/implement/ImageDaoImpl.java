@@ -66,7 +66,7 @@ public class ImageDaoImpl extends JDBCConnection implements ImageDao<Image> {
 
 	@Override
 	public void delete(int id) {
-		// TODO Auto-generated method stub
+		String sql = "delete from image where id = ?;";
 
 	}
 
