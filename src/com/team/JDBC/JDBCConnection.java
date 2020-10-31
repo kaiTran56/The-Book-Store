@@ -15,10 +15,10 @@ public class JDBCConnection {
 			System.out.println("Access to DB successfully!");
 			return DriverManager.getConnection(URL, USER, PASSWORD);
 		} catch (ClassNotFoundException e) {
-
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SQLException e) {
-
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;

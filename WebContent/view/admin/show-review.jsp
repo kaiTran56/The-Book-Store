@@ -14,10 +14,11 @@
                   <table class="table table-striped">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
+                        
                         <th scope="col">Name</th>
                         <th scope="col">Email</th>
                         <th scope="col">Id</th>
+                        <th scope="col">Product</th>
                         <th scope="col">Content</th>
                         <th scope="col">Date</th>
                         <th scope="col">Action</th>
@@ -26,10 +27,11 @@
                     <tbody>
                   <c:forEach items="${reviewlist}" var="review">
                       <tr>
-                        <td scope="row">${review.id}</td>
+                        
                         <td>${review.name}</td>
         				<td>${review.email}</td>
         				<td>${review.product_id}</td>
+        				<td>${review.product_name}</td>
         				<td>${review.content}</td>
         				<td>${review.created}</td>
         				 <td>

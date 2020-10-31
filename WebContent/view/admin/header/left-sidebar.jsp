@@ -17,43 +17,43 @@
         </li>
         
          <li>
-          <a href="${pageContext.request.contextPath}/admin/admin/list">
+          <a href="${pageContext.request.contextPath}/admin/list-admin">
             <i class="zmdi zmdi-account-box"></i> <span>Manage Admin</span>
           </a>
         </li>
         <li>
-          <a href="${pageContext.request.contextPath}/admin/user/list">
+          <a href="${pageContext.request.contextPath}/admin/list-user">
             <i class="zmdi zmdi-accounts"></i> <span>Manage User</span>
           </a>
         </li>
         <li>
-          <a href="${pageContext.request.contextPath}/admin/cate/list">
+          <a href="${pageContext.request.contextPath}/admin/list-cate">
             <i class="zmdi zmdi-grid"></i> <span>Topic</span>
           </a>
         </li>
         <li>
-          <a href="${pageContext.request.contextPath}/admin/product/list">
+          <a href="${pageContext.request.contextPath}/admin/list-product">
             <i class="zmdi zmdi-widgets"></i> <span>List Products</span>
           </a>
         </li>
         <li>
-          <a href="${pageContext.request.contextPath}/admin/order/list">
+          <a href="${pageContext.request.contextPath}/admin/list-order">
             <i class="zmdi zmdi-shopping-cart"></i> <span>Orders</span>
           </a>
         </li>
         
         <li>
-          <a href="${pageContext.request.contextPath}/admin/order/list-detail">
+          <a href="${pageContext.request.contextPath}/admin/list-ordereddetail">
             <i class="zmdi zmdi-shopping-cart"></i> <span>Details Orders</span>
           </a>
         </li>
         <li>
-          <a href="${pageContext.request.contextPath}/admin/review/list">
+          <a href="${pageContext.request.contextPath}/admin/list-order">
             <i class="zmdi zmdi-calendar-check"></i> <span>Review</span>
           </a>   
         </li>
         <li>
-          <a href="${pageContext.request.contextPath}/admin/new/list">
+          <a href="${pageContext.request.contextPath}/admin/list-boardnew">
             <i class="icon-envelope-open"></i> <span>News</span>
           </a>
         </li>

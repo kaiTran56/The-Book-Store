@@ -37,15 +37,11 @@
 									}
 								</script>
 							</div>
-							<div class="form-group">
-								<label for="input-1">Name </label> <input type="text"
-									class="form-control" id="input-1" placeholder="name"
-									name="admin-name">
-							</div>
+
 							<div class="form-footer">
 								<button class="btn btn-danger">
 									<i class="fa fa-times"></i><a
-										href="${pageContext.request.contextPath}/admin/admin/list">Cancel</a>
+										href="${pageContext.request.contextPath}/admin/homepage">Cancel</a>
 								</button>
 								<button type="submit" class="btn btn-success">
 									<i class="fa fa-check-square-o"></i>Add

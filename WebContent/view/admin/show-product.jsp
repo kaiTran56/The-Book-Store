@@ -17,8 +17,8 @@ if (session.getAttribute("admin-username") == null) {
 		<div class="row mt-3">
 			<div class="col-lg-12">
 				<button class="add-catalog">
-					<a href="${pageContext.request.contextPath}/admin/product/add">Thêm
-						sản phẩm</a>
+					<a href="${pageContext.request.contextPath}/admin/product/add">Add
+						Products</a>
 				</button>
 			</div>
 			<div class="col-lg-12">
@@ -36,6 +36,7 @@ if (session.getAttribute("admin-username") == null) {
 										<th scope="col">Prices</th>
 										<th scope="col">Status</th>
 										<th scope="col">Sale</th>
+										<th scope="col">Quantity</th>
 										<th scope="col">Created Day</th>
 										<th scope="col">Action</th>
 									</tr>
@@ -43,11 +44,11 @@ if (session.getAttribute("admin-username") == null) {
 								<tbody>
 									<c:forEach items="${productlist}" var="product">
 										<tr>
-											<th scope="row">${product.id }</th>
+											<th scope="row">${product.product_id }</th>
 											<td>${product.name }</td>
 											<td><img
 												style="width: 110px; height: 67px; object-fit: cover; border: 1px solid #fff;"
-												src="${pageContext.request.contextPath}/view/client/assets/images/products/img-test/${product.image_link}"
+												src="${pageContext.request.contextPath}/${product.urlTemp}"
 												alt="${product.name}"></td>
 											<td>${product.catalog_id }</td>
 											<td>${product.price }</td>
@@ -59,17 +60,18 @@ if (session.getAttribute("admin-username") == null) {
 														<c:out value="Out" />
 													</c:otherwise>
 												</c:choose></td>
-											<td>${product.discount }%</td>
+											<td>${product.discount}%</td>
+											<td>${product.quantity }</td>
 											<td>${product.created }</td>
 											<td>
 												<button class="btn btn-danger">
 													<a
-														href="${pageContext.request.contextPath}/admin/product/delete?id=${product.id}">Remove</a>
+														href="${pageContext.request.contextPath}/admin/product/delete?id=${product.product_id}">Remove</a>
 												</button>
 
 												<button class="btn btn-success">
 													<a
-														href="${pageContext.request.contextPath}/admin/product/edit?id=${product.id}">Edit</a>
+														href="${pageContext.request.contextPath}/admin/product/edit?id=${product.product_id}">Edit</a>
 												</button>
 											</td>
 										</tr>

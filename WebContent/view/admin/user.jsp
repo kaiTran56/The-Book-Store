@@ -27,34 +27,34 @@
 							<table class="table table-striped">
 								<thead>
 									<tr>
-										<th scope="col">#</th>
+										
 										<th scope="col">Name</th>
 										<th scope="col">Email</th>
 										<th scope="col">Phone</th>
-										<th scope="col">Username</th>
+										<th scope="col">Date of Birth</th>
+										<th scope="col">Address</th>
 										<th scope="col">Created Day</th>
-										<th scope="col">Actions</th>
-
 									</tr>
 								</thead>
 								<tbody>
-									<c:forEach items="${userList}" var="user">
+									<c:forEach items="${listUser}" var="user">
 										<tr>
-											<td scope="row">${user.id}</td>
+											
 											<td>${user.name }</td>
 											<td>${user.email }</td>
 											<td>${user.phone }</td>
-											<td>${user.username }</td>
+											<td>${user.dateOfBirth}</td>
+											<td>${user.address }</td>
 											<td>${user.created }</td>
 											<td>
 												<button class="btn btn-danger">
 													<a
-														href="${pageContext.request.contextPath}/admin/user/delete?user-id=${user.id}">Xóa</a>
+														href="${pageContext.request.contextPath}/admin/user/delete?user-email=${user.email}">Remove</a>
 												</button>
 
 												<button class="btn btn-success">
 													<a
-														href="${pageContext.request.contextPath}/admin/user/edit?user-id=${user.id}">Sửa</a>
+														href="${pageContext.request.contextPath}/admin/user/edit?user-email=${user.email}">Edit</a>
 												</button>
 											</td>
 										</tr>

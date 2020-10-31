@@ -1,32 +1,23 @@
 package com.team.model;
 
 public class Image {
-	private int id;
-	private String url;
+	private String address;
 
-	public Image(String url) {
+	public Image(String address) {
 		super();
-
-		this.url = url;
+		this.address = address;
 	}
 
-	public int getId() {
-		return id;
+	public Image() {
+		super();
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public String getAddress() {
+		return address;
 	}
 
-	public String getUrl() {
-		return url;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
-	}
-
-	public String toString() {
-		return "id: " + id + " ,url: " + url;
-	}
 }

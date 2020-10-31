@@ -71,7 +71,7 @@
               </li>
             
               <li class="dropdown-divider"></li>
-			 <li class="dropdown-item"><i class="icon-power mr-2"></i><a href="${pageContext.request.contextPath}/admin/logout"> Đăng xuất</a></li>		
+			 <li class="dropdown-item"><i class="icon-power mr-2"></i><a href="${pageContext.request.contextPath}/admin/logout">Logout</a></li>		
             </ul>
           </li>
         </ul>

@@ -68,7 +68,7 @@
 				  </div>
 			   </div>
 			  </div>
-			  <div><b> <span style="color:#00d9e8"> ${errorMessage}</span></b></div>
+			  <div><b> <span style="color:#00d9e8"> ${requestScope.error}</span></b></div>
 			<div class="form-row">
 			 <div class="form-group col-6">
 			   <div class="icheck-material-white">

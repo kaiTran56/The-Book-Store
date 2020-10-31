@@ -18,21 +18,12 @@ import org.apache.tomcat.util.http.fileupload.disk.DiskFileItemFactory;
 import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 import org.apache.tomcat.util.http.fileupload.servlet.ServletRequestContext;
 
-import com.team.dao.implement.ImageDaoImpl;
-import com.team.model.Image;
-
 /**
  * Servlet implementation class Uploader
  */
 @WebServlet("/Uploader")
 public class Uploader extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private ImageDaoImpl imageDao;
-
-	@Override
-	public void init() throws ServletException {
-		this.imageDao = new ImageDaoImpl();
-	}
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -57,28 +48,23 @@ public class Uploader extends HttpServlet {
 			for (FileItem item : items) {
 				String contentType = item.getContentType();
 				System.out.println("Type: " + contentType);
-
 				/*
 				 * @use: check type of file to upload to server
 				 * 
 				 * @result: Server just recieve the image which have types: png or jpeg
 				 * 
 				 */
-
 				if (!contentType.equals("image/jpeg") && !contentType.equals("image/png")) {
 					out.println("only png or jpeg format image files supported");
 					continue;
 				}
-				
-				String fileUrl = "C:\\Users\\Admin\\eclipse-workspace\\WebTest\\WebContent\\images";
-				File uploadDir = new File(fileUrl);
-				System.out.println("address: " + uploadDir.getAbsolutePath());
+
+				File uploadDir = new File("C:\\Zoom");
 				File file = File.createTempFile("img", ".png", uploadDir);
 				item.write(file);
 				String url = file.getAbsolutePath();
 				System.out.println("Address: " + url);
 				out.println("File Saved Successfully");
-				this.imageDao.insert(new Image(url));
 			}
 		} catch (FileUploadException e) {
 
