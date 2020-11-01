@@ -299,7 +299,7 @@
 												<i class="icon_heart_alt"></i>
 											</div>
 											<ul>
-												<li class="w-icon active"><a href="#"><i
+												<li class="w-icon active"><a href="${pageContext.request.contextPath}/view/user/product-detail?product_id = ${product.product_id}"><i
 														class="icon_bag_alt"></i></a></li>
 												<li class="quick-view"><a
 													href="${pageContext.request.contextPath}/view/user/product-detail?product_id = ${product.product_id}">+
