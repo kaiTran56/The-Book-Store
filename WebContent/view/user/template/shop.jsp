@@ -510,7 +510,9 @@
 										</div>
 									</div>
 								</div>
-							</div> --%> 
+							</div> --%>
+
+
 							<c:forEach items="${listproduct}" var="product">
 
 								<div class="col-lg-4 col-sm-6">
@@ -526,7 +528,7 @@
 											<ul>
 												<li class="w-icon active"><a href="#"><i
 														class="icon_bag_alt"></i></a></li>
-												<li class="quick-view"><a href="#">+ Quick View</a></li>
+												<li class="quick-view"><a href="${pageContext.request.contextPath}/view/user/product-detail?id = ${product.product_id}">+ Quick View</a></li>
 											</ul>
 										</div>
 										<div class="pi-text">
@@ -542,11 +544,11 @@
 								</div>
 
 							</c:forEach>
-							
+
 						</div>
 						<div class="loading-more">
-								<i class="icon_loading"></i> <a href="#"> Loading More </a>
-							</div>
+							<i class="icon_loading"></i> <a href="#"> Loading More </a>
+						</div>
 					</div>
 				</div>
 	</section>

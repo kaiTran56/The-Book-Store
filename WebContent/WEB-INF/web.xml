@@ -74,6 +74,14 @@
 		<servlet-name>ShowShopController</servlet-name>
 		<url-pattern>/view/user/shop</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>ProductDetailController</servlet-name>
+		<servlet-class>com.team.controller.ProductDetailController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductDetailController</servlet-name>
+		<url-pattern>/view/user/product-detail</url-pattern>
+	</servlet-mapping>
 	
 	
 	

@@ -45,7 +45,7 @@
 	</div>
 
 	<!-- Header Section Begin -->
-	
+
 	<header class="header-section">
 		<div class="header-top">
 			<div class="container">
@@ -238,7 +238,7 @@
 						<h4 class="fw-title">Brand</h4>
 						<div class="fw-brand-check">
 							<div class="bc-item">
-								<label for="bc-calvin"> Nguyễn Nhật Ánh <input
+								<label for="bc-calvin"> Nguyen Nhat Anh  <input
 									type="checkbox" id="bc-calvin"> <span class="checkmark"></span>
 								</label>
 							</div>
@@ -284,9 +284,7 @@
 					<div class="filter-widget">
 						<h4 class="fw-title">Tags</h4>
 						<div class="fw-tags">
-							<a href="#">Story</a> <a href="#">Phim</a> <a href="#">Chuyện
-								Ngắn</a> <a href="#">Nguyễn Nhật Ánh</a> <a href="#">Hà
-								Lan</a>
+							<a href="#">Story</a> <a href="#">Phim</a> <a href="#">Chuyen ngan</a> <a href="#">Nguyen Nhat Anh</a> <a href="#">Ha Lan</a>
 
 						</div>
 					</div>
@@ -295,13 +293,13 @@
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="product-pic-zoom">
-								<img class="product-big-img" src="img/select-product-10.jpg"
+								<img class="product-big-img" src="${pageContext.request.contextPath}/${productdetail.urlTemp }"
 									alt="">
 								<div class="zoom-icon">
 									<i class="fa fa-search-plus"></i>
 								</div>
 							</div>
-							<div class="product-thumbs">
+							<!-- <div class="product-thumbs">
 								<div class="product-thumbs-track ps-slider owl-carousel">
 									<div class="pt active"
 										data-imgbigurl="img/select-product-10.jpg">
@@ -317,13 +315,13 @@
 										<img src="img/select-product-5.jpg" alt="">
 									</div>
 								</div>
-							</div>
+							</div> -->
 						</div>
 						<div class="col-lg-6">
 							<div class="product-details">
 								<div class="pd-title">
 									<span>Short Story</span>
-									<h3>Mắt Biếc</h3>
+									<h3>${productdetail.name}</h3>
 									<a href="#" class="heart-icon"><i class="icon_heart_alt"></i></a>
 								</div>
 								<div class="pd-rating">
@@ -332,17 +330,7 @@
 										class="fa fa-star"></i> <span>(5)</span>
 								</div>
 								<div class="pd-desc">
-									<p>Mắt biếc là một tác phẩm được nhiều
-										người bình chọn là hay nhất của nhà văn Nguyễn
-										Nhật Ánh. Tác phẩm này cũng đã được dịch giả
-										Kato Sakae dịch sang tiếng Nhật để giới thiệu
-										với độc giả Nhật Bản. “Tôi gửi tình yêu cho
-										mùa hè, nhưng mùa hè không giữ nổi. Mùa hè chỉ
-										biết ra hoa, phượng đỏ sân trường và tiếng ve
-										nỉ non trong lá. Mùa hè ngây ngô, giống như tôi
-										vậy. Nó chẳng làm được những điều tôi ký
-										thác. Nó để Hà Lan đốt tôi, đốt rụi. Trái tim
-										tôi cháy thành tro, rơi vãi trên đường về...”</p>
+									<p>${productdetail.description}��</p>
 									<h4>
 										$3.94 <span>4.15</span>
 									</h4>
@@ -389,21 +377,9 @@
 										<div class="row">
 											<div class="col-lg-7">
 												<h5>Introduction</h5>
-												<p>Mắt Biếc là một tác phẩm của tác giả
-													Nguyễn Nhật Ánh trong loạt truyện viết về
-													tình yêu thanh thiếu niên của tác giả này cùng
-													với Thằng quỷ nhỏ, Cô gái đến từ hôm qua...</p>
+												<p>${productdetail.description}</p>
 												<h5>Quote</h5>
-												<p>Tôi đi bên, lòng vui không tiếng, tưởng
-													như thế giới vừa được sửa sang. Tâm hồn
-													tôi ai vừa trang hoàng lại, để bên cạnh nỗi
-													đau vơi kịp có nỗi vui đầy, để tiếng chuông
-													mùa phục sinh reo leng keng trong ngực, suốt ba
-													tháng phượng hồng không một bóng mây giăng.
-													Chỉ có những ngày cuối cùng, mây mùa thu chớm
-													vắt ngang cành phượng và trên những ngọn cây
-													cao tiếng ve thi nhau khản giọng dần, tôi mới
-													buồn chút chút</p>
+												<p>${productdetail.description}</p>
 											</div>
 											<div class="col-lg-5">
 												<img src="img/select-product-6.jpg" alt="">
@@ -556,7 +532,7 @@
 				<div class="col-lg-3 col-sm-6">
 					<div class="product-item">
 						<div class="pi-pic">
-							<img src="img/products/women-1.jpg" alt="">
+							<img src="${ url}/img/products/women-1.jpg" alt="">
 							<div class="sale">Sale</div>
 							<div class="icon">
 								<i class="icon_heart_alt"></i>
@@ -582,7 +558,7 @@
 				<div class="col-lg-3 col-sm-6">
 					<div class="product-item">
 						<div class="pi-pic">
-							<img src="img/products/women-2.jpg" alt="">
+							<img src="${ url}/img/products/women-2.jpg" alt="">
 							<div class="icon">
 								<i class="icon_heart_alt"></i>
 							</div>
@@ -605,7 +581,7 @@
 				<div class="col-lg-3 col-sm-6">
 					<div class="product-item">
 						<div class="pi-pic">
-							<img src="img/products/women-3.jpg" alt="">
+							<img src="${ url}/img/products/women-3.jpg" alt="">
 							<div class="icon">
 								<i class="icon_heart_alt"></i>
 							</div>
@@ -625,10 +601,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3 col-sm-6">
+				<%-- <div class="col-lg-3 col-sm-6">
 					<div class="product-item">
 						<div class="pi-pic">
-							<img src="img/products/women-4.jpg" alt="">
+							<img src="${ url}/img/products/women-4.jpg" alt="">
 							<div class="icon">
 								<i class="icon_heart_alt"></i>
 							</div>
@@ -647,44 +623,13 @@
 							<div class="product-price">$34.00</div>
 						</div>
 					</div>
-				</div>
+				</div> --%>
 			</div>
 		</div>
 	</div>
 	<!-- Related Products Section End -->
 
 	<!-- Partner Logo Section Begin -->
-	<div class="partner-logo">
-		<div class="container">
-			<div class="logo-carousel owl-carousel">
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-1.png" alt="">
-					</div>
-				</div>
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-2.png" alt="">
-					</div>
-				</div>
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-3.png" alt="">
-					</div>
-				</div>
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-4.png" alt="">
-					</div>
-				</div>
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-5.png" alt="">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 	<!-- Partner Logo Section End -->
 
 	<!-- Footer Section Begin -->
