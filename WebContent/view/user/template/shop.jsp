@@ -285,7 +285,7 @@
 					</div>
 					<div class="product-list">
 						<div class="row">
-							<div class="col-lg-4 col-sm-6">
+							<%-- <div class="col-lg-4 col-sm-6">
 								<div class="product-item">
 									<div class="pi-pic">
 										<img src="${url}/img/products/product-1.jpg" alt="">
@@ -510,7 +510,7 @@
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> --%> 
 							<c:forEach items="${listproduct}" var="product">
 
 								<div class="col-lg-4 col-sm-6">
@@ -542,10 +542,11 @@
 								</div>
 
 							</c:forEach>
-							<div class="loading-more">
+							
+						</div>
+						<div class="loading-more">
 								<i class="icon_loading"></i> <a href="#"> Loading More </a>
 							</div>
-						</div>
 					</div>
 				</div>
 	</section>
