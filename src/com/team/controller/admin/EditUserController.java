@@ -34,7 +34,7 @@ public class EditUserController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String email = (String) request.getParameter("user-email");
+		String email =  request.getParameter("user-email");
 		User userTemp = userDao.get(email);
 		request.setAttribute("user", userTemp);
 		request.getRequestDispatcher("/view/admin/edituser.jsp").forward(request, response);

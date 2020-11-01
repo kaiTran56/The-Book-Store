@@ -172,7 +172,7 @@
 				<nav class="nav-menu mobile-menu">
 					<ul>
 						<li><a href="${url}/index.jsp">Home</a></li>
-						<li><a href="${ url}/shop.jsp">Shop</a></li>
+						<li><a href="${pageContext.request.contextPath}/view/user/shop">Shop</a></li>
 						<li><a href="#">Language of Book</a>
 							<ul class="dropdown">
 								<li><a href="#">English</a></li>
