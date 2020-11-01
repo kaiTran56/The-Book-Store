@@ -37,8 +37,8 @@ public class EditProductController extends HttpServlet {
 			throws ServletException, IOException {
 		List<Category> listCate = new CategoryDaoImpl().getAll();
 		request.setAttribute("catelist", listCate);
-		// int id = Integer.parseInt(request.getParameter("id"));
-		Product productTemp = new ProductDaoImpl().get(1);
+		int id = Integer.parseInt(request.getParameter("id"));
+		Product productTemp = new ProductDaoImpl().get(id);
 		request.setAttribute("product", productTemp);
 		request.getRequestDispatcher("/view/admin/editproduct.jsp").forward(request, response);
 	}

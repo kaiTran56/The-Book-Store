@@ -529,7 +529,39 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-3 col-sm-6">
+			
+			<c:forEach items="${listrelate}" var="product">
+
+								<div class="col-lg-4 col-sm-6">
+									<div class="product-item">
+										<div class="pi-pic">
+											<img
+												src="${pageContext.request.contextPath}/${product.urlTemp}"
+												alt="" width="270" heigth="302">
+											<div class="sale pp-sale">Sale off</div>
+											<div class="icon">
+												<i class="icon_heart_alt"></i>
+											</div>
+											<ul>
+												<li class="w-icon active"><a href="#"><i
+														class="icon_bag_alt"></i></a></li>
+												<li class="quick-view"><a href="${pageContext.request.contextPath}/view/user/product-detail?id = ${product.product_id}">+ Quick View</a></li>
+											</ul>
+										</div>
+										<div class="pi-text">
+											<div class="catagory-name">Short Story</div>
+											<a href="#">
+												<h5>${product.name}</h5>
+											</a>
+											<div class="product-price">
+												${product.price}<span>${product.discount}%</span>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</c:forEach>
+				<%-- <div class="col-lg-3 col-sm-6">
 					<div class="product-item">
 						<div class="pi-pic">
 							<img src="${ url}/img/products/women-1.jpg" alt="">
@@ -554,8 +586,8 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
+				</div> --%>
+				<%-- <div class="col-lg-3 col-sm-6">
 					<div class="product-item">
 						<div class="pi-pic">
 							<img src="${ url}/img/products/women-2.jpg" alt="">
@@ -577,8 +609,8 @@
 							<div class="product-price">$13.00</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
+				</div> --%>
+				<%-- <div class="col-lg-3 col-sm-6">
 					<div class="product-item">
 						<div class="pi-pic">
 							<img src="${ url}/img/products/women-3.jpg" alt="">
@@ -600,7 +632,7 @@
 							<div class="product-price">$34.00</div>
 						</div>
 					</div>
-				</div>
+				</div> --%>
 				<%-- <div class="col-lg-3 col-sm-6">
 					<div class="product-item">
 						<div class="pi-pic">
