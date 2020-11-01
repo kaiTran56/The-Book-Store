@@ -218,7 +218,7 @@
 						<h4 class="fw-title">Author</h4>
 						<div class="fw-brand-check">
 							<div class="bc-item">
-								<label for="bc-calvin"> Nguyễn Nhật Ánh <input
+								<label for="bc-calvin"> Nguyen Nhat Anh <input
 									type="checkbox" id="bc-calvin"> <span class="checkmark"></span>
 								</label>
 							</div>
@@ -302,7 +302,7 @@
 									<div class="pi-text">
 										<div class="catagory-name">Short Story</div>
 										<a href="#">
-											<h5>Mắt Biếc</h5>
+											<h5>Mat Biec</h5>
 										</a>
 										<div class="product-price">
 											$3.94 <span>$4.15</span>
