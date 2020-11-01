@@ -286,8 +286,6 @@
 					<div class="product-list">
 						<div class="row">
 
-
-
 							<c:forEach items="${listproduct}" var="product">
 
 								<div class="col-lg-4 col-sm-6">
@@ -304,7 +302,7 @@
 												<li class="w-icon active"><a href="#"><i
 														class="icon_bag_alt"></i></a></li>
 												<li class="quick-view"><a
-													href="${pageContext.request.contextPath}/view/user/product-detail?id = ${product.product_id}">+
+													href="${pageContext.request.contextPath}/view/user/product-detail?product_id = ${product.product_id}">+
 														Quick View</a></li>
 											</ul>
 										</div>
