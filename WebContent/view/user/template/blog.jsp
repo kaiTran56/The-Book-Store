@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<c:url value="/view/user/template" var="url" />
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -57,7 +57,9 @@
 				</div>
 				<div class="ht-right">
 					<a href="${pageContext.request.contextPath}/view/user/login"
-						class="login-panel"><i class="fa fa-user"></i>Login</a>
+						class="login-panel"><i class="fa fa-user"></i>Login</a> <a
+						href="${pageContext.request.contextPath}/view/logout"
+						class="login-panel"><i class="fa fa-user"></i>Logout</a>
 					<div class="lan-selector">
 						<select class="language_drop" name="countries" id="countries"
 							style="width: 300px;">
@@ -112,8 +114,8 @@
 										<table>
 											<tbody>
 												<tr>
-													<td class="si-pic"><img src="${ url}/img/select-product-1.jpg"
-														alt=""></td>
+													<td class="si-pic"><img
+														src="${ url}/img/select-product-1.jpg" alt=""></td>
 													<td class="si-text">
 														<div class="product-selected">
 															<p>$2.42 x 1</p>
@@ -123,8 +125,8 @@
 													<td class="si-close"><i class="ti-close"></i></td>
 												</tr>
 												<tr>
-													<td class="si-pic"><img src="${ url}/img/select-product-2.jpg"
-														alt=""></td>
+													<td class="si-pic"><img
+														src="${ url}/img/select-product-2.jpg" alt=""></td>
 													<td class="si-text">
 														<div class="product-selected">
 															<p>$3.94 x 1</p>
@@ -182,9 +184,13 @@
 								<li><a href="${ url}/blog-details.jsp">Blog Details</a></li>
 								<li><a href="${ url}/shopping-cart.jsp">Shopping Cart</a></li>
 								<li><a href="${ url}/check-out.jsp">Checkout</a></li>
-								<li><a href="${pageContext.request.contextPath }/view/user/profile">Profile User</a></li>
-								<li><a href="${pageContext.request.contextPath }/view/register">Register</a></li>
-								<li><a href="${pageContext.request.contextPath }/view/user/login">Login</a></li>
+								<li><a
+									href="${pageContext.request.contextPath }/view/user/profile">Profile
+										User</a></li>
+								<li><a
+									href="${pageContext.request.contextPath }/view/register">Register</a></li>
+								<li><a
+									href="${pageContext.request.contextPath }/view/user/login">Login</a></li>
 							</ul></li>
 					</ul>
 				</nav>
@@ -429,89 +435,7 @@
 	<!-- Partner Logo Section End -->
 
 	<!-- Footer Section Begin -->
-	<footer class="footer-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3">
-					<div class="footer-left">
-						<div class="footer-logo">
-							<a href="#"><img src="${ url}/img/footer-logo.png" alt=""></a>
-						</div>
-						<ul>
-							<li>Address: Km9 Nguyen Trai, Trung Van Ward, Nam Tu Liem
-								District, Ha Noi.</li>
-							<li>Phone: +65 11.188.888</li>
-							<li>Email: onl.bookstore@gmail.com</li>
-						</ul>
-						<div class="footer-social">
-							<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
-								class="fa fa-instagram"></i></a> <a href="#"><i
-								class="fa fa-twitter"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-2 offset-lg-1">
-					<div class="footer-widget">
-						<h5>Information</h5>
-						<ul>
-							<li><a href="#">About Us</a></li>
-							<li><a href="#">Checkout</a></li>
-							<li><a href="#">Contact</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-2">
-					<div class="footer-widget">
-						<h5>My Account</h5>
-						<ul>
-							<li><a href="#">My Account</a></li>
-							<li><a href="#">Contact</a></li>
-							<li><a href="#">Shopping Cart</a></li>
-							<li><a href="#">Shop</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="newslatter-item">
-						<h5>Join Our Newsletter Now</h5>
-						<p>Get E-mail updates about our latest shop and special
-							offers.</p>
-						<form action="#" class="subscribe-form">
-							<input type="text" placeholder="Enter Your Mail">
-							<button type="button">Subscribe</button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="copyright-reserved">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="copyright-text">
-							SAD FAll-
-							<script>
-								document.write(new Date().getFullYear());
-							</script>
-							|| This template is made with <i class="fa fa-heart-o"
-								aria-hidden="true"></i> by <a href="https://myteam.com"
-								target="_blank">MyTeam</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<script src="${ url}/js/jquery-3.3.1.min.js"></script>
-	<script src="${ url}/js/bootstrap.min.js"></script>
-	<script src="${ url}/js/jquery-ui.min.js"></script>
-	<script src="${ url}/js/jquery.countdown.min.js"></script>
-	<script src="${ url}/js/jquery.nice-select.min.js"></script>
-	<script src="${ url}/js/jquery.zoom.min.js"></script>
-	<script src="${ url}/js/jquery.dd.min.js"></script>
-	<script src="${ url}/js/jquery.slicknav.js"></script>
-	<script src="${ url}/js/owl.carousel.min.js"></script>
-	<script src="${ url}/js/main.js"></script>
+	<jsp:include page="/view/user/template/footer/footer.jsp" flush="true" />
 </body>
 
 </html>

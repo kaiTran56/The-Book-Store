@@ -2,23 +2,18 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:url value="/view/user/template" var="url" />
-<!DOCTYPE html>
-<html lang="zxx">
-
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="description" content="Fashi Template">
 <meta name="keywords" content="Fashi, unica, creative, html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Onl.Book Store</title>
-
-<!-- Google Font -->
+<title>The Online Book Store</title>
 <link
 	href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap"
 	rel="stylesheet">
 
-<!-- Css Styles -->
 <link rel="stylesheet" href="${ url}/css/bootstrap.min.css"
 	type="text/css">
 <link rel="stylesheet" href="${ url}/css/font-awesome.min.css"
@@ -37,14 +32,12 @@
 	type="text/css">
 <link rel="stylesheet" href="${ url}/css/style.css" type="text/css">
 </head>
-
 <body>
-	<!-- Page Preloder -->
 	<div id="preloder">
 		<div class="loader"></div>
 	</div>
 
-	<!-- Header Section Begin -->
+
 	<header class="header-section">
 		<div class="header-top">
 			<div class="container">
@@ -57,10 +50,16 @@
 					</div>
 				</div>
 				<div class="ht-right">
-					<a href="${pageContext.request.contextPath}/view/user/login"
-						class="login-panel"><i class="fa fa-user"></i>Login</a> <a
-						href="${pageContext.request.contextPath}/view/logout"
-						class="login-panel"><i class="fa fa-user"></i>Logout</a>
+					<c:choose>
+						<c:when test="${sessionScope.username == null }">
+							<a href="${pageContext.request.contextPath}/view/user/login"
+								class="login-panel"><i class="fa fa-user"></i>Login</a>
+						</c:when>
+						<c:otherwise>
+							<a href="${pageContext.request.contextPath}/view/logout"
+								class="login-panel"><i class="fa fa-user"></i>Logout</a>
+						</c:otherwise>
+					</c:choose>
 					<div class="lan-selector">
 						<select class="language_drop" name="countries" id="countries"
 							style="width: 300px;">
@@ -199,127 +198,5 @@
 			</div>
 		</div>
 	</header>
-	<!-- Header End -->
-
-	<!-- Breadcrumb Section Begin -->
-	<div class="breacrumb-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="breadcrumb-text">
-						<a href="#"><i class="fa fa-home"></i> Home</a> <span>Contact</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Breadcrumb Section Begin -->
-
-
-
-	<!-- Contact Section Begin -->
-	<section class="contact-section spad">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-5">
-					<div class="contact-title">
-						<h4>Contacts Us</h4>
-
-					</div>
-					<div class="contact-widget">
-						<div class="cw-item">
-							<div class="ci-icon">
-								<i class="ti-location-pin"></i>
-							</div>
-							<div class="ci-text">
-								<span>Address:</span>
-								<p>km9 Nguyen Trai, Ha Noi University, Trung Van Ward, Nam
-									Tu Liem District, Ha Noi</p>
-							</div>
-						</div>
-						<div class="cw-item">
-							<div class="ci-icon">
-								<i class="ti-mobile"></i>
-							</div>
-							<div class="ci-text">
-								<span>Phone:</span>
-								<p>+65 11.188.888</p>
-							</div>
-						</div>
-						<div class="cw-item">
-							<div class="ci-icon">
-								<i class="ti-email"></i>
-							</div>
-							<div class="ci-text">
-								<span>Email:</span>
-								<p>onl.bookstore@gmail.com</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6 offset-lg-1">
-					<div class="contact-form">
-						<div class="leave-comment">
-							<h4>Leave A Comment</h4>
-							<p>Our staff will call back later and answer your questions.</p>
-							<form action="#" class="comment-form">
-								<div class="row">
-									<div class="col-lg-6">
-										<input type="text" placeholder="Your name">
-									</div>
-									<div class="col-lg-6">
-										<input type="text" placeholder="Your email">
-									</div>
-									<div class="col-lg-12">
-										<textarea placeholder="Your message"></textarea>
-										<button type="submit" class="site-btn">Send message</button>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Contact Section End -->
-
-	<!-- Partner Logo Section Begin -->
-	<div class="partner-logo">
-		<div class="container">
-			<div class="logo-carousel owl-carousel">
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-1.png" alt="">
-					</div>
-				</div>
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-2.png" alt="">
-					</div>
-				</div>
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-3.png" alt="">
-					</div>
-				</div>
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-4.png" alt="">
-					</div>
-				</div>
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-5.png" alt="">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Partner Logo Section End -->
-
-	<!-- Footer Section Begin -->
-	<jsp:include page="/view/user/template/footer/footer.jsp" flush="true" />
 </body>
-
 </html>
