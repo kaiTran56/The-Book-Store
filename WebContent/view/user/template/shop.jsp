@@ -290,6 +290,16 @@
 
 								<div class="col-lg-4 col-sm-6">
 									<div class="product-item">
+
+										<div class="pi-text">
+											<div class="catagory-name">Short Story</div>
+											<a href="#">
+												<h5>${product.name}</h5>
+											</a>
+											<div class="product-price">
+												${product.price}<span>${product.discount}%</span>
+											</div>
+										</div>
 										<div class="pi-pic">
 											<img
 												src="${pageContext.request.contextPath}/${product.urlTemp}"
@@ -299,21 +309,17 @@
 												<i class="icon_heart_alt"></i>
 											</div>
 											<ul>
-												<li class="w-icon active"><a href="${pageContext.request.contextPath}/view/user/product-detail?product_id = ${product.product_id}"><i
+												<li class="w-icon active"><a
+													href="${pageContext.request.contextPath}/view/user/product-detail?product_id = ${product.product_id}"><i
 														class="icon_bag_alt"></i></a></li>
+												<button class="btn btn-danger">
+													<a
+														href="${pageContext.request.contextPath}/view/user/product-detail?id = ${product.product_id}">Check</a>
+												</button>
 												<li class="quick-view"><a
-													href="${pageContext.request.contextPath}/view/user/product-detail?product_id = ${product.product_id}">+
+													href="${pageContext.request.contextPath}/view/user/product-detail?id = ${product.product_id}">+
 														Quick View</a></li>
 											</ul>
-										</div>
-										<div class="pi-text">
-											<div class="catagory-name">Short Story</div>
-											<a href="#">
-												<h5>${product.name}</h5>
-											</a>
-											<div class="product-price">
-												${product.price}<span>${product.discount}%</span>
-											</div>
 										</div>
 									</div>
 								</div>

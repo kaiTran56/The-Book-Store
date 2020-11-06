@@ -32,6 +32,7 @@ public class ShowShopController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Product> listPorduct = new ProductDaoImpl().getAll();
+		System.out.println("TEst shop:" +listPorduct.get(1).getProduct_id());
 		request.setAttribute("listproduct", listPorduct);
 		request.getRequestDispatcher("/view/user/template/shop.jsp").forward(request, response);
 	}
