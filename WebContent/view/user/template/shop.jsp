@@ -315,7 +315,7 @@
 										<div class="pi-text">
 											<div class="catagory-name">Short Story</div>
 											<a
-												href="${pageContext.request.contextPath}/view/user/product-detail?id = ${product.product_id}">
+												href="${pageContext.request.contextPath}/view/user/product-detail?id=${product.product_id}">
 												<h5>${product.name}</h5>
 											</a>
 											<div class="product-price">

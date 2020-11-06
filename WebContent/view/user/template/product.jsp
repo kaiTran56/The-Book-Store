@@ -547,16 +547,18 @@
 									<i class="icon_heart_alt"></i>
 								</div>
 								<ul>
-									<li class="w-icon active"><a href="#"><i
+									<li class="w-icon active"><a
+										href="${pageContext.request.contextPath}/view/user/product-detail?id=${product.product_id}"><i
 											class="icon_bag_alt"></i></a></li>
 									<li class="quick-view"><a
-										href="${pageContext.request.contextPath}/view/user/product-detail?id = ${product.product_id}">+
+										href="${pageContext.request.contextPath}/view/user/product-detail?id=${product.product_id}">+
 											Quick View</a></li>
 								</ul>
 							</div>
 							<div class="pi-text">
 								<div class="catagory-name">Short Story</div>
-								<a href="#">
+								<a
+									href="${pageContext.request.contextPath}/view/user/product-detail?id=${product.product_id}">
 									<h5>${product.name}</h5>
 								</a>
 								<div class="product-price">
