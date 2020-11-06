@@ -312,10 +312,7 @@
 												<li class="w-icon active"><a
 													href="${pageContext.request.contextPath}/view/user/product-detail?product_id = ${product.product_id}"><i
 														class="icon_bag_alt"></i></a></li>
-												<button class="btn btn-danger">
-													<a
-														href="${pageContext.request.contextPath}/view/user/product-detail?id = ${product.product_id}">Check</a>
-												</button>
+
 												<li class="quick-view"><a
 													href="${pageContext.request.contextPath}/view/user/product-detail?id = ${product.product_id}">+
 														Quick View</a></li>
