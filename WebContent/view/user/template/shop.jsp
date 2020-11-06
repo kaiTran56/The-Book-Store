@@ -308,9 +308,10 @@
 											<div class="icon">
 												<i class="icon_heart_alt"></i>
 											</div>
+											<h1>${product.product_id}</h1>
 											<ul>
 												<li class="w-icon active"><a
-													href="${pageContext.request.contextPath}/view/user/product-detail?product_id = ${product.product_id}"><i
+													href="${pageContext.request.contextPath}/view/user/product-detail?id = ${product.product_id}"><i
 														class="icon_bag_alt"></i></a></li>
 
 												<li class="quick-view"><a

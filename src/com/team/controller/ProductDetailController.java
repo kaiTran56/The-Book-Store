@@ -38,9 +38,9 @@ public class ProductDetailController extends HttpServlet {
 		 * show the detail information about product by product_id
 		 */
 		System.out.println("New id of product: ");
-		String product_id = request.getParameter("id");
-		System.out.println("The id of Product: " +product_id);
-		Product product = new ProductDaoImpl().get(Integer.parseInt(product_id));
+		String check_id = request.getParameter("id");
+		System.out.println("The id of Product: " +check_id);
+		Product product = new ProductDaoImpl().get(Integer.parseInt(check_id));
 		request.setAttribute("productdetail", product);
 		/*
 		 * show the related book
