@@ -73,7 +73,8 @@ if (session.getAttribute("admin-username") == null) {
 												</button>
 											</td>
 										</tr>
-									</c:forEach>
+									</c:forEach
+									>
 								</tbody>
 							</table>
 						</div>
