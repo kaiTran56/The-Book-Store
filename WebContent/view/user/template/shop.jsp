@@ -3,13 +3,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:url value="/view/user/template" var="url" />
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="description" content="Fashi Template">
-<meta name="keywords" content="Fashi, unica, creative, html">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="">
+
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>The Online Book Store</title>
 
@@ -301,11 +303,11 @@
 											</div>
 											<ul>
 												<li class=""><a
-													href="${pageContext.request.contextPath}/view/user/product-detail?product_id = ${product.product_id}"><i
+													href="${pageContext.request.contextPath}/view/user/product-detail?id = 1"><i
 														class="icon_bag_alt"></i></a></li>
 
 												<li class=""><a
-													href="${pageContext.request.contextPath}/view/user/product-detail?id = ${product.product_id}">+
+													href="${pageContext.request.contextPath}/view/user/product-detail?id = 1">+
 														Quick View</a></li>
 											</ul>
 										</div>

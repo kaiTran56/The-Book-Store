@@ -34,12 +34,13 @@ public class ProductDetailController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=UTF-8");
 		/*
 		 * show the detail information about product by product_id
 		 */
 		System.out.println("New id of product: ");
-		check_id = request.getParameter("id");
+		
 		System.out.println("The id of Product: " + check_id);
 		Product product = new ProductDaoImpl().get(Integer.parseInt(check_id));
 		request.setAttribute("productdetail", product);

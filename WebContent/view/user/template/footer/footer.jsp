@@ -1,16 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:url value="/view/user/template" var="url" />
 
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="description" content="Fashi Template">
-<meta name="keywords" content="Fashi, unica, creative, html">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>The Online Book Store</title>
 <link
 	href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap"
 	rel="stylesheet">
@@ -159,4 +150,3 @@
 	<script src="${ url}/js/owl.carousel.min.js"></script>
 	<script src="${ url}/js/main.js"></script>
 </body>
-</html>
