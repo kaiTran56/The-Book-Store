@@ -83,6 +83,15 @@
 		<url-pattern>/view/user/product-detail</url-pattern>
 	</servlet-mapping>
 	
+	<!-- <servlet>
+		<servlet-name>ShowShopController</servlet-name>
+		<servlet-class>com.team.controller.ShowShopController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ShowShopController</servlet-name>
+		<url-pattern>/view/user</url-pattern>
+	</servlet-mapping> -->
+	
 	
 	
 	

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:url value="/view/user/template" var="url" />
 <!DOCTYPE html>
@@ -174,7 +173,8 @@
 				<nav class="nav-menu mobile-menu">
 					<ul>
 						<li><a href="${url}/index.jsp">Home</a></li>
-						<li><a href="${pageContext.request.contextPath}/view/user/shop">Shop</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/view/user/shop">Shop</a></li>
 						<li><a href="#">Language of Book</a>
 							<ul class="dropdown">
 								<li><a href="#">English</a></li>
@@ -238,7 +238,7 @@
 						<h4 class="fw-title">Brand</h4>
 						<div class="fw-brand-check">
 							<div class="bc-item">
-								<label for="bc-calvin"> Nguyen Nhat Anh  <input
+								<label for="bc-calvin"> Nguyen Nhat Anh <input
 									type="checkbox" id="bc-calvin"> <span class="checkmark"></span>
 								</label>
 							</div>
@@ -284,7 +284,8 @@
 					<div class="filter-widget">
 						<h4 class="fw-title">Tags</h4>
 						<div class="fw-tags">
-							<a href="#">Story</a> <a href="#">Phim</a> <a href="#">Chuyen ngan</a> <a href="#">Nguyen Nhat Anh</a> <a href="#">Ha Lan</a>
+							<a href="#">Story</a> <a href="#">Phim</a> <a href="#">Chuyen
+								ngan</a> <a href="#">Nguyen Nhat Anh</a> <a href="#">Ha Lan</a>
 
 						</div>
 					</div>
@@ -293,7 +294,8 @@
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="product-pic-zoom">
-								<img class="product-big-img" src="${pageContext.request.contextPath}/${productdetail.urlTemp }"
+								<img class="product-big-img"
+									src="${pageContext.request.contextPath}/${productdetail.urlTemp }"
 									alt="">
 								<div class="zoom-icon">
 									<i class="fa fa-search-plus"></i>
@@ -330,7 +332,7 @@
 										class="fa fa-star"></i> <span>(5)</span>
 								</div>
 								<div class="pd-desc">
-									<p>${productdetail.description}��</p>
+									<p>${productdetail.description}</p>
 									<h4>
 										$3.94 <span>4.15</span>
 									</h4>
@@ -345,8 +347,8 @@
 								<ul class="pd-tags">
 									<li><span>CATEGORIES</span>: More categories, short story
 									</li>
-									<li><span>TAGS</span>: Nguyễn Nhật Ánh, Hà Lan,
-										Mắt Biếc</li>
+									<li><span>TAGS</span>: Nguyá»n Nháº­t Ãnh, HÃ  Lan,
+										Máº¯t Biáº¿c</li>
 								</ul>
 								<div class="pd-share">
 									<div class="p-code">Sku : 1007</div>
@@ -477,7 +479,7 @@
 													<h5>
 														Roy Banks <span>10 July 2020</span>
 													</h5>
-													<div class="at-reply">Sách rất hay và ý nghĩa</div>
+													<div class="at-reply">SÃ¡ch ráº¥t hay vÃ  Ã½ nghÄ©a</div>
 												</div>
 											</div>
 										</div>
@@ -529,38 +531,43 @@
 				</div>
 			</div>
 			<div class="row">
-			
-			<c:forEach items="${listrelate}" var="product">
 
-								<div class="col-lg-4 col-sm-6">
-									<div class="product-item">
-										<div class="pi-pic">
-											<img
-												src="${pageContext.request.contextPath}/${product.urlTemp}"
-												alt="" width="270" heigth="302">
-											<div class="sale pp-sale">Sale off</div>
-											<div class="icon">
-												<i class="icon_heart_alt"></i>
-											</div>
-											<ul>
-												<li class="w-icon active"><a href="#"><i
-														class="icon_bag_alt"></i></a></li>
-												<li class="quick-view"><a href="${pageContext.request.contextPath}/view/user/product-detail?id = ${product.product_id}">+ Quick View</a></li>
-											</ul>
-										</div>
-										<div class="pi-text">
-											<div class="catagory-name">Short Story</div>
-											<a href="#">
-												<h5>${product.name}</h5>
-											</a>
-											<div class="product-price">
-												${product.price}<span>${product.discount}%</span>
-											</div>
-										</div>
-									</div>
+				<c:forEach items="${listrelate}" var="product">
+
+					<div class="col-lg-4 col-sm-6">
+						<div class="product-item">
+							<div class="pi-pic">
+								<img src="${pageContext.request.contextPath}/${product.urlTemp}"
+									alt="" width="270" heigth="302">
+								<div class="sale pp-sale">Sale off</div>
+								<div class="icon">
+									<i class="icon_heart_alt"></i>
 								</div>
+								<ul>
+									<li class="w-icon active"><a href="#"><i
+											class="icon_bag_alt"></i></a></li>
+									<li class="quick-view"><a
+										href="${pageContext.request.contextPath}/view/user/product-detail?id = ${product.product_id}">+
+											Quick View</a></li>
+								</ul>
+							</div>
+							<div class="pi-text">
+								<div class="catagory-name">Short Story</div>
+								<a href="#">
+									<h5>${product.name}</h5>
+								</a>
+								<div class="product-price">
+									${product.price}<span>${product.discount}%</span>
+								</div>
+							</div>
+						</div>
+						<button class="btn btn-danger">
+							<a
+								href="${pageContext.request.contextPath}/view/user/product-detail?id = ${product.product_id}">Remove</a>
+						</button>
+					</div>
 
-							</c:forEach>
+				</c:forEach>
 				<%-- <div class="col-lg-3 col-sm-6">
 					<div class="product-item">
 						<div class="pi-pic">

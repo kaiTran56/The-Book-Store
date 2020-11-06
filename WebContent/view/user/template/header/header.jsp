@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:url value="/view/user/template" var="url" />
 <html>
@@ -172,7 +171,8 @@
 				<nav class="nav-menu mobile-menu">
 					<ul>
 						<li><a href="${url}/index.jsp">Home</a></li>
-						<li><a href="${pageContext.request.contextPath}/view/user/shop">Shop</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/view/user/shop">Shop</a></li>
 						<li><a href="#">Language of Book</a>
 							<ul class="dropdown">
 								<li><a href="#">English</a></li>

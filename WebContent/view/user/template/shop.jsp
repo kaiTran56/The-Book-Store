@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:url value="/view/user/template" var="url" />
 <!DOCTYPE html>
@@ -265,7 +265,7 @@
 						<div class="fw-tags">
 							<a href="#">2020</a> <a href="#">2019</a> <a href="#">2018</a> <a
 								href="#">2017</a> <a href="#">2016</a> <a href="#">2015</a> <a
-								href="#">Order</a>
+								href="#">Older</a>
 						</div>
 					</div>
 				</div>
@@ -290,34 +290,34 @@
 
 								<div class="col-lg-4 col-sm-6">
 									<div class="product-item">
+										<div class="pi-pic">
+											<img
+												src="${pageContext.request.contextPath}/${product.urlTemp}"
+												alt="" width="270" heigth="302">
+											<div class="sale pp-sale">${ product.product_id}</div>
+											<h1>${product.product_id }</h1>
+											<div class="icon">
+												<i class="icon_heart_alt"></i>
+											</div>
+											<ul>
+												<li class=""><a
+													href="${pageContext.request.contextPath}/view/user/product-detail?product_id = ${product.product_id}"><i
+														class="icon_bag_alt"></i></a></li>
 
+												<li class=""><a
+													href="${pageContext.request.contextPath}/view/user/product-detail?id = ${product.product_id}">+
+														Quick View</a></li>
+											</ul>
+										</div>
 										<div class="pi-text">
 											<div class="catagory-name">Short Story</div>
-											<a href="#">
+											<a
+												href="${pageContext.request.contextPath}/view/user/product-detail?product_id = ${product.product_id}">
 												<h5>${product.name}</h5>
 											</a>
 											<div class="product-price">
 												${product.price}<span>${product.discount}%</span>
 											</div>
-										</div>
-										<div class="pi-pic">
-											<img
-												src="${pageContext.request.contextPath}/${product.urlTemp}"
-												alt="" width="270" heigth="302">
-											<div class="sale pp-sale">Sale off</div>
-											<div class="icon">
-												<i class="icon_heart_alt"></i>
-											</div>
-											
-											<ul>
-												<li class="w-icon active"><a
-													href="${pageContext.request.contextPath}/view/user/product-detail?id = ${product.product_id}"><i
-														class="icon_bag_alt"></i></a></li>
-
-												<li class="quick-view"><a
-													href="${pageContext.request.contextPath}/view/user/product-detail?id = ${product.product_id}">+
-														Quick View</a></li>
-											</ul>
 										</div>
 									</div>
 								</div>
@@ -328,6 +328,7 @@
 						<div class="loading-more">
 							<i class="icon_loading"></i> <a href="#"> Loading More </a>
 						</div>
+
 					</div>
 				</div>
 	</section>

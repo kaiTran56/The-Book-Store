@@ -18,6 +18,7 @@ import com.team.model.Product;
 
 public class ProductDetailController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private String check_id;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -38,8 +39,8 @@ public class ProductDetailController extends HttpServlet {
 		 * show the detail information about product by product_id
 		 */
 		System.out.println("New id of product: ");
-		String check_id = request.getParameter("id");
-		System.out.println("The id of Product: " +check_id);
+		check_id = request.getParameter("id");
+		System.out.println("The id of Product: " + check_id);
 		Product product = new ProductDaoImpl().get(Integer.parseInt(check_id));
 		request.setAttribute("productdetail", product);
 		/*
