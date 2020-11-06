@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:url value="/view/user/template" var="url" />
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
 <meta charset="utf-8" />
@@ -564,10 +564,7 @@
 								</div>
 							</div>
 						</div>
-						<button class="btn btn-danger">
-							<a
-								href="${pageContext.request.contextPath}/view/user/product-detail?id = ${product.product_id}">Remove</a>
-						</button>
+
 					</div>
 
 				</c:forEach>

@@ -297,24 +297,25 @@
 												src="${pageContext.request.contextPath}/${product.urlTemp}"
 												alt="" width="270" heigth="302">
 											<div class="sale pp-sale">${ product.product_id}</div>
-											<h1>${product.product_id }</h1>
+
 											<div class="icon">
 												<i class="icon_heart_alt"></i>
 											</div>
+
 											<ul>
-												<li class=""><a
-													href="${pageContext.request.contextPath}/view/user/product-detail?id = 1"><i
+												<li class="w-icon active"><a
+													href="${pageContext.request.contextPath}/view/user/product-detail?id=${product.product_id}"><i
 														class="icon_bag_alt"></i></a></li>
 
-												<li class=""><a
-													href="${pageContext.request.contextPath}/view/user/product-detail?id = 1">+
+												<li class="quick-view"><a
+													href="${pageContext.request.contextPath}/view/user/product-detail?id=${product.product_id}">+
 														Quick View</a></li>
 											</ul>
 										</div>
 										<div class="pi-text">
 											<div class="catagory-name">Short Story</div>
 											<a
-												href="${pageContext.request.contextPath}/view/user/product-detail?product_id = ${product.product_id}">
+												href="${pageContext.request.contextPath}/view/user/product-detail?id = ${product.product_id}">
 												<h5>${product.name}</h5>
 											</a>
 											<div class="product-price">
