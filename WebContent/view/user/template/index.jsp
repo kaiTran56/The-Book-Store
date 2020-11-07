@@ -58,7 +58,7 @@
 								problems with limited books. The upcoming Black Friday 2020
 								program will be the day you should not miss, with super sales,
 								deals with huge discounts.</p>
-							<a href="#" class="primary-btn">Shop Now</a>
+							<a href="${pageContext.request.contextPath}/view/user/shop" class="primary-btn">Shop Now</a>
 						</div>
 					</div>
 					<div class="off-card">
@@ -79,7 +79,7 @@
 								problems with limited books. The upcoming Black Friday 2020
 								program will be the day you should not miss, with super sales,
 								deals with huge discounts.</p>
-							<a href="#" class="primary-btn">Shop Now</a>
+							<a href="${pageContext.request.contextPath}/view/user/shop" class="primary-btn">Shop Now</a>
 						</div>
 					</div>
 					<div class="off-card">
@@ -263,7 +263,7 @@
 						<p>Secs</p>
 					</div>
 				</div>
-				<a href="#" class="primary-btn">Shop Now</a>
+				<a href="${pageContext.request.contextPath}/view/user/shop" class="primary-btn">Shop Now</a>
 			</div>
 		</div>
 	</section>
