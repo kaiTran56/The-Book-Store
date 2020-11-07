@@ -20,7 +20,7 @@ public class OrderedDaoImpl extends JDBCConnection implements OrderedDao<Ordered
 	public List<Ordered> getAll() {
 		connect = super.getConnectionJDBC();
 		List<Ordered> listOrdered = new ArrayList<Ordered>();
-		String sql = "select o.ordered_id, p.product_id, p.name, p.price, o.amount from ordered as o inner join product as p on o.ordered_id = p.product_id;";
+		String sql = "" + "";
 		try {
 			statement = connect.prepareStatement(sql);
 			result = statement.executeQuery();
@@ -44,7 +44,9 @@ public class OrderedDaoImpl extends JDBCConnection implements OrderedDao<Ordered
 
 	@Override
 	public Ordered get(int id) {
-
+		connect = super.getConnectionJDBC();
+		String sql = "select o.ordered_id, p.product_id, p.name, p.price, o.amount from ordered as o inner join product as p on o.ordered_id = p.product_id;";
+		statement = connect.prepareStatement(sql);
 		return null;
 	}
 
@@ -67,7 +69,7 @@ public class OrderedDaoImpl extends JDBCConnection implements OrderedDao<Ordered
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Test: "+ new OrderedDaoImpl().getAll().toString());
+		System.out.println("Test: " + new OrderedDaoImpl().getAll().toString());
 	}
 
 }

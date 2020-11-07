@@ -7,6 +7,7 @@ public class Ordered {
 	private int amount;
 	private String name;
 	private double price;
+	private User user;
 
 	public Ordered(int ordered_id, int product_id, int transaction_id, int amount) {
 		super();
@@ -24,12 +25,26 @@ public class Ordered {
 		this.name = name;
 		this.price = price;
 	}
-	
 
 	public Ordered(int amount, String name) {
 		super();
 		this.amount = amount;
 		this.name = name;
+	}
+
+	public Ordered(User user, int amount, String name) {
+		super();
+		this.user = user;
+		this.amount = amount;
+		this.name = name;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public int getOrdered_id() {
@@ -79,7 +94,7 @@ public class Ordered {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
+
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub

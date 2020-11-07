@@ -71,6 +71,10 @@ if (session.getAttribute("admin-username") == null) {
 													<a
 														href="${pageContext.request.contextPath}/admin/order/delete?id=${order.transaction_id}">Remove</a>
 												</button>
+												<button class="btn btn-danger">
+													<a
+														href="${pageContext.request.contextPath}/admin/order/delete?id=${order.transaction_id}">Details</a>
+												</button>
 											</td>
 										</tr>
 									</c:forEach
