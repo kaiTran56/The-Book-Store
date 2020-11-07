@@ -178,7 +178,8 @@
 								<li><a href="#">English</a></li>
 								<li><a href="#">Vietnamese</a></li>
 							</ul></li>
-						<li><a href="${ url}/contact.jsp">Contact</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/view/user/cantact">Contact</a></li>
 						<li><a href="#">Pages</a>
 							<ul class="dropdown">
 								<li><a href="${ url}/blog-details.jsp">Blog Details</a></li>
