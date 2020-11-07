@@ -172,8 +172,8 @@
 				</div>
 				<nav class="nav-menu mobile-menu">
 					<ul>
-						<li><a href="${url}/index.jsp">Home</a></li>
-						<li><a href="${ url}/shop.jsp">Shop</a></li>
+						<li><a href="${pageContext.request.contextPath}/view/user/homepage">Home</a></li>
+						<li><a href="${pageContext.request.contextPath}/view/user/shop">Shop</a></li>
 						<li><a href="#">Language of Book</a>
 							<ul class="dropdown">
 								<li><a href="#">English</a></li>
@@ -204,7 +204,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="breadcrumb-text">
-						<a href="#"><i class="fa fa-home"></i> Home</a> <span>Shop</span>
+						<a href="${pageContext.request.contextPath}/view/user/shop"><i class="fa fa-home"></i> Home</a> <span>Shop</span>
 					</div>
 				</div>
 			</div>
