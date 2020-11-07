@@ -91,6 +91,14 @@
 		<servlet-name>ShowShopController</servlet-name>
 		<url-pattern>/view/user</url-pattern>
 	</servlet-mapping> -->
+	<servlet>
+		<servlet-name>ContactController</servlet-name>
+		<servlet-class>com.team.controller.ContactController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ContactController</servlet-name>
+		<url-pattern>/view/user/contact</url-pattern>
+	</servlet-mapping>
 	
 	
 	
