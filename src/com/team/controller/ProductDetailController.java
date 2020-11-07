@@ -38,7 +38,6 @@ public class ProductDetailController extends HttpServlet {
 		/*
 		 * show the detail information about product by product_id
 		 */
-		System.out.println("New id of product: ");
 
 		String check_id = request.getParameter("id");
 

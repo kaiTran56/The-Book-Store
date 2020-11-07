@@ -11,7 +11,8 @@
 <meta name="keywords" content="Fashi, unica, creative, html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Onl.Book Store</title>
+<title>The Online Book Store</title>
+
 
 <!-- Google Font -->
 <link
@@ -173,7 +174,8 @@
 				<nav class="nav-menu mobile-menu">
 					<ul>
 						<li><a href="${url}/index.jsp">Home</a></li>
-						<li><a href="${pageContext.request.contextPath}/view/user/shop">Shop</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/view/user/shop">Shop</a></li>
 						<li><a href="#">Language of Book</a>
 							<ul class="dropdown">
 								<li><a href="#">English</a></li>
@@ -285,37 +287,7 @@
 	<!-- Contact Section End -->
 
 	<!-- Partner Logo Section Begin -->
-	<div class="partner-logo">
-		<div class="container">
-			<div class="logo-carousel owl-carousel">
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-1.png" alt="">
-					</div>
-				</div>
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-2.png" alt="">
-					</div>
-				</div>
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-3.png" alt="">
-					</div>
-				</div>
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-4.png" alt="">
-					</div>
-				</div>
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-5.png" alt="">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
 	<!-- Partner Logo Section End -->
 
 	<!-- Footer Section Begin -->
