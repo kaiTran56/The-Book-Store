@@ -218,8 +218,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="breadcrumb-text product-more">
-						<a href="./home.html"><i class="fa fa-home"></i> Home</a> <a
-							href="./shop.html">Shop</a> <span>Shopping Cart</span>
+						<a href="${pageContext.request.contextPath}/view/user/homepage"><i class="fa fa-home"></i> Home</a> <a
+							href="${pageContext.request.contextPath}/view/user/shop">Shop</a> <span>Shopping Cart</span>
 					</div>
 				</div>
 			</div>
@@ -302,7 +302,7 @@
 					<div class="row">
 						<div class="col-lg-4">
 							<div class="cart-buttons">
-								<a href="#" class="primary-btn continue-shop">Continue
+								<a href="${pageContext.request.contextPath}/view/user/shop" class="primary-btn continue-shop">Continue
 									shopping</a> <a href="#" class="primary-btn up-cart">Update
 									cart</a>
 							</div>
