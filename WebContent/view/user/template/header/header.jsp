@@ -170,7 +170,7 @@
 				</div>
 				<nav class="nav-menu mobile-menu">
 					<ul>
-						<li><a href="${url}/index.jsp">Home</a></li>
+						<li><a href="${pageContext.request.contextPath}/view/user/homepage">Home</a></li>
 						<li><a
 							href="${pageContext.request.contextPath}/view/user/shop">Shop</a></li>
 						<li><a href="#">Language of Book</a>
