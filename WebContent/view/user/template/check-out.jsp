@@ -174,13 +174,15 @@
 				<nav class="nav-menu mobile-menu">
 					<ul>
 						<li><a href="${url}/index.jsp">Home</a></li>
-						<li><a href="${pageContext.request.contextPath}/view/user/shop">Shop</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/view/user/shop">Shop</a></li>
 						<li><a href="#">Language of Book</a>
 							<ul class="dropdown">
 								<li><a href="#">English</a></li>
 								<li><a href="#">Vietnamese</a></li>
 							</ul></li>
-						<li><a href="${pageContext.request.contextPath}/view/user/contact">Contact</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/view/user/contact">Contact</a></li>
 						<li><a href="#">Pages</a>
 							<ul class="dropdown">
 								<li><a href="${ url}/blog-details.jsp">Blog Details</a></li>
@@ -223,10 +225,8 @@
 			<form action="#" class="checkout-form">
 				<div class="row">
 					<div class="col-lg-6">
-						<div class="checkout-content">
-							<a href="#" class="content-btn">Click Here To Login</a>
-						</div>
-						<h4>Biiling Details</h4>
+
+						<h4>Billing Details</h4>
 						<div class="row">
 							<div class="col-lg-6">
 								<label for="fir">First Name<span>*</span></label> <input
@@ -272,9 +272,7 @@
 						</div>
 					</div>
 					<div class="col-lg-6">
-						<div class="checkout-content">
-							<input type="text" placeholder="Enter Your Coupon Code">
-						</div>
+
 						<div class="place-order">
 							<h4>Your Order</h4>
 							<div class="order-total">
@@ -313,37 +311,7 @@
 	<!-- Shopping Cart Section End -->
 
 	<!-- Partner Logo Section Begin -->
-	<div class="partner-logo">
-		<div class="container">
-			<div class="logo-carousel owl-carousel">
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-1.png" alt="">
-					</div>
-				</div>
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-2.png" alt="">
-					</div>
-				</div>
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-3.png" alt="">
-					</div>
-				</div>
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-4.png" alt="">
-					</div>
-				</div>
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-5.png" alt="">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
 	<!-- Partner Logo Section End -->
 
 	<!-- Footer Section Begin -->
