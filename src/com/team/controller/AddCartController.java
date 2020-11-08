@@ -22,6 +22,8 @@ public class AddCartController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Product product;
 	private ProductDaoImpl productDao = new ProductDaoImpl();
+	private boolean check = false;
+	private int quantity = 1;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -41,7 +43,6 @@ public class AddCartController extends HttpServlet {
 		List<Item> listItems = new ArrayList<Item>();
 		int n = Integer.parseInt(request.getParameter("check-quanity"));
 		int product_id = Integer.parseInt(request.getParameter("id"));
-		int quantity = 1;
 
 		if (product_id != 0) {
 			this.product = productDao.get(product_id);
@@ -59,7 +60,7 @@ public class AddCartController extends HttpServlet {
 			Item item = new Item();
 			item.setAmount(quantity);
 			item.setProduct(product);
-			item.setPrice(product.getPrice());
+			item.setPrice(product.getPrice() - (product.getPrice() * product.getDiscount()) / 100);
 
 			order.setSumPrice(0);
 			order.setSumPrice(order.getSumPrice() + item.getPrice());
@@ -73,8 +74,33 @@ public class AddCartController extends HttpServlet {
 			session.setAttribute("sumprice", order.getSumPrice());
 		} else {
 			Order order = (Order) session.getAttribute("order");
-			listItem = order.getItems();
+			listItems = order.getItems();
+
+			listItems.stream().forEach(p -> {
+				if (p.getProduct().getProduct_id() == product.getProduct_id()) {
+					p.setPrice(p.getPrice() - (p.getProduct().getPrice() * p.getProduct().getDiscount()) / 100);
+					p.setAmount(p.getAmount() + quantity);
+					order.setSumPrice(order.getSumPrice());
+					check = true;
+				}
+			});
+
+			if (check == false) {
+				Item item = new Item();
+				item.setAmount(quantity);
+				item.setProduct(product);
+				item.setPrice(product.getPrice() - (product.getPrice() * product.getDiscount()) / 100);
+				order.setSumPrice(order.getSumPrice() + (item.getProduct().getPrice()
+						- (item.getProduct().getPrice() * item.getProduct().getDiscount() / 100)));
+				listItems.add(item);
+			}
+			n = listItems.size();
+			session.setAttribute("length-order", n);
+			session.setAttribute("order", order);
+			session.setAttribute("sumprice", order.getSumPrice());
 		}
+
+		response.sendRedirect(request.getContextPath() + "/view/user/add-cart");
 
 	}
 
