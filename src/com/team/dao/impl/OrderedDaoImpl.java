@@ -44,10 +44,39 @@ public class OrderedDaoImpl extends JDBCConnection implements OrderedDao<Ordered
 
 	@Override
 	public Ordered get(int id) {
-		connect = super.getConnectionJDBC();
-		String sql = "select o.ordered_id, p.product_id, p.name, p.price, o.amount from ordered as o inner join product as p on o.ordered_id = p.product_id;";
-		statement = connect.prepareStatement(sql);
+		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public List<Ordered> getProduct(int id) {
+		connect = super.getConnectionJDBC();
+		List<Ordered> listProduct = new ArrayList<Ordered>();
+		String sql = "select u.name, p.name, p.price, o.amount from user as u "
+				+ "inner join transactions as t on u.user_id = t.user_id "
+				+ "inner join ordered as o on t.transaction_id = o.transaction_id "
+				+ "inner join product as p on p.product_id = o.product_id where u.user_id = ?;";
+		;
+		try {
+			statement = connect.prepareStatement(sql);
+			statement.setInt(1, id);
+			result = statement.executeQuery();
+			while (result.next()) {
+				String username = result.getString("name");
+				String name = result.getString("name");
+				double price = result.getDouble("price");
+				int amount = result.getInt("amount");
+
+				listProduct.add(new Ordered(username, name, amount, price));
+			}
+			statement.close();
+			result.close();
+			connect.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listProduct;
 	}
 
 	@Override
@@ -69,7 +98,7 @@ public class OrderedDaoImpl extends JDBCConnection implements OrderedDao<Ordered
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Test: " + new OrderedDaoImpl().getAll().toString());
+		System.out.println("Test: " + new OrderedDaoImpl().getProduct(1).toString());
 	}
 
 }

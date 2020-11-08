@@ -7,7 +7,7 @@ public class Ordered {
 	private int amount;
 	private String name;
 	private double price;
-	private User user;
+	private String username;
 
 	public Ordered(int ordered_id, int product_id, int transaction_id, int amount) {
 		super();
@@ -32,19 +32,20 @@ public class Ordered {
 		this.name = name;
 	}
 
-	public Ordered(User user, int amount, String name) {
+	public Ordered(String username, String name, int amount, double price) {
 		super();
-		this.user = user;
+		this.username = username;
 		this.amount = amount;
 		this.name = name;
+		this.price = price;
 	}
 
-	public User getUser() {
-		return user;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public int getOrdered_id() {

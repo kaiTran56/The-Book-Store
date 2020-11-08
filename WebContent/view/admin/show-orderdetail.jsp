@@ -27,17 +27,17 @@ if (session.getAttribute("admin-username") == null) {
 								<thead>
 									<tr>
 
-										<th scope="col">ID of Order</th>
-										<th scope="col">ID of Product</th>
-										<th scope="col">Name</th>
+										<th scope="col">Username</th>
+										<th scope="col">Product Name</th>
 										<th scope="col">Price</th>
+
 										<th scope="col">Quantity</th>
 									</tr>
 								</thead>
 								<tbody>
 									<c:forEach items="${orderedlist}" var="orderedlist">
 										<tr>
-											<td scope="row">${orderedlist.ordered_id}</td>
+
 
 											<td>${orderedlist.product_id}</td>
 											<td>${orderedlist.name}</td>

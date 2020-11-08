@@ -6,6 +6,8 @@ public interface OrderedDao<T> {
 	List<T> getAll();
 
 	T get(int id);
+	
+	List<T> getProduct(int id);
 
 	void insert(T t);
 
