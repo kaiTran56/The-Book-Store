@@ -183,7 +183,8 @@
 								<li><a href="#">English</a></li>
 								<li><a href="#">Vietnamese</a></li>
 							</ul></li>
-						<li><a href="${pageContext.request.contextPath}/view/user/contact">Contact</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/view/user/contact">Contact</a></li>
 						<li><a href="#">Pages</a>
 							<ul class="dropdown">
 								<li><a href="${ url}/blog-details.jsp">Blog Details</a></li>
@@ -211,8 +212,10 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="breadcrumb-text product-more">
-						<a href="${pageContext.request.contextPath}/view/user/homepage"><i class="fa fa-home"></i> Home</a> <a
-							href="${pageContext.request.contextPath}/view/user/shop">Shop</a> <span>Detail</span>
+						<a href="${pageContext.request.contextPath}/view/user/homepage"><i
+							class="fa fa-home"></i> Home</a> <a
+							href="${pageContext.request.contextPath}/view/user/shop">Shop</a>
+						<span>Detail</span>
 					</div>
 				</div>
 			</div>
@@ -340,9 +343,16 @@
 										$3.94 <span>4.15</span>
 									</h4>
 								</div>
-
 								<div class="quantity">
 									<div class="pro-qty">
+
+										<input type="text" value="${productdetail.quantity }">
+									</div>
+
+								</div>
+								<div class="quantity">
+									<div class="pro-qty">
+
 										<input type="text" value="1">
 									</div>
 									<a href="#" class="primary-btn pd-cart">Add To Cart</a>

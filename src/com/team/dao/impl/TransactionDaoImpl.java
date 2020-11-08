@@ -39,7 +39,7 @@ public class TransactionDaoImpl extends JDBCConnection implements TransactionDao
 				String message = result.getString("message");
 				double payment = result.getDouble("payment");
 				String status = result.getString("status");
-				String nameProduct = result.getString("name");
+				String nameProduct = result.getString("p.name");
 				int amount = result.getInt("amount");
 				LocalDateTime created = result.getTimestamp("created").toLocalDateTime();
 				User user = new User(name, email, phone, address);

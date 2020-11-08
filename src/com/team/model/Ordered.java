@@ -99,7 +99,7 @@ public class Ordered {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return name + amount;
+		return username + " "+ name+" "+ amount;
 	}
 
 }

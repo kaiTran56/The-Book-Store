@@ -34,8 +34,7 @@ if (session.getAttribute("admin-username") == null) {
 										<th scope="col">Note</th>
 										<th scope="col">Payment</th>
 										<th scope="col">Status</th>
-										<th scope="col">Product</th>
-										<th scope="col">Quantity</th>
+
 										<th scope="col">Created Day</th>
 										<th scope="col">Actions</th>
 
@@ -61,8 +60,7 @@ if (session.getAttribute("admin-username") == null) {
 													</c:otherwise>
 												</c:choose></td>
 
-											<td>${order.ordered.name}</td>
-											<td>${order.ordered.amount}</td>
+
 											<td>${order.created}</td>
 
 
@@ -73,12 +71,11 @@ if (session.getAttribute("admin-username") == null) {
 												</button>
 												<button class="btn btn-danger">
 													<a
-														href="${pageContext.request.contextPath}/admin/order/delete?id=${order.transaction_id}">Details</a>
+														href="${pageContext.request.contextPath}/admin/list-ordereddetail?id=${order.transaction_id}">Details</a>
 												</button>
 											</td>
 										</tr>
-									</c:forEach
-									>
+									</c:forEach>
 								</tbody>
 							</table>
 						</div>

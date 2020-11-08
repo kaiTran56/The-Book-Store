@@ -18,28 +18,8 @@ public class OrderedDaoImpl extends JDBCConnection implements OrderedDao<Ordered
 
 	@Override
 	public List<Ordered> getAll() {
-		connect = super.getConnectionJDBC();
-		List<Ordered> listOrdered = new ArrayList<Ordered>();
-		String sql = "" + "";
-		try {
-			statement = connect.prepareStatement(sql);
-			result = statement.executeQuery();
-			while (result.next()) {
-				int ordered_id = result.getInt("ordered_id");
-				int product_id = result.getInt("product_id");
-				String name = result.getString("name");
-				double price = result.getDouble("price");
-				int amount = result.getInt("amount");
-				listOrdered.add(new Ordered(ordered_id, product_id, amount, name, price));
-			}
-			statement.close();
-			connect.close();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
-		return listOrdered;
+		return null;
 	}
 
 	@Override
@@ -62,10 +42,10 @@ public class OrderedDaoImpl extends JDBCConnection implements OrderedDao<Ordered
 			statement.setInt(1, id);
 			result = statement.executeQuery();
 			while (result.next()) {
-				String username = result.getString("name");
-				String name = result.getString("name");
-				double price = result.getDouble("price");
-				int amount = result.getInt("amount");
+				String username = result.getString("u.name");
+				String name = result.getString("p.name");
+				double price = result.getDouble("p.price");
+				int amount = result.getInt("o.amount");
 
 				listProduct.add(new Ordered(username, name, amount, price));
 			}
@@ -98,7 +78,7 @@ public class OrderedDaoImpl extends JDBCConnection implements OrderedDao<Ordered
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Test: " + new OrderedDaoImpl().getProduct(1).toString());
+
 	}
 
 }

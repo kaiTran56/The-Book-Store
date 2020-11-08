@@ -39,7 +39,7 @@ if (session.getAttribute("admin-username") == null) {
 										<tr>
 
 
-											<td>${orderedlist.product_id}</td>
+											<td>${orderedlist.username}</td>
 											<td>${orderedlist.name}</td>
 											<td>${orderedlist.price}</td>
 											<td>${orderedlist.amount}</td>
