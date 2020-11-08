@@ -100,6 +100,11 @@ public class AddCartController extends HttpServlet {
 			session.setAttribute("order", order);
 			session.setAttribute("sumprice", order.getSumPrice());
 		}
+		int sizeTemp = listItems.size();
+		session.setAttribute("length", sizeTemp);
+		System.out.println("check List: " + listItems.toString());
+		System.out.println("check List: " + (Order) session.getAttribute("order"));
+
 		System.out.println("Number: " + n);
 		System.out.println("Successfully Done add to cart!");
 		response.sendRedirect(request.getContextPath() + "/view/user/shop");

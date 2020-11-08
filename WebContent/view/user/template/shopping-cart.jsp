@@ -116,53 +116,58 @@
 							<li class="heart-icon"><a href="#"> <i
 									class="icon_heart_alt"></i> <span>1</span>
 							</a></li>
-							<li class="cart-icon"><a href="#"> <i
-									class="icon_bag_alt"></i> <span>2</span>
+
+							<li class="cart-icon"><a
+								href="${pageContext.request.contextPath}/view/user/shopping-cart">
+									<i class="icon_bag_alt"></i> <span>${length}</span>
 							</a>
 								<div class="cart-hover">
 									<div class="select-items">
 										<table>
 											<tbody>
-												<tr>
-													<td class="si-pic"><img
-														src="${ url}/img/select-product-1.jpg" alt=""></td>
-													<td class="si-text">
-														<div class="product-selected">
-															<p>$2.42 x 1</p>
-															<h6>Cho Toi Mot Ve Di Tuoi Tho</h6>
-														</div>
-													</td>
-													<td class="si-close"><i class="ti-close"></i></td>
-												</tr>
-												<tr>
-													<td class="si-pic"><img
-														src="${ url}/img/select-product-2.jpg" alt=""></td>
-													<td class="si-text">
-														<div class="product-selected">
-															<p>$3.94 x 1</p>
-															<h6>Mat Biec</h6>
-														</div>
-													</td>
-													<td class="si-close"><i class="ti-close"></i></td>
-												</tr>
+												<c:forEach items="${order.items}" var="listitem">
+													<tr>
+														<td class="si-pic"><img
+															src="${pageContext.request.contextPath}/${listitem.product.urlTemp}"
+															alt=""
+															style="width: 110px; height: 67px; object-fit: cover; border: 1px solid #fff;"></td>
+														<td class="si-text">
+															<div class="product-selected">
+																<p>$${listitem.product.price}</p>
+																<h6>${listitem.product.name}</h6>
+															</div>
+														</td>
+														<td class="si-close"><i class="ti-close"></i></td>
+													</tr>
+												</c:forEach>
+
+
 											</tbody>
 										</table>
 									</div>
 									<div class="select-total">
 										<span>total:</span>
-										<h5>$6.36</h5>
+										<h5>$${order.sumPrice}</h5>
 									</div>
+
+
 									<div class="select-button">
-										<a href="#" class="primary-btn view-card">VIEW CARD</a> <a
-											href="#" class="primary-btn checkout-btn">CHECK OUT</a>
+										<a
+											href="${pageContext.request.contextPath}/view/user/shopping-cart"
+											class="primary-btn view-card">VIEW CARD</a> <a
+											href="${pageContext.request.contextPath}/view/user/checkout"
+											class="primary-btn checkout-btn">CHECK OUT</a>
 									</div>
 								</div></li>
-							<li class="cart-price">$100.00</li>
+
+
+							<li class="cart-price">$${order.sumPrice}</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
+
 		<div class="nav-item">
 			<div class="container">
 				<div class="nav-depart">
@@ -218,8 +223,10 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="breadcrumb-text product-more">
-						<a href="${pageContext.request.contextPath}/view/user/homepage"><i class="fa fa-home"></i> Home</a> <a
-							href="${pageContext.request.contextPath}/view/user/shop">Shop</a> <span>Shopping Cart</span>
+						<a href="${pageContext.request.contextPath}/view/user/homepage"><i
+							class="fa fa-home"></i> Home</a> <a
+							href="${pageContext.request.contextPath}/view/user/shop">Shop</a>
+						<span>Shopping Cart</span>
 					</div>
 				</div>
 			</div>
@@ -241,70 +248,52 @@
 									<th>Price</th>
 									<th>Quantity</th>
 									<th>Total</th>
-									<th><i class="ti-close"></i></th>
+									<th>Function</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td class="cart-pic first-row"><img
-										src="img/cart-page/product-1.jpg" alt=""></td>
-									<td class="cart-title first-row">
-										<h5>Pure Pineapple</h5>
-									</td>
-									<td class="p-price first-row">$60.00</td>
-									<td class="qua-col first-row">
-										<div class="quantity">
-											<div class="pro-qty">
-												<input type="text" value="1">
+								<c:forEach items="${order.items}" var="listitem">
+									<tr>
+										<td class="cart-pic first-row"><img
+											src="${pageContext.request.contextPath}/${listitem.product.urlTemp}"
+											alt=""
+											style="width: 110px; height: 67px; object-fit: cover; border: 1px solid #fff;"></td>
+										<td class="cart-title first-row">
+											<h5>${listitem.product.name}</h5>
+										</td>
+										<td class="p-price first-row">$${listitem.product.price}</td>
+										<td class="qua-col first-row">
+											<div class="quantity">
+												<div class="pro-qty">
+													<input type="text" value="1">
+												</div>
 											</div>
-										</div>
-									</td>
-									<td class="total-price first-row">$60.00</td>
-									<td class="close-td first-row"><i class="ti-close"></i></td>
-								</tr>
-								<tr>
-									<td class="cart-pic"><img
-										src="img/cart-page/product-2.jpg" alt=""></td>
-									<td class="cart-title">
-										<h5>American lobster</h5>
-									</td>
-									<td class="p-price">$60.00</td>
-									<td class="qua-col">
-										<div class="quantity">
-											<div class="pro-qty">
-												<input type="text" value="1">
-											</div>
-										</div>
-									</td>
-									<td class="total-price">$60.00</td>
-									<td class="close-td"><i class="ti-close"></i></td>
-								</tr>
-								<tr>
-									<td class="cart-pic"><img
-										src="img/cart-page/product-3.jpg" alt=""></td>
-									<td class="cart-title">
-										<h5>Guangzhou sweater</h5>
-									</td>
-									<td class="p-price">$60.00</td>
-									<td class="qua-col">
-										<div class="quantity">
-											<div class="pro-qty">
-												<input type="text" value="1">
-											</div>
-										</div>
-									</td>
-									<td class="total-price">$60.00</td>
-									<td class="close-td"><i class="ti-close"></i></td>
-								</tr>
+										</td>
+
+										<td class="total-price first-row">$${order.sumPrice}</td>
+
+										<td>
+											<button class="btn btn-danger">
+												<a
+													href="${pageContext.request.contextPath}/view/user/delete-cart?id=${boardnew.boardnew_id}">Remove</a>
+											</button>
+										</td>
+
+
+									</tr>
+
+								</c:forEach>
+
+
 							</tbody>
 						</table>
 					</div>
 					<div class="row">
 						<div class="col-lg-4">
 							<div class="cart-buttons">
-								<a href="${pageContext.request.contextPath}/view/user/shop" class="primary-btn continue-shop">Continue
-									shopping</a> <a href="#" class="primary-btn up-cart">Update
-									cart</a>
+								<a href="${pageContext.request.contextPath}/view/user/shop"
+									class="primary-btn continue-shop">Continue shopping</a> <a
+									href="#" class="primary-btn up-cart">Update cart</a>
 							</div>
 							<div class="discount-coupon">
 								<h6>Discount Codes</h6>
@@ -317,8 +306,8 @@
 						<div class="col-lg-4 offset-lg-4">
 							<div class="proceed-checkout">
 								<ul>
-									<li class="subtotal">Subtotal <span>$240.00</span></li>
-									<li class="cart-total">Total <span>$240.00</span></li>
+									<li class="subtotal">Subtotal <span>$${order.sumPrice}</span></li>
+									<li class="cart-total">Total <span>$${order.sumPrice}</span></li>
 								</ul>
 								<a href="#" class="proceed-btn">PROCEED TO CHECK OUT</a>
 							</div>
@@ -331,37 +320,7 @@
 	<!-- Shopping Cart Section End -->
 
 	<!-- Partner Logo Section Begin -->
-	<div class="partner-logo">
-		<div class="container">
-			<div class="logo-carousel owl-carousel">
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-1.png" alt="">
-					</div>
-				</div>
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-2.png" alt="">
-					</div>
-				</div>
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-3.png" alt="">
-					</div>
-				</div>
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-4.png" alt="">
-					</div>
-				</div>
-				<div class="logo-item">
-					<div class="tablecell-inner">
-						<img src="img/logo-carousel/logo-5.png" alt="">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
 	<!-- Partner Logo Section End -->
 
 	<!-- Footer Section Begin -->

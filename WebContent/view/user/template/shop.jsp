@@ -107,48 +107,51 @@
 							<li class="heart-icon"><a href="#"> <i
 									class="icon_heart_alt"></i> <span>1</span>
 							</a></li>
-							<li class="cart-icon"><a href="#"> <i
-									class="icon_bag_alt"></i> <span>2</span>
+
+
+							<li class="cart-icon"><a
+								href="${pageContext.request.contextPath}/view/user/shopping-cart">
+									<i class="icon_bag_alt"></i> <span>${length}</span>
 							</a>
 								<div class="cart-hover">
 									<div class="select-items">
 										<table>
 											<tbody>
-												<tr>
-													<td class="si-pic"><img
-														src="${ url}/img/select-product-1.jpg" alt=""></td>
-													<td class="si-text">
-														<div class="product-selected">
-															<p>$2.42 x 1</p>
-															<h6>Cho Toi Mot Ve Di Tuoi Tho</h6>
-														</div>
-													</td>
-													<td class="si-close"><i class="ti-close"></i></td>
-												</tr>
-												<tr>
-													<td class="si-pic"><img
-														src="${ url}/img/select-product-2.jpg" alt=""></td>
-													<td class="si-text">
-														<div class="product-selected">
-															<p>$3.94 x 1</p>
-															<h6>Mat Biec</h6>
-														</div>
-													</td>
-													<td class="si-close"><i class="ti-close"></i></td>
-												</tr>
+												<c:forEach items="${order.items}" var="listitem">
+													<tr>
+														<td class="si-pic"><img
+															src="${pageContext.request.contextPath}/${listitem.product.urlTemp}"
+															alt=""
+															style="width: 110px; height: 67px; object-fit: cover; border: 1px solid #fff;"></td>
+														<td class="si-text">
+															<div class="product-selected">
+																<p>$${listitem.product.price}</p>
+																<h6>${listitem.product.name}</h6>
+															</div>
+														</td>
+														<td class="si-close"><i class="ti-close"></i></td>
+													</tr>
+												</c:forEach>
+
+
 											</tbody>
 										</table>
 									</div>
 									<div class="select-total">
 										<span>total:</span>
-										<h5>$6.36</h5>
+										<h5>$${order.sumPrice}</h5>
 									</div>
+
+
 									<div class="select-button">
-										<a href="#" class="primary-btn view-card">VIEW CARD</a> <a
-											href="#" class="primary-btn checkout-btn">CHECK OUT</a>
+										<a
+											href="${pageContext.request.contextPath}/view/user/shopping-cart"
+											class="primary-btn view-card">VIEW CARD</a> <a
+											href="${pageContext.request.contextPath}/view/user/checkout"
+											class="primary-btn checkout-btn">CHECK OUT</a>
 									</div>
 								</div></li>
-							<li class="cart-price">$100.00</li>
+							<li class="cart-price">$${order.sumPrice}</li>
 						</ul>
 					</div>
 				</div>
@@ -172,8 +175,10 @@
 				</div>
 				<nav class="nav-menu mobile-menu">
 					<ul>
-						<li><a href="${pageContext.request.contextPath}/view/user/homepage">Home</a></li>
-						<li><a href="${pageContext.request.contextPath}/view/user/shop">Shop</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/view/user/homepage">Home</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/view/user/shop">Shop</a></li>
 						<li><a href="#">Language of Book</a>
 							<ul class="dropdown">
 								<li><a href="#">English</a></li>
@@ -204,7 +209,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="breadcrumb-text">
-						<a href="${pageContext.request.contextPath}/view/user/shop"><i class="fa fa-home"></i> Home</a> <span>Shop</span>
+						<a href="${pageContext.request.contextPath}/view/user/shop"><i
+							class="fa fa-home"></i> Home</a> <span>Shop</span>
 					</div>
 				</div>
 			</div>

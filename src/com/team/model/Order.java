@@ -41,4 +41,10 @@ public class Order {
 		this.created = created;
 	}
 
+	@Override
+	public String toString() {
+
+		return items.toString() + ": " + sumPrice;
+	}
+
 }

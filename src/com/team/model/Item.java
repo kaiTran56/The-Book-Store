@@ -64,4 +64,8 @@ public class Item implements Serializable {
 		this.price = price;
 	}
 
+	public String toString() {
+		return product.getName() + " : " + product.getDescription()+" : "+ amount;
+	}
+
 }

@@ -140,5 +140,6 @@ public class Product {
 	public void setUrlTemp(String urlTemp) {
 		this.urlTemp = urlTemp;
 	}
+	
 
 }
