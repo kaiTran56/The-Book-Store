@@ -344,6 +344,7 @@
 									</h4>
 								</div>
 								<div class="quantity">
+									<h4>Now:</h4>
 									<div class="pro-qty">
 
 										<input type="text" value="${productdetail.quantity }">
@@ -360,8 +361,7 @@
 								<ul class="pd-tags">
 									<li><span>CATEGORIES</span>: More categories, short story
 									</li>
-									<li><span>TAGS</span>: Nguyá»n Nháº­t Ãnh, HÃ  Lan,
-										Máº¯t Biáº¿c</li>
+									<li><span>TAGS</span>: Nguyen Ngoc Anh</li>
 								</ul>
 								<div class="pd-share">
 									<div class="p-code">Sku : 1007</div>
@@ -393,8 +393,7 @@
 											<div class="col-lg-7">
 												<h5>Introduction</h5>
 												<p>${productdetail.description}</p>
-												<h5>Quote</h5>
-												<p>${productdetail.description}</p>
+
 											</div>
 											<div class="col-lg-5">
 												<img src="img/select-product-6.jpg" alt="">
