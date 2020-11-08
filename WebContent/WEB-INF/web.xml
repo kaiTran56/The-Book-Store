@@ -361,12 +361,5 @@
 		<servlet-name>BoardnewDetailListController</servlet-name>
 		<url-pattern>/user/new/list/detail</url-pattern>
 	</servlet-mapping>
-	<servlet>
-		<servlet-name>CheckoutController</servlet-name>
-		<servlet-class>com.team.controller.CheckoutController</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>CheckoutController</servlet-name>
-		<url-pattern>/user/checkout</url-pattern>
-	</servlet-mapping>
+	
 </web-app>
