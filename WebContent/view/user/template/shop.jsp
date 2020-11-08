@@ -304,7 +304,7 @@
 
 											<ul>
 												<li class="w-icon active"><a
-													href="${pageContext.request.contextPath}/view/user/product-detail?id=${product.product_id}"><i
+													href="${pageContext.request.contextPath}/view/user/add-cart?id=${product.product_id}"><i
 														class="icon_bag_alt"></i></a></li>
 
 												<li class="quick-view"><a
