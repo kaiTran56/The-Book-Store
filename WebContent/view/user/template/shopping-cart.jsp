@@ -44,7 +44,7 @@
 		<div class="loader"></div>
 	</div>
 
-	<!-- Header Section Begin -->
+	<%-- <!-- Header Section Begin -->
 	<%
 		response.setHeader("Cache-control", "no-cache, no-store, must-revalidate");
 	response.setHeader("Pragma", "no-cache");
@@ -53,7 +53,7 @@
 	if (session.getAttribute("username") == null) {
 		response.sendRedirect(request.getContextPath() + "/view/user/login");
 	}
-	%>
+	%> --%>
 	<header class="header-section">
 		<div class="header-top">
 			<div class="container">

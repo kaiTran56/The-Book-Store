@@ -129,6 +129,14 @@
 		<servlet-name>BoardnewDetailListController</servlet-name>
 		<url-pattern>/user/new/list/detail</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>AddCartController</servlet-name>
+		<servlet-class>com.team.controller.AddCartController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddCartController</servlet-name>
+		<url-pattern>/view/user/add-cart</url-pattern>
+	</servlet-mapping>
 
 
 
