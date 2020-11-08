@@ -13,19 +13,18 @@ public class TransactionServiceImpl implements TransactionService {
 
 	@Override
 	public void insert(Transactions transaction) {
-		// TODO Auto-generated method stub
-
+		transactionDao.insert(transaction);
 	}
 
 	@Override
 	public void delete(int id) {
-		// TODO Auto-generated method stub
+		transactionDao.delete(id);
 
 	}
 
 	@Override
 	public void edit(Transactions transaction) {
-		// TODO Auto-generated method stub
+		transactionDao.edit(transaction);
 
 	}
 
