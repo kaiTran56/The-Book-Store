@@ -312,7 +312,7 @@
 									<div class="pt active"
 										data-imgbigurl="img/select-product-10.jpg">
 										<img src="img/select-product-10.jpg" alt="">
-									</div>
+								</div>
 									<div class="pt" data-imgbigurl="img/select-product-7.png">
 										<img src="img/select-product-7.png" alt="">
 									</div>
@@ -346,7 +346,7 @@
 								<div class="quantity">
 									<h4>Now:</h4>
 									<div class="pro-qty">
-
+										
 										<input type="text" value="${productdetail.quantity }" name = "quantityTemp">
 									</div>
 
