@@ -8,8 +8,9 @@ import com.team.model.Transactions;
 import com.team.service.TransactionService;
 
 public class TransactionServiceImpl implements TransactionService {
-	
-	private TransactionDao transactionDao = new TransactionDaoImpl();
+
+	private TransactionDao<Transactions> transactionDao = new TransactionDaoImpl();
+
 	@Override
 	public void insert(Transactions transaction) {
 		// TODO Auto-generated method stub
@@ -31,7 +32,7 @@ public class TransactionServiceImpl implements TransactionService {
 	@Override
 	public List<Transactions> getAll() {
 		// TODO Auto-generated method stub
-		return null;
+		return transactionDao.getAll();
 	}
 
 	@Override
