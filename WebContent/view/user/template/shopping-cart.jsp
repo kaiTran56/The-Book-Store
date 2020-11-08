@@ -236,92 +236,93 @@
 
 	<!-- Shopping Cart Section Begin -->
 	<section class="shopping-cart spad">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="cart-table">
-						<table>
-							<thead>
-								<tr>
-									<th>Image</th>
-									<th class="p-name">Product Name</th>
-									<th>Price</th>
-									<th>Quantity</th>
-									<th>Total</th>
-									<th>Function</th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach items="${order.items}" var="listitem">
+
+		<form
+			action="${pageContext.request.contextPath}/view/user/update-cart"
+			method="post">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="cart-table">
+							<table>
+								<thead>
 									<tr>
-										<td class="cart-pic first-row"><img
-											src="${pageContext.request.contextPath}/${listitem.product.urlTemp}"
-											alt=""
-											style="width: 110px; height: 67px; object-fit: cover; border: 1px solid #fff;"></td>
-										<td class="cart-title first-row">
-											<h5>${listitem.product.name}</h5>
-										</td>
-										<td class="p-price first-row">$${listitem.product.price}</td>
-										<td class="qua-col first-row">
-											<div class="quantity">
-												<div class="pro-qty">
-													<input type="text" value="1">
-												</div>
-											</div>
-										</td>
-
-										<td class="total-price first-row">$${order.sumPrice}</td>
-
-										<td>
-											<button class="btn btn-danger">
-												<a
-													href="${pageContext.request.contextPath}/view/user/delete-cart?id=${listitem.id}">Remove</a>
-											</button>
-										</td>
-
-
+										<th>Image</th>
+										<th class="p-name">Product Name</th>
+										<th>Price</th>
+										<th>Quantity</th>
+										<th>Total</th>
+										<th>Function</th>
 									</tr>
+								</thead>
+								<tbody>
+									<c:forEach items="${order.items}" var="listitem">
+										<tr>
+											<td class="cart-pic first-row"><img
+												src="${pageContext.request.contextPath}/${listitem.product.urlTemp}"
+												alt=""
+												style="width: 110px; height: 67px; object-fit: cover; border: 1px solid #fff;"></td>
+											<td class="cart-title first-row">
+												<h5>${listitem.product.name}</h5>
+											</td>
+											<td class="p-price first-row">$${listitem.product.price}</td>
+											<td class="qua-col first-row">
+												<div class="quantity">
+													<div class="pro-qty">
+														<input type="text" value="1">
+													</div>
+												</div>
+											</td>
 
-								</c:forEach>
+											<td class="total-price first-row">$${order.sumPrice}</td>
+
+											<td>
+												<button class="btn btn-danger">
+													<a
+														href="${pageContext.request.contextPath}/view/user/delete-cart?id=${listitem.id}">Remove</a>
+												</button>
+											</td>
 
 
-							</tbody>
-						</table>
-					</div>
-					<div class="row">
-						<div class="col-lg-4">
-							<div class="cart-buttons">
-								<a href="${pageContext.request.contextPath}/view/user/shop"
-									class="primary-btn continue-shop">Continue shopping</a> <a
-									href="#" class="primary-btn up-cart">Update cart</a>
-							</div>
-							<div class="discount-coupon">
-								<h6>Discount Codes</h6>
-								<form action="#" class="coupon-form">
-									<input type="text" placeholder="Enter your codes">
-									<button type="submit" class="site-btn coupon-btn">Apply</button>
-								</form>
-							</div>
+										</tr>
+
+									</c:forEach>
+
+
+								</tbody>
+							</table>
 						</div>
-						<div class="col-lg-4 offset-lg-4">
-							<div class="proceed-checkout">
-								<ul>
-									<li class="subtotal">Subtotal <span>$${order.sumPrice}</span></li>
-									<li class="cart-total">Total <span>$${order.sumPrice}</span></li>
-								</ul>
-								<a href="#" class="proceed-btn">PROCEED TO CHECK OUT</a>
+						<div class="row">
+							<div class="col-lg-4">
+								<div class="cart-buttons">
+									<a href="${pageContext.request.contextPath}/view/user/shop"
+										class="primary-btn continue-shop">Continue shopping</a> <a
+										href="#" class="primary-btn up-cart">Update cart</a>
+								</div>
+								<div class="discount-coupon">
+									<h6>Discount Codes</h6>
+									<form action="#" class="coupon-form">
+										<input type="text" placeholder="Enter your codes">
+										<button type="submit" class="site-btn coupon-btn">Apply</button>
+									</form>
+								</div>
+							</div>
+							<div class="col-lg-4 offset-lg-4">
+								<div class="proceed-checkout">
+									<ul>
+										<li class="subtotal">Subtotal <span>$${order.sumPrice}</span></li>
+										<li class="cart-total">Total <span>$${order.sumPrice}</span></li>
+									</ul>
+									<a href="#" class="proceed-btn">PROCEED TO CHECK OUT</a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</form>
 	</section>
-	<!-- Shopping Cart Section End -->
 
-	<!-- Partner Logo Section Begin -->
-
-	<!-- Partner Logo Section End -->
 
 	<!-- Footer Section Begin -->
 	<jsp:include page="/view/user/template/footer/footer.jsp" flush="true" />

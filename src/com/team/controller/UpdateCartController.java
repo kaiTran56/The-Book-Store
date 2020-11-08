@@ -51,6 +51,8 @@ public class UpdateCartController extends HttpServlet {
 			p.setPrice(p.getProduct().getPrice());
 			order.setSumPrice(order.getSumPrice() + p.getPrice());
 		});
+		System.out.println("Hello!");
+		System.out.println("Update cart!");
 		order.setItems(listItems);
 		session.setAttribute("order", order);
 		session.setAttribute("sumprice", order.getSumPrice());

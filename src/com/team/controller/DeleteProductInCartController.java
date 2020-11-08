@@ -50,7 +50,7 @@ public class DeleteProductInCartController extends HttpServlet {
 
 		listItems.remove(itemTemp);
 
-		System.out.println("Successfully to delete product from cart!");
+		System.out.println("Successfully to delete product from cart!" + " Price: " + order.getSumPrice());
 
 		int sizeTemp = listItems.size();
 		session.setAttribute("length", sizeTemp);

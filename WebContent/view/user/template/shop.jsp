@@ -129,7 +129,7 @@
 																<h6>${listitem.product.name}</h6>
 															</div>
 														</td>
-														<td class="si-close"><i class="ti-close"></i></td>
+
 													</tr>
 												</c:forEach>
 
@@ -188,7 +188,7 @@
 						<li><a href="#">Pages</a>
 							<ul class="dropdown">
 								<li><a href="${ url}/blog-details.jsp">Blog Details</a></li>
-								<li><a href="${ url}/shopping-cart.jsp">Shopping Cart</a></li>
+								<li><a href="${pageContext.request.contextPath}/view/user/shopping-cart">Shopping Cart</a></li>
 								<li><a href="${ url}/check-out.jsp">Checkout</a></li>
 								<li><a
 									href="${pageContext.request.contextPath }/view/user/profile">Profile
@@ -300,9 +300,10 @@
 									<div class="product-item">
 										<div class="pi-pic">
 											<img
+												style="width: 270px; height: 302px; object-fit: cover; border: 1px solid #fff;"
 												src="${pageContext.request.contextPath}/${product.urlTemp}"
-												alt="" width="270" heigth="302">
-											<div class="sale pp-sale">${ product.product_id}</div>
+												alt="">
+											<div class="sale pp-sale">${product.discount}%</div>
 
 											<div class="icon">
 												<i class="icon_heart_alt"></i>
@@ -324,9 +325,7 @@
 												href="${pageContext.request.contextPath}/view/user/product-detail?id=${product.product_id}">
 												<h5>${product.name}</h5>
 											</a>
-											<div class="product-price">
-												${product.price}<span>${product.discount}%</span>
-											</div>
+											<div class="product-price">${product.price}</div>
 										</div>
 									</div>
 								</div>
