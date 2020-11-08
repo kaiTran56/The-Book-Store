@@ -12,7 +12,7 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
-	
+
 	<error-page>
 		<error-code>404</error-code>
 		<location>/error</location>
@@ -57,7 +57,7 @@
 		<servlet-name>HomePageController</servlet-name>
 		<url-pattern>/view/user/homepage</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>LogoutController</servlet-name>
 		<servlet-class>com.team.controller.LogoutController</servlet-class>
@@ -82,15 +82,10 @@
 		<servlet-name>ProductDetailController</servlet-name>
 		<url-pattern>/view/user/product-detail</url-pattern>
 	</servlet-mapping>
-	
-	<!-- <servlet>
-		<servlet-name>ShowShopController</servlet-name>
-		<servlet-class>com.team.controller.ShowShopController</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>ShowShopController</servlet-name>
-		<url-pattern>/view/user</url-pattern>
-	</servlet-mapping> -->
+
+	<!-- <servlet> <servlet-name>ShowShopController</servlet-name> <servlet-class>com.team.controller.ShowShopController</servlet-class> 
+		</servlet> <servlet-mapping> <servlet-name>ShowShopController</servlet-name> 
+		<url-pattern>/view/user</url-pattern> </servlet-mapping> -->
 	<servlet>
 		<servlet-name>ContactController</servlet-name>
 		<servlet-class>com.team.controller.ContactController</servlet-class>
@@ -99,12 +94,27 @@
 		<servlet-name>ContactController</servlet-name>
 		<url-pattern>/view/user/contact</url-pattern>
 	</servlet-mapping>
-	
-	
-	
-	
-	
-	
+	<servlet>
+		<servlet-name>ShoppingCartController</servlet-name>
+		<servlet-class>com.team.controller.ShoppingCartController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ShoppingCartController</servlet-name>
+		<url-pattern>/view/user/shopping-cart</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>CheckoutController</servlet-name>
+		<servlet-class>com.team.controller.CheckoutController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CheckoutController</servlet-name>
+		<url-pattern>/view/user/checkout</url-pattern>
+	</servlet-mapping>
+
+
+
+
+
 	<servlet>
 		<servlet-name>HomepageAdmin</servlet-name>
 		<servlet-class>com.team.controller.admin.HomepageController</servlet-class>
@@ -137,7 +147,7 @@
 		<servlet-name>ErrorHandle</servlet-name>
 		<url-pattern>/error</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>ListUserController</servlet-name>
 		<servlet-class>com.team.controller.admin.ListUserController</servlet-class>
@@ -258,7 +268,7 @@
 		<servlet-name>RemoveCategoryController</servlet-name>
 		<url-pattern>/admin/cate/delete</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>EditCategoryController</servlet-name>
 		<servlet-class>com.team.controller.admin.EditCategoryController</servlet-class>
@@ -331,10 +341,10 @@
 		<servlet-name>RemoveOrderController</servlet-name>
 		<url-pattern>/admin/order/delete</url-pattern>
 	</servlet-mapping>
-	
-	
-	
-	
+
+
+
+
 	<servlet>
 		<servlet-name>BoardnewListController</servlet-name>
 		<servlet-class>com.team.controller.BoardnewListController</servlet-class>
