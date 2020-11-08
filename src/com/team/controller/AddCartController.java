@@ -41,7 +41,7 @@ public class AddCartController extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		List<Item> listItems = new ArrayList<Item>();
-		int n = Integer.parseInt(request.getParameter("check-quanity"));
+		int n = 1;
 		int product_id = Integer.parseInt(request.getParameter("id"));
 
 		if (product_id != 0) {
@@ -49,7 +49,7 @@ public class AddCartController extends HttpServlet {
 			System.out.println("Done1");
 		}
 		if (product != null) {
-			quantity = Integer.parseInt(request.getParameter("check-quantity"));
+			quantity = n;
 			System.out.println("Done2");
 		}
 
@@ -95,12 +95,14 @@ public class AddCartController extends HttpServlet {
 				listItems.add(item);
 			}
 			n = listItems.size();
+
 			session.setAttribute("length-order", n);
 			session.setAttribute("order", order);
 			session.setAttribute("sumprice", order.getSumPrice());
 		}
-
-		response.sendRedirect(request.getContextPath() + "/view/user/add-cart");
+		System.out.println("Number: " + n);
+		System.out.println("Successfully Done add to cart!");
+		response.sendRedirect(request.getContextPath() + "/view/user/shop");
 
 	}
 
