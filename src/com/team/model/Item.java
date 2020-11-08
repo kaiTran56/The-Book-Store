@@ -21,6 +21,17 @@ public class Item implements Serializable {
 		this.price = price;
 	}
 
+	public Item(Product product, int amount, double price) {
+		super();
+		this.product = product;
+		this.amount = amount;
+		this.price = price;
+	}
+
+	public Item() {
+		super();
+	}
+
 	public String getId() {
 		return id;
 	}

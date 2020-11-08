@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.team.dao.impl.ProductDaoImpl;
 import com.team.model.Item;
+import com.team.model.Order;
 import com.team.model.Product;
 
 /**
@@ -19,6 +21,7 @@ import com.team.model.Product;
 public class AddCartController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Product product;
+	private ProductDaoImpl productDao = new ProductDaoImpl();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -35,12 +38,44 @@ public class AddCartController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		List<Item> listItem = new ArrayList<Item>();
+		List<Item> listItems = new ArrayList<Item>();
 		int n = Integer.parseInt(request.getParameter("check-quanity"));
 		int product_id = Integer.parseInt(request.getParameter("id"));
-		if(product_id!=0) {
-			this.product = 
+		int quantity = 1;
+
+		if (product_id != 0) {
+			this.product = productDao.get(product_id);
+			System.out.println("Done1");
 		}
+		if (product != null) {
+			quantity = Integer.parseInt(request.getParameter("check-quantity"));
+			System.out.println("Done2");
+		}
+
+		if (session.getAttribute("order") == null) {
+
+			Order order = new Order();
+
+			Item item = new Item();
+			item.setAmount(quantity);
+			item.setProduct(product);
+			item.setPrice(product.getPrice());
+
+			order.setSumPrice(0);
+			order.setSumPrice(order.getSumPrice() + item.getPrice());
+			listItems.add(item);
+
+			order.setItems(listItems);
+			n = listItems.size();
+
+			session.setAttribute("length-order", n);
+			session.setAttribute("order", order);
+			session.setAttribute("sumprice", order.getSumPrice());
+		} else {
+			Order order = (Order) session.getAttribute("order");
+			listItem = order.getItems();
+		}
+
 	}
 
 }
