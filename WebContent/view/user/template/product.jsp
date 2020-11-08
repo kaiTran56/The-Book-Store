@@ -347,14 +347,15 @@
 									<h4>Now:</h4>
 									<div class="pro-qty">
 
-										<input type="text" value="${productdetail.quantity }">
+										<input type="text" value="${productdetail.quantity }" name = "quantityTemp">
 									</div>
 
 								</div>
 								<div class="quantity">
 									<div class="pro-qty">
 
-										<input type="text" value="1">
+										<input type="text" value="1" name = "check-quantity">
+										
 									</div>
 									<a href="#" class="primary-btn pd-cart">Add To Cart</a>
 								</div>

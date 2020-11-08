@@ -17,10 +17,15 @@
 		<error-code>404</error-code>
 		<location>/error</location>
 	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/error</location>
+	</error-page>
 	<servlet>
 		<servlet-name>Login</servlet-name>
 		<servlet-class>com.team.controller.Login</servlet-class>
 	</servlet>
+
 	<servlet-mapping>
 		<servlet-name>Login</servlet-name>
 		<url-pattern>/view/user/login</url-pattern>
@@ -83,9 +88,7 @@
 		<url-pattern>/view/user/product-detail</url-pattern>
 	</servlet-mapping>
 
-	<!-- <servlet> <servlet-name>ShowShopController</servlet-name> <servlet-class>com.team.controller.ShowShopController</servlet-class> 
-		</servlet> <servlet-mapping> <servlet-name>ShowShopController</servlet-name> 
-		<url-pattern>/view/user</url-pattern> </servlet-mapping> -->
+
 	<servlet>
 		<servlet-name>ContactController</servlet-name>
 		<servlet-class>com.team.controller.ContactController</servlet-class>
@@ -110,6 +113,23 @@
 		<servlet-name>CheckoutController</servlet-name>
 		<url-pattern>/view/user/checkout</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>BoardnewListController</servlet-name>
+		<servlet-class>com.team.controller.BoardnewListController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BoardnewListController</servlet-name>
+		<url-pattern>/user/new/list</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>BoardnewDetailListController</servlet-name>
+		<servlet-class>com.team.controller.BoardnewDetailListController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BoardnewDetailListController</servlet-name>
+		<url-pattern>/user/new/list/detail</url-pattern>
+	</servlet-mapping>
+
 
 
 
@@ -345,21 +365,10 @@
 
 
 
-	<servlet>
-		<servlet-name>BoardnewListController</servlet-name>
-		<servlet-class>com.team.controller.BoardnewListController</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>BoardnewListController</servlet-name>
-		<url-pattern>/user/new/list</url-pattern>
-	</servlet-mapping>
-	<servlet>
-		<servlet-name>BoardnewDetailListController</servlet-name>
-		<servlet-class>com.team.controller.BoardnewDetailListController</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>BoardnewDetailListController</servlet-name>
-		<url-pattern>/user/new/list/detail</url-pattern>
-	</servlet-mapping>
-	
+
+
+
+	<session-config>
+		<session-timeout>90</session-timeout>
+	</session-config>
 </web-app>
