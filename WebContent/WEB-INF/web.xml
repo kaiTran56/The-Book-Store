@@ -137,6 +137,14 @@
 		<servlet-name>AddCartController</servlet-name>
 		<url-pattern>/view/user/add-cart</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>DeleteProductInCartController</servlet-name>
+		<servlet-class>com.team.controller.DeleteProductInCartController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteProductInCartController</servlet-name>
+		<url-pattern>/view/user/delete-cart</url-pattern>
+	</servlet-mapping>
 
 
 
