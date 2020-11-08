@@ -275,7 +275,7 @@
 										<td>
 											<button class="btn btn-danger">
 												<a
-													href="${pageContext.request.contextPath}/view/user/delete-cart?id=${boardnew.boardnew_id}">Remove</a>
+													href="${pageContext.request.contextPath}/view/user/delete-cart?id=${listitem.id}">Remove</a>
 											</button>
 										</td>
 

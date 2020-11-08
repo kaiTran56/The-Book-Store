@@ -38,19 +38,19 @@ public class DeleteProductInCartController extends HttpServlet {
 			throws ServletException, IOException {
 		String id = request.getParameter("id");
 		HttpSession session = request.getSession();
-		Product product = new ProductDaoImpl().get(id);
+		Product product = new ProductDaoImpl().get(Integer.parseInt(id));
 		Order order = (Order) session.getAttribute("order");
 		List<Item> listItems = order.getItems();
-		/*
-		 * listItems.stream().forEach(p -> { if (p.getProduct().getProduct_id() ==
-		 * product.getProduct_id()) { order.setSumPrice(order.getSumPrice() -
-		 * p.getPrice()); listItems.remove(p);
-		 * System.out.println("Delete cart successfully!"); } });
-		 */
-		listItems.stream().filter(p -> p.getProduct().getProduct_id() == product.getProduct_id())
-				.forEach(p -> listItems.remove(p));
+
+		Item itemTemp = listItems.stream().filter(p -> p.getId().equals(product.getProduct_id() + "")).findFirst()
+				.orElse(null);
+		listItems.remove(itemTemp);
+
+		System.out.println("Successfully to delete product from cart!");
 
 		order.setItems(listItems);
+		int sizeTemp = listItems.size();
+		session.setAttribute("length", sizeTemp);
 		session.setAttribute("order", order);
 		response.sendRedirect(request.getContextPath() + "/view/user/shopping-cart");
 

@@ -59,6 +59,7 @@ public class AddCartController extends HttpServlet {
 
 			Item item = new Item();
 			item.setAmount(quantity);
+			item.setId(product.getProduct_id() + "");
 			item.setProduct(product);
 			item.setPrice(product.getPrice() - (product.getPrice() * product.getDiscount()) / 100);
 
@@ -88,6 +89,7 @@ public class AddCartController extends HttpServlet {
 			if (check == false) {
 				Item item = new Item();
 				item.setAmount(quantity);
+				item.setId(product.getProduct_id() + "");
 				item.setProduct(product);
 				item.setPrice(product.getPrice() - (product.getPrice() * product.getDiscount()) / 100);
 				order.setSumPrice(order.getSumPrice() + (item.getProduct().getPrice()

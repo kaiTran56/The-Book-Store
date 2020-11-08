@@ -44,7 +44,7 @@ public class Order {
 	@Override
 	public String toString() {
 
-		return items.toString() + ": " + sumPrice;
+		return id+": "+items.toString() + ": " + sumPrice;
 	}
 
 }
