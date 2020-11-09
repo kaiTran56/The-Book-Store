@@ -253,18 +253,18 @@ tr:nth-child(even) {
 							<table>
 								<tr>
 									<th>Name Book</th>
-									<th>Price</th>
+
 									<th>Quantity</th>
 									<th>Ordered Date</th>
-									<th>Total</th>
+									<th>Total Money(Same Date)</th>
 								</tr>
 								<c:forEach items="${listtran}" var="list">
 
 									<tr>
 										<td>${list.ordered.name }</td>
-										<td>$${list.ordered.price}</td>
 										<td>${list.ordered.amount}</td>
 										<td>${list.created}</td>
+										<td>${list.payment}</td>
 									</tr>
 
 								</c:forEach>

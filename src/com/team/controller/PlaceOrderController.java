@@ -50,6 +50,7 @@ public class PlaceOrderController extends HttpServlet {
 		listItems.forEach(p -> {
 			product_id.add(p.getProduct().getProduct_id());
 		});
+
 	}
 
 }

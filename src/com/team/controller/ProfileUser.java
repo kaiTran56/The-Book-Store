@@ -1,6 +1,7 @@
 package com.team.controller;
 
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -50,6 +51,11 @@ public class ProfileUser extends HttpServlet {
 			int user_id = user.getUser_id();
 			List<Transactions> transaction = new TransactionDaoImpl().get(user_id);
 
+			Comparator<Transactions> comparator = Comparator.comparing(Transactions::getTransaction_id);
+
+			int max = transaction.stream().min(comparator).get().getTransaction_id();
+
+			session.setAttribute("maxTransaction_id", max);
 			request.setAttribute("listtran", transaction);
 			request.getRequestDispatcher("/view/user/template/profile.jsp").forward(request, response);
 
