@@ -39,6 +39,7 @@ public class CheckoutController extends HttpServlet {
 			request.setAttribute("createdDay", user.getCreated());
 			request.setAttribute("userDetail", user);
 			request.getRequestDispatcher("/view/user/template/check-out.jsp").forward(request, response);
+			
 
 		} else {
 			request.getRequestDispatcher("/view/user/template/check-out.jsp").forward(request, response);
