@@ -184,7 +184,7 @@
 							<ul class="dropdown">
 								<li><a href="${ url}/blog-details.jsp">Blog Details</a></li>
 								<li><a href="${ url}/shopping-cart.jsp">Shopping Cart</a></li>
-								<li><a href="${ url}/check-out.jsp">Checkout</a></li>
+								<li><a href="${pageContext.request.contextPath}/view/user/checkout">Checkout</a></li>
 								<li><a
 									href="${pageContext.request.contextPath }/view/user/profile">Profile
 										User</a></li>

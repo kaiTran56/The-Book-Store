@@ -122,7 +122,7 @@ public class Product {
 	}
 
 	public String getUrlTemp() {
-		String url = "C:\\Users\\Admin\\eclipse-workspace\\Project\\WebContent\\";
+		String url = "C:\\Users\\Admin\\eclipse-workspace\\WebTest\\WebContent\\";
 		int len = this.getImage_link().length();
 		System.out.println("Address: " + this.getImage_link() + " The length: " + len);
 		urlTemp = this.getImage_link().substring(url.length(), len).replace("\\", "//");

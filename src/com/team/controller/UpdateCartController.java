@@ -33,7 +33,7 @@ public class UpdateCartController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("/view/user/template/shopping-cart").forward(request, response);
+		request.getRequestDispatcher("/view/user/template/check-out.jsp").forward(request, response);
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class UpdateCartController extends HttpServlet {
 		order.setItems(listItems);
 		session.setAttribute("order", order);
 		session.setAttribute("sumprice", order.getSumPrice());
-		response.sendRedirect(request.getContextPath() + "/view/user/shopping-cart");
+		response.sendRedirect(request.getContextPath() + "/view/user/checkout");
 	}
 
 }

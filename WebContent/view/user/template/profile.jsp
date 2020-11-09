@@ -213,7 +213,7 @@ tr:nth-child(even) {
 								<div class="col-xs-6">
 									<label for="email"><h4>Location</h4></label> <input type="text"
 										class="form-control" name="addressTemp" id="location"
-										value="${requestScope.userDetail.address}">
+										value="${requestScope.userDetail.address}" >
 								</div>
 							</div>
 

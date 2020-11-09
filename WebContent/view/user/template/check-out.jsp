@@ -229,46 +229,36 @@
 						<h4>Billing Details</h4>
 						<div class="row">
 							<div class="col-lg-6">
-								<label for="fir">First Name<span>*</span></label> <input
-									type="text" id="fir">
+								<label for="fir">Username<span>*</span></label> <input
+									type="text" id="fir" value="${requestScope.userDetail.name}" >
 							</div>
-							<div class="col-lg-6">
-								<label for="last">Last Name<span>*</span></label> <input
-									type="text" id="last">
-							</div>
+
 							<div class="col-lg-6">
 								<label for="phone">Phone<span>*</span></label> <input
-									type="text" id="phone">
+									type="text" id="phone" value="${requestScope.userDetail.phone}">
 							</div>
 							<div class="col-lg-6">
 								<label for="email">Email Address<span>*</span></label> <input
-									type="text" id="email">
+									type="text" id="email" value="${requestScope.userDetail.email}">
 							</div>
 
 
 							<div class="col-lg-12">
 								<label for="cun">Country<span>*</span></label> <input
-									type="text" id="cun">
+									type="text" id="cun" value="Viet Nam">
 							</div>
 							<div class="col-lg-12">
 								<label for="street">Address<span>*</span></label> <input
-									type="text" id="street" class="street-first"> <input
-									type="text">
+									type="text" id="street" class="street-first"
+									value="${requestScope.userDetail.address}">
 							</div>
 							<div class="col-lg-12">
-								<label for="zip">Postcode / ZIP (optional)</label> <input
+								<label for="zip">Message</label> <input
 									type="text" id="zip">
 							</div>
 
 
-							<div class="col-lg-12">
-								<div class="create-item">
-									<label for="acc-create"> Create an account? <input
-										type="checkbox" id="acc-create"> <span
-										class="checkmark"></span>
-									</label>
-								</div>
-							</div>
+							<div class="col-lg-12"></div>
 						</div>
 					</div>
 					<div class="col-lg-6">
@@ -278,11 +268,14 @@
 							<div class="order-total">
 								<ul class="order-table">
 									<li>Product <span>Total</span></li>
-									<li class="fw-normal">Combination x 1 <span>$60.00</span></li>
-									<li class="fw-normal">Combination x 1 <span>$60.00</span></li>
-									<li class="fw-normal">Combination x 1 <span>$120.00</span></li>
-									<li class="fw-normal">Subtotal <span>$240.00</span></li>
-									<li class="total-price">Total <span>$240.00</span></li>
+									<c:forEach items="${order.items}" var="list">
+
+										<li class="fw-normal">${list.product.name}<span>$${list.product.price}</span></li>
+
+									</c:forEach>
+
+
+									<li class="total-price">Total <span>$${order.sumPrice}</span></li>
 								</ul>
 								<div class="payment-check">
 									<div class="pc-item">
