@@ -53,11 +53,13 @@ public class ProfileUser extends HttpServlet {
 
 			Comparator<Transactions> comparator = Comparator.comparing(Transactions::getTransaction_id);
 
-			int max = transaction.stream().min(comparator).get().getTransaction_id();
+			int max_trans = transaction.stream().min(comparator).get().getTransaction_id();
+			int max_ordered = transaction.stream().min(comparator).get().getOrdered().getOrdered_id();
+			session.setAttribute("maxTransaction_id", max_trans);
+			session.setAttribute("maxOrdered_id", max_ordered);
 
-			session.setAttribute("maxTransaction_id", max);
-			
 			request.setAttribute("listtran", transaction);
+
 			request.getRequestDispatcher("/view/user/template/profile.jsp").forward(request, response);
 
 		} else {

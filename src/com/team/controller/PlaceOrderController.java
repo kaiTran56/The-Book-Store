@@ -13,7 +13,6 @@ import javax.servlet.http.HttpSession;
 import com.team.dao.impl.UserDaoImpl;
 import com.team.model.Item;
 import com.team.model.Order;
-import com.team.model.Transactions;
 import com.team.model.User;
 
 /**
@@ -22,8 +21,6 @@ import com.team.model.User;
 
 public class PlaceOrderController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	private int user_id;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -43,8 +40,10 @@ public class PlaceOrderController extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		String email = (String) session.getAttribute("username");
+
 		User user = new UserDaoImpl().get(email);
-		user_id = user.getUser_id();
+
+		int user_id = user.getUser_id();
 
 		Order order = (Order) session.getAttribute("order");
 
@@ -55,7 +54,11 @@ public class PlaceOrderController extends HttpServlet {
 			product_id.add(p.getProduct().getProduct_id());
 		});
 
-		int maxTransaction_id = (Integer) session.getAttribute("maxTransaction_id");
+		int maxTrans_id = (Integer) session.getAttribute("maxTransaction_id");
+
+		System.out.println("Max: " + maxTrans_id);
+
+		request.getRequestDispatcher("/view/user/template/index.jsp").forward(request, response);
 
 	}
 
