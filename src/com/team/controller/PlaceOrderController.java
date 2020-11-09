@@ -10,9 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.team.dao.impl.OrderedDaoImpl;
+import com.team.dao.impl.TransactionDaoImpl;
 import com.team.dao.impl.UserDaoImpl;
 import com.team.model.Item;
 import com.team.model.Order;
+import com.team.model.Ordered;
+import com.team.model.Transactions;
 import com.team.model.User;
 
 /**
@@ -54,6 +58,11 @@ public class PlaceOrderController extends HttpServlet {
 		listItems.forEach(p -> {
 			product_id.add(p.getProduct().getProduct_id());
 		});
+		Transactions transaction = new Transactions(transaction_id, user, message, payment, status, ordered, created);
+		new TransactionDaoImpl().insert(transaction);
+
+		Ordered orderTemp = new Ordered(ordered_id, product_id, transaction_id, amount);
+		new OrderedDaoImpl().insert(orderTemp);
 
 		System.out.println("Max: " + maxTrans_id);
 

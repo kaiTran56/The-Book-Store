@@ -62,7 +62,6 @@ public class TransactionDaoImpl extends JDBCConnection implements TransactionDao
 
 	@Override
 	public void insert(Transactions t) {
-		// TODO Auto-generated method stub
 
 	}
 
