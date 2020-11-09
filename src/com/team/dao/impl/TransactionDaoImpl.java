@@ -94,4 +94,10 @@ public class TransactionDaoImpl extends JDBCConnection implements TransactionDao
 		System.out.println("Run");
 		System.out.println("Test: " + new TransactionDaoImpl().getAll().toString());
 	}
+
+	@Override
+	public Transactions get(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

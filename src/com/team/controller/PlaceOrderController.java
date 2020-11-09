@@ -1,6 +1,7 @@
 package com.team.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -20,7 +21,7 @@ import com.team.model.User;
 
 public class PlaceOrderController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private int product_id;
+
 	private int user_id;
 
 	/**
@@ -45,9 +46,9 @@ public class PlaceOrderController extends HttpServlet {
 
 		Order order = (Order) session.getAttribute("order");
 		List<Item> listItems = order.getItems();
-
+		List<Integer> product_id = new ArrayList<Integer>();
 		listItems.forEach(p -> {
-			product_id = p.getProduct().getProduct_id();
+			product_id.add(p.getProduct().getProduct_id());
 		});
 	}
 
