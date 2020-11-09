@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import com.team.dao.impl.UserDaoImpl;
 import com.team.model.Item;
 import com.team.model.Order;
+import com.team.model.Transactions;
 import com.team.model.User;
 
 /**
@@ -38,6 +39,7 @@ public class PlaceOrderController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		HttpSession session = request.getSession();
 
 		String email = (String) session.getAttribute("username");
@@ -45,11 +47,15 @@ public class PlaceOrderController extends HttpServlet {
 		user_id = user.getUser_id();
 
 		Order order = (Order) session.getAttribute("order");
+
 		List<Item> listItems = order.getItems();
 		List<Integer> product_id = new ArrayList<Integer>();
+
 		listItems.forEach(p -> {
 			product_id.add(p.getProduct().getProduct_id());
 		});
+
+		int maxTransaction_id = (Integer) session.getAttribute("maxTransaction_id");
 
 	}
 

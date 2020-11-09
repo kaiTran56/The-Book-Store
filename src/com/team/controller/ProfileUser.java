@@ -56,6 +56,7 @@ public class ProfileUser extends HttpServlet {
 			int max = transaction.stream().min(comparator).get().getTransaction_id();
 
 			session.setAttribute("maxTransaction_id", max);
+			
 			request.setAttribute("listtran", transaction);
 			request.getRequestDispatcher("/view/user/template/profile.jsp").forward(request, response);
 
