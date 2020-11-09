@@ -64,6 +64,7 @@ public class UserDaoImpl extends JDBCConnection implements UserDao<User> {
 			result = preparedStatement.executeQuery();
 			System.out.println("profile!");
 			while (result.next()) {
+				int user_id = result.getInt("user_id");
 				String name = result.getString("name");
 				String emailTemp = result.getString("email");
 				String phone = result.getString("phone");
@@ -71,7 +72,7 @@ public class UserDaoImpl extends JDBCConnection implements UserDao<User> {
 				String address = result.getString("address");
 				LocalDateTime created = result.getTimestamp("created").toLocalDateTime();
 				String password = result.getString("password");
-				return new User(name, emailTemp, phone, dateOfBirth, address, created, password);
+				return new User(user_id, name, emailTemp, phone, dateOfBirth, address, created, password);
 			}
 
 			preparedStatement.close();
