@@ -251,7 +251,7 @@
 										<th class="p-name">Product Name</th>
 										<th>Price</th>
 										<th>Quantity</th>
-										<th>Total</th>
+
 										<th>Function</th>
 									</tr>
 								</thead>
@@ -274,7 +274,7 @@
 												</div>
 											</td>
 
-											<td class="total-price first-row">$${order.sumPrice}</td>
+
 
 											<td>
 												<button class="btn btn-danger">
