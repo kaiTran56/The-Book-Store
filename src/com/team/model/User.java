@@ -34,6 +34,18 @@ public class User {
 		this.password = password;
 	}
 
+	public User(String name, String email, String phone, String dateOfBirth, String address, LocalDateTime created,
+			String password) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.phone = phone;
+		this.dateOfBirth = dateOfBirth;
+		this.address = address;
+		this.created = created;
+		this.password = password;
+	}
+
 	public User(String name, String email, String phone, String dateOfBirth, String address, LocalDateTime created) {
 		super();
 		this.name = name;

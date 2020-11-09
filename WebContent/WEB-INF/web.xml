@@ -153,6 +153,14 @@
 		<servlet-name>UpdateCartController</servlet-name>
 		<url-pattern>/view/user/update-cart</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>PlaceOrderController</servlet-name>
+		<servlet-class>com.team.controller.PlaceOrderController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PlaceOrderController</servlet-name>
+		<url-pattern>/view/user/placeorder</url-pattern>
+	</servlet-mapping>
 
 
 
