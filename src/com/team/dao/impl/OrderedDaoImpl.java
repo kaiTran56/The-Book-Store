@@ -61,8 +61,22 @@ public class OrderedDaoImpl extends JDBCConnection implements OrderedDao<Ordered
 
 	@Override
 	public void insert(Ordered t) {
-		// TODO Auto-generated method stub
-
+		connect = super.getConnectionJDBC();
+		String sql = "insert into ordered (ordered_id, product_id, transaction_id, amount) value (?,?,?,?);";
+		try {
+			statement = connect.prepareStatement(sql);
+			statement.setInt(1, t.getOrdered_id());
+			statement.setInt(2, t.getProduct_id());
+			statement.setInt(3, t.getTransaction_id());
+			statement.setInt(4, t.getAmount());
+			statement.executeUpdate();
+			System.out.println("Insert into Ordered success!");
+			statement.close();
+			connect.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
