@@ -264,7 +264,7 @@ tr:nth-child(even) {
 										<td>${list.ordered.name }</td>
 										<td>$${list.ordered.price}</td>
 										<td>${list.ordered.amount}</td>
-										<td>10/10/2020</td>
+										<td>${list.created}</td>
 									</tr>
 
 								</c:forEach>

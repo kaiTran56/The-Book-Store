@@ -47,10 +47,11 @@ public class ProfileUser extends HttpServlet {
 			User user = userDao.get(email);
 			request.setAttribute("createdDay", user.getCreated());
 			request.setAttribute("userDetail", user);
-			request.getRequestDispatcher("/view/user/template/profile.jsp").forward(request, response);
 			int user_id = user.getUser_id();
 			List<Transactions> transaction = new TransactionDaoImpl().get(user_id);
+
 			request.setAttribute("listtran", transaction);
+			request.getRequestDispatcher("/view/user/template/profile.jsp").forward(request, response);
 
 		} else {
 			request.getRequestDispatcher("/view/user/template/profile.jsp").forward(request, response);
