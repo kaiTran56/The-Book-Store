@@ -5,7 +5,7 @@ import java.util.List;
 public interface TransactionDao<T> {
 	List<T> getAll();
 	
-	T get(int id);
+	List<T> get(int id);
 
 	void insert(T t);
 

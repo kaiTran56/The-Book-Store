@@ -213,7 +213,7 @@ tr:nth-child(even) {
 								<div class="col-xs-6">
 									<label for="email"><h4>Location</h4></label> <input type="text"
 										class="form-control" name="addressTemp" id="location"
-										value="${requestScope.userDetail.address}" >
+										value="${requestScope.userDetail.address}">
 								</div>
 							</div>
 
@@ -255,23 +255,21 @@ tr:nth-child(even) {
 									<th>Name Book</th>
 									<th>Price</th>
 									<th>Quantity</th>
-									<th>Total Money</th>
 									<th>Ordered Date</th>
+									<th>Total</th>
 								</tr>
-								<tr>
-									<td>Detective Conan</td>
-									<td>$3</td>
-									<td>2</td>
-									<td>$6</td>
-									<td>10/10/2020</td>
-								</tr>
-								<tr>
-									<td>Sherlock Holmes</td>
-									<td>$13</td>
-									<td>3</td>
-									<td>$39</td>
-									<td>11/10/2020</td>
-								</tr>
+								<c:forEach items="${listtran}" var="list">
+
+									<tr>
+										<td>${list.ordered.name }</td>
+										<td>$${list.ordered.price}</td>
+										<td>${list.ordered.amount}</td>
+										<td>10/10/2020</td>
+									</tr>
+
+								</c:forEach>
+
+
 
 							</table>
 						</div>

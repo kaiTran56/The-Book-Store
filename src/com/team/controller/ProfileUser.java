@@ -1,6 +1,7 @@
 package com.team.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -8,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.team.dao.impl.TransactionDaoImpl;
 import com.team.dao.impl.UserDaoImpl;
+import com.team.model.Transactions;
 import com.team.model.User;
 
 /**
@@ -45,6 +48,9 @@ public class ProfileUser extends HttpServlet {
 			request.setAttribute("createdDay", user.getCreated());
 			request.setAttribute("userDetail", user);
 			request.getRequestDispatcher("/view/user/template/profile.jsp").forward(request, response);
+			int user_id = user.getUser_id();
+			List<Transactions> transaction = new TransactionDaoImpl().get(user_id);
+			request.setAttribute("listtran", transaction);
 
 		} else {
 			request.getRequestDispatcher("/view/user/template/profile.jsp").forward(request, response);

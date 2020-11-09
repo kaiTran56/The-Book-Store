@@ -96,9 +96,9 @@ public class TransactionDaoImpl extends JDBCConnection implements TransactionDao
 	}
 
 	@Override
-	public Transactions get(int id) {
+	public List<Transactions> get(int id) {
 		connect = super.getConnectionJDBC();
-		Transactions transactions = null;
+		List<Transactions> listTransaction = new ArrayList<Transactions>();
 		String sql = "select t.transaction_id, u.name, u.email, u.phone, u.address, t.message, t.payment, t.status, p.name, o.amount, t.created from user as u "
 				+ " inner join transactions as t " + " on u.user_id = t.user_id " + " inner join ordered as o "
 				+ " on o.transaction_id = t.transaction_id " + " inner join product as p "
@@ -121,7 +121,7 @@ public class TransactionDaoImpl extends JDBCConnection implements TransactionDao
 				LocalDateTime created = result.getTimestamp("created").toLocalDateTime();
 				User user = new User(name, email, phone, address);
 				Ordered ordered = new Ordered(amount, nameProduct);
-				transactions = new Transactions(transaction_id, user, message, payment, status, ordered, created);
+				listTransaction.add(new Transactions(transaction_id, user, message, payment, status, ordered, created));
 
 			}
 			System.out.println("transactions successfully!");
@@ -132,6 +132,6 @@ public class TransactionDaoImpl extends JDBCConnection implements TransactionDao
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return transactions;
+		return listTransaction;
 	}
 }
