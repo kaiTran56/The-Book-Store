@@ -97,7 +97,42 @@ public class TransactionDaoImpl extends JDBCConnection implements TransactionDao
 
 	@Override
 	public Transactions get(int id) {
-		// TODO Auto-generated method stub
+		connect = super.getConnectionJDBC();
+
+		String sql = "select t.transaction_id, u.name, u.email, u.phone, u.address, t.message, t.payment, t.status, p.name, o.amount, t.created from user as u "
+				+ " inner join transactions as t " + " on u.user_id = t.user_id " + " inner join ordered as o "
+				+ " on o.transaction_id = t.transaction_id " + " inner join product as p "
+				+ " on p.product_id = o.product_id; where u.user_id = ?;";
+		try {
+			statement = connect.prepareStatement(sql);
+			statement.setInt(1, id);
+			result = statement.executeQuery();
+			while (result.next()) {
+				int transaction_id = result.getInt("transaction_id");
+				String name = result.getString("name");
+				String email = result.getString("email");
+				String phone = result.getString("phone");
+				String address = result.getString("address");
+				String message = result.getString("message");
+				double payment = result.getDouble("payment");
+				String status = result.getString("status");
+				String nameProduct = result.getString("p.name");
+				int amount = result.getInt("amount");
+				LocalDateTime created = result.getTimestamp("created").toLocalDateTime();
+				User user = new User(name, email, phone, address);
+				Ordered ordered = new Ordered(amount, nameProduct);
+				Transactions transactions = new Transactions(transaction_id, user, message, payment, status, ordered,
+						created);
+				listTransaction.add(transactions);
+			}
+			System.out.println("List transactions successfully!");
+			result.close();
+			statement.close();
+			connect.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
 }
