@@ -55,6 +55,15 @@
 		<url-pattern>/view/user/edit</url-pattern>
 	</servlet-mapping>
 	<servlet>
+		<servlet-name>ShowHistoryUserController</servlet-name>
+		<servlet-class>com.team.controller.ShowHistoryUserController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ShowHistoryUserController</servlet-name>
+		<url-pattern>/view/user/history</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>HomePageController</servlet-name>
 		<servlet-class>com.team.controller.HomePageController</servlet-class>
 	</servlet>
