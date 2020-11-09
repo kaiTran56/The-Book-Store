@@ -23,6 +23,17 @@ public class Transactions {
 		this.ordered = ordered;
 	}
 
+	public Transactions(int transaction_id, User user, String message, double payment, String status,
+			LocalDateTime created) {
+		super();
+		this.transaction_id = transaction_id;
+		this.user = user;
+		this.message = message;
+		this.payment = payment;
+		this.status = status;
+		this.created = created;
+	}
+
 	public int getTransaction_id() {
 		return transaction_id;
 	}
@@ -78,7 +89,7 @@ public class Transactions {
 	public void setOrdered(Ordered ordered) {
 		this.ordered = ordered;
 	}
-	
+
 	public String toString() {
 		return message;
 	}

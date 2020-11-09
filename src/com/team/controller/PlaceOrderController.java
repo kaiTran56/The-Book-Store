@@ -40,15 +40,16 @@ public class PlaceOrderController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		String message = request.getParameter("message");
 
 		HttpSession session = request.getSession();
 
-		int maxTrans_id = (Integer) session.getAttribute("maxTransaction_id");
 		int maxOrds_id = (Integer) session.getAttribute("maxOrdered_id");
 
 		String email = (String) session.getAttribute("username");
 		User user = new UserDaoImpl().get(email);
 		int user_id = user.getUser_id();
+		String status = "Not Finish!";
 
 		Order order = (Order) session.getAttribute("order");
 
@@ -58,7 +59,10 @@ public class PlaceOrderController extends HttpServlet {
 		listItems.forEach(p -> {
 			product_id.add(p.getProduct().getProduct_id());
 		});
-		Transactions transaction = new Transactions(transaction_id, user, message, payment, status, ordered, created);
+		double payment = order.getSumPrice();
+		int maxTrans_id = (Integer) session.getAttribute("maxTransaction_id");
+		maxTrans_id++;
+		Transactions transaction = new Transactions(maxTrans_id, user, message, payment, status, created);
 		new TransactionDaoImpl().insert(transaction);
 
 		Ordered orderTemp = new Ordered(ordered_id, product_id, transaction_id, amount);
