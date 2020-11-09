@@ -8,7 +8,6 @@ import java.sql.Statement;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import com.team.JDBC.JDBCConnection;
 import com.team.dao.UserDao;
