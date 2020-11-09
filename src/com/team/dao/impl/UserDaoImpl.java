@@ -49,7 +49,7 @@ public class UserDaoImpl extends JDBCConnection implements UserDao<User> {
 	}
 
 	@Override
-	public Optional<User> get(int id) {
+	public User get(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
