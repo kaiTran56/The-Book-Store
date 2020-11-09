@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -62,7 +63,23 @@ public class TransactionDaoImpl extends JDBCConnection implements TransactionDao
 
 	@Override
 	public void insert(Transactions t) {
-
+		connect = super.getConnectionJDBC();
+		String sql = "insert into transaction_id, user_id, message, payment, status, created " + "value (?,?,?,?,?,?);";
+		try {
+			statement = connect.prepareStatement(sql);
+			statement.setInt(1, t.getTransaction_id());
+			statement.setInt(2, t.getUser().getUser_id());
+			statement.setString(3, t.getMessage());
+			statement.setString(4, t.getStatus());
+			statement.setTimestamp(5, Timestamp.valueOf(t.getCreated()));
+			statement.executeUpdate();
+			System.out.println("Insert Transaction success!");
+			statement.close();
+			connect.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
