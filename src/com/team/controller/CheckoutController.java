@@ -25,8 +25,9 @@ import com.team.model.User;
 
 public class CheckoutController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private int maxOrds_id;
+
 	private int transaction_id;
+	private int ordered_id;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -81,11 +82,11 @@ public class CheckoutController extends HttpServlet {
 
 		transaction_id = new TransactionDaoImpl().getTheLastest().getTransaction_id();
 		System.out.println("MAXXXXX: " + transaction_id);
-		maxOrds_id = (Integer) session.getAttribute("maxOrdered_id") + 3;
+		ordered_id = 4;
 
 		listItems.forEach(p -> {
-			maxOrds_id++;
-			Ordered orderTemp = new Ordered(maxOrds_id, p.getProduct().getProduct_id(), transaction_id, p.getAmount());
+			ordered_id++;
+			Ordered orderTemp = new Ordered(ordered_id, p.getProduct().getProduct_id(), transaction_id, p.getAmount());
 			new OrderedDaoImpl().insert(orderTemp);
 		});
 
@@ -94,7 +95,7 @@ public class CheckoutController extends HttpServlet {
 		session.removeAttribute("order");
 		System.out.println("Successfully!");
 
-		response.sendRedirect(request.getContextPath() + "/view/user/checkout");
+		response.sendRedirect(request.getContextPath() + "/view/user/homepage");
 
 	}
 

@@ -95,4 +95,18 @@ public class OrderedDaoImpl extends JDBCConnection implements OrderedDao<Ordered
 
 	}
 
+	@Override
+	public int getMaxId() {
+		connect = super.getConnectionJDBC();
+		String sql = "select max(ordered_id) from ordered;";
+		try {
+			statement = connect.prepareStatement(sql);
+			result = statement.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
 }

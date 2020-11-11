@@ -40,6 +40,11 @@ public class Ordered {
 		this.price = price;
 	}
 
+	public Ordered(int ordered_id) {
+		super();
+		this.ordered_id = ordered_id;
+	}
+
 	public String getUsername() {
 		return username;
 	}
@@ -99,7 +104,7 @@ public class Ordered {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return username + " "+ name+" "+ amount;
+		return username + " " + name + " " + amount;
 	}
 
 }
