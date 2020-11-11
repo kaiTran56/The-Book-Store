@@ -82,7 +82,7 @@ public class CheckoutController extends HttpServlet {
 
 		transaction_id = new TransactionDaoImpl().getTheLastest().getTransaction_id();
 		System.out.println("MAXXXXX: " + transaction_id);
-		ordered_id = 4;
+		ordered_id = new OrderedDaoImpl().getMaxId().getOrdered_id();
 
 		listItems.forEach(p -> {
 			ordered_id++;

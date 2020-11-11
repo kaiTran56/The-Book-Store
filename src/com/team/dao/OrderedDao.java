@@ -15,5 +15,5 @@ public interface OrderedDao<T> {
 
 	void delete(String id);
 
-	int getMaxId();
+	T getMaxId();
 }

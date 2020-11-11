@@ -71,7 +71,7 @@ if (session.getAttribute("admin-username") == null) {
 												</button>
 												<button class="btn btn-danger">
 													<a
-														href="${pageContext.request.contextPath}/admin/list-ordereddetail?id=${order.transaction_id}">Details</a>
+														href="${pageContext.request.contextPath}/admin/list-ordereddetail?id=${order.user.user_id}">Details</a>
 												</button>
 											</td>
 										</tr>

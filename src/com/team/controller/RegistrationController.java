@@ -31,7 +31,7 @@ public class RegistrationController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		request.getRequestDispatcher("/view/user/signup.jsp").forward(request, response);
 	}
 
@@ -43,12 +43,10 @@ public class RegistrationController extends HttpServlet {
 			throws ServletException, IOException {
 		System.out.println("HElloWorld");
 		String name = request.getParameter("fullName");
-		
-		System.out.println("Hello: "+ name);
+
+		System.out.println("Hello: " + name);
 		String email = request.getParameter("email");
-		
-		
-		
+
 		LocalDateTime now = LocalDateTime.now();
 
 		String phone = request.getParameter("phoneNumber");
@@ -60,9 +58,9 @@ public class RegistrationController extends HttpServlet {
 		User user = new User(name, email, phone, dob, address, now, password);
 		boolean set = new RegisterDao().registerUser(user);
 
-		if(!password.equals(repassword)){
-			request.setAttribute("errorPassword","The password is not equal to repassword!");
-			request.getRequestDispatcher("/view/user/signup.jsp").forward(request,response);
+		if (!password.equals(repassword)) {
+			request.setAttribute("errorPassword", "The password is not equal to repassword!");
+			request.getRequestDispatcher("/view/user/signup.jsp").forward(request, response);
 		}
 		if (set) {
 			request.setAttribute("success", "Successfully!");
@@ -71,7 +69,7 @@ public class RegistrationController extends HttpServlet {
 			request.setAttribute("notSuccess", "Impossible to create new user!");
 			request.getRequestDispatcher("/view/user/signup.jsp").forward(request, response);
 		}
-		doGet(request, response);
+
 	}
 
 }

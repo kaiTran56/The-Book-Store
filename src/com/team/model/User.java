@@ -56,8 +56,9 @@ public class User {
 		this.created = created;
 	}
 
-	public User(String name, String email, String phone, String address) {
+	public User(int user_id, String name, String email, String phone, String address) {
 		super();
+		this.user_id = user_id;
 		this.name = name;
 		this.email = email;
 		this.phone = phone;
