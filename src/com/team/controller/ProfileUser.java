@@ -51,13 +51,6 @@ public class ProfileUser extends HttpServlet {
 			int user_id = user.getUser_id();
 			List<Transactions> transaction = new TransactionDaoImpl().get(user_id);
 
-			Comparator<Transactions> comparator = Comparator.comparing(Transactions::getTransaction_id);
-
-			int max_trans = transaction.stream().min(comparator).get().getTransaction_id();
-			int max_ordered = transaction.stream().min(comparator).get().getOrdered().getOrdered_id();
-			session.setAttribute("maxTransaction_id", max_trans);
-			session.setAttribute("maxOrdered_id", max_ordered);
-
 			request.setAttribute("listtran", transaction);
 
 			request.getRequestDispatcher("/view/user/template/profile.jsp").forward(request, response);
