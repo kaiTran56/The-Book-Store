@@ -64,7 +64,7 @@ public class TransactionDaoImpl extends JDBCConnection implements TransactionDao
 	@Override
 	public void insert(Transactions t) {
 		connect = super.getConnectionJDBC();
-		String sql = "insert into transactions ( user_id, message, payment, status, created) " + "value (?,?,?,?,?,?);";
+		String sql = "insert into transactions ( user_id, message, payment, status, created) " + "value (?,?,?,?,?);";
 		try {
 			statement = connect.prepareStatement(sql);
 

@@ -2,7 +2,6 @@ package com.team.controller;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,12 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.team.dao.impl.OrderedDaoImpl;
 import com.team.dao.impl.TransactionDaoImpl;
 import com.team.dao.impl.UserDaoImpl;
-import com.team.model.Item;
 import com.team.model.Order;
-import com.team.model.Ordered;
 import com.team.model.Transactions;
 import com.team.model.User;
 
@@ -25,7 +21,7 @@ import com.team.model.User;
 
 public class CheckoutController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private int maxOrds_id;
+	// private int maxOrds_id;
 	private int transaction_id;
 
 	/**
@@ -71,7 +67,7 @@ public class CheckoutController extends HttpServlet {
 
 		Order order = (Order) session.getAttribute("order");
 
-		List<Item> listItems = order.getItems();
+		// List<Item> listItems = order.getItems();
 
 		LocalDateTime created = LocalDateTime.now();
 		double payment = order.getSumPrice();
