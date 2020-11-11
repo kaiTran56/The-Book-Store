@@ -222,7 +222,9 @@
 	<!-- Shopping Cart Section Begin -->
 	<section class="checkout-section spad">
 		<div class="container">
-			<form action="#" class="checkout-form">
+			<form
+				action="${pageContext.request.contextPath}/view/user/checkout"
+				class="checkout-form" method="post">
 				<div class="row">
 					<div class="col-lg-6">
 
@@ -230,7 +232,7 @@
 						<div class="row">
 							<div class="col-lg-6">
 								<label for="fir">Username<span>*</span></label> <input
-									type="text" id="fir" value="${requestScope.userDetail.name}" >
+									type="text" id="fir" value="${requestScope.userDetail.name}">
 							</div>
 
 							<div class="col-lg-6">
@@ -253,8 +255,8 @@
 									value="${requestScope.userDetail.address}">
 							</div>
 							<div class="col-lg-12">
-								<label for="zip">Message</label> <input
-									type="text" id="zip">
+								<label for="zip">Message</label> <input type="text" id="zip"
+									name="message">
 							</div>
 
 

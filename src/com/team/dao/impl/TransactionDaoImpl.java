@@ -64,12 +64,13 @@ public class TransactionDaoImpl extends JDBCConnection implements TransactionDao
 	@Override
 	public void insert(Transactions t) {
 		connect = super.getConnectionJDBC();
-		String sql = "insert into transaction_id, user_id, message, payment, status, created " + "value (?,?,?,?,?,?);";
+		String sql = "insert into transactions ( user_id, message, payment, status, created) " + "value (?,?,?,?,?,?);";
 		try {
 			statement = connect.prepareStatement(sql);
-			statement.setInt(1, t.getTransaction_id());
-			statement.setInt(2, t.getUser().getUser_id());
-			statement.setString(3, t.getMessage());
+
+			statement.setInt(1, t.getUser().getUser_id());
+			statement.setString(2, t.getMessage());
+			statement.setDouble(3, t.getPayment());
 			statement.setString(4, t.getStatus());
 			statement.setTimestamp(5, Timestamp.valueOf(t.getCreated()));
 			statement.executeUpdate();
@@ -149,5 +150,26 @@ public class TransactionDaoImpl extends JDBCConnection implements TransactionDao
 			e.printStackTrace();
 		}
 		return listTransaction;
+	}
+
+	@Override
+	public Transactions getTheLastest() {
+		connect = super.getConnectionJDBC();
+		String sql = "select transaction_id from transactions order by created desc limit 1";
+		try {
+			statement = connect.prepareStatement(sql);
+			result = statement.executeQuery();
+			while (result.next()) {
+				int transaction_id = result.getInt("transaction_id");
+				return new Transactions(transaction_id);
+			}
+			statement.close();
+			result.close();
+			connect.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 }

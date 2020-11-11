@@ -34,6 +34,21 @@ public class Transactions {
 		this.created = created;
 	}
 
+	public Transactions(User user, String message, double payment, String status, LocalDateTime created) {
+		super();
+		this.user = user;
+		this.message = message;
+		this.payment = payment;
+		this.status = status;
+		this.created = created;
+	}
+	
+
+	public Transactions(int transaction_id) {
+		super();
+		this.transaction_id = transaction_id;
+	}
+
 	public int getTransaction_id() {
 		return transaction_id;
 	}

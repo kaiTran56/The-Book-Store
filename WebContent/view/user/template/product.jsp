@@ -306,24 +306,7 @@
 								<div class="zoom-icon">
 									<i class="fa fa-search-plus"></i>
 								</div>
-							</div>
-							<!-- <div class="product-thumbs">
-								<div class="product-thumbs-track ps-slider owl-carousel">
-									<div class="pt active"
-										data-imgbigurl="img/select-product-10.jpg">
-										<img src="img/select-product-10.jpg" alt="">
-								</div>
-									<div class="pt" data-imgbigurl="img/select-product-7.png">
-										<img src="img/select-product-7.png" alt="">
-									</div>
-									<div class="pt" data-imgbigurl="img/select-product-6.jpg">
-										<img src="img/select-product-6.jpg" alt="">
-									</div>
-									<div class="pt" data-imgbigurl="img/select-product-5.jpg">
-										<img src="img/select-product-5.jpg" alt="">
-									</div>
-								</div>
-							</div> -->
+							</div>s
 						</div>
 						<div class="col-lg-6">
 							<div class="product-details">
@@ -346,16 +329,17 @@
 								<div class="quantity">
 									<h4>Now:</h4>
 									<div class="pro-qty">
-										
-										<input type="text" value="${productdetail.quantity }" name = "quantityTemp">
+
+										<input type="text" value="${productdetail.quantity }"
+											name="quantityTemp">
 									</div>
 
 								</div>
 								<div class="quantity">
 									<div class="pro-qty">
 
-										<input type="text" value="1" name = "check-quantity">
-										
+										<input type="text" value="1" name="check-quantity">
+
 									</div>
 									<a href="#" class="primary-btn pd-cart">Add To Cart</a>
 								</div>

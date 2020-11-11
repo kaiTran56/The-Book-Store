@@ -72,7 +72,8 @@ public class PlaceOrderController extends HttpServlet {
 
 		System.out.println("Max: " + maxTrans_id);
 
-		session.invalidate();
+		session.removeAttribute("order");
+		System.out.println("Successfully!");
 
 		response.sendRedirect(request.getContextPath() + "/view/user/checkout");
 

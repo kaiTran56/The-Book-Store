@@ -12,5 +12,7 @@ public interface TransactionDao<T> {
 	void edit(T t);
 
 	void delete(int id);
+	
+	T getTheLastest();
 
 }
