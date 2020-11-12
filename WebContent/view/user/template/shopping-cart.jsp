@@ -299,13 +299,7 @@
 										class="primary-btn continue-shop">Continue shopping</a> <a
 										href="#" class="primary-btn up-cart">Update cart</a>
 								</div>
-								<div class="discount-coupon">
-									<h6>Discount Codes</h6>
-									<form action="#" class="coupon-form">
-										<input type="text" placeholder="Enter your codes">
-										<button type="submit" class="site-btn coupon-btn">Apply</button>
-									</form>
-								</div>
+								<div class="discount-coupon"></div>
 							</div>
 							<div class="col-lg-4 offset-lg-4">
 								<div class="proceed-checkout">
@@ -313,7 +307,8 @@
 										<li class="subtotal">Subtotal <span>$${order.sumPrice}</span></li>
 										<li class="cart-total">Total <span>$${order.sumPrice}</span></li>
 									</ul>
-									<a href="#" class="proceed-btn">PROCEED TO CHECK OUT</a>
+									<a href="${pageContext.request.contextPath}/view/user/checkout"
+										class="proceed-btn">PROCEED TO CHECK OUT</a>
 								</div>
 							</div>
 						</div>

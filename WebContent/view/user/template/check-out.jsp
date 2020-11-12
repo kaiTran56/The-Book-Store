@@ -279,19 +279,7 @@
 
 									<li class="total-price">Total <span>$${order.sumPrice}</span></li>
 								</ul>
-								<div class="payment-check">
-									<div class="pc-item">
-										<label for="pc-check"> Cheque Payment <input
-											type="checkbox" id="pc-check"> <span
-											class="checkmark"></span>
-										</label>
-									</div>
-									<div class="pc-item">
-										<label for="pc-paypal"> Paypal <input type="checkbox"
-											id="pc-paypal"> <span class="checkmark"></span>
-										</label>
-									</div>
-								</div>
+
 								<div class="order-btn">
 									<button type="submit" class="site-btn place-btn">Place
 										Order</button>
