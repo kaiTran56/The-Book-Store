@@ -10,7 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="description" content="Fashi Template">
-<meta name="keywords" content="Fashi, unica, creative, html">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>The Online Book Store</title>
@@ -58,7 +58,8 @@
 								problems with limited books. The upcoming Black Friday 2020
 								program will be the day you should not miss, with super sales,
 								deals with huge discounts.</p>
-							<a href="${pageContext.request.contextPath}/view/user/shop" class="primary-btn">Shop Now</a>
+							<a href="${pageContext.request.contextPath}/view/user/shop"
+								class="primary-btn">Shop Now</a>
 						</div>
 					</div>
 					<div class="off-card">
@@ -79,7 +80,8 @@
 								problems with limited books. The upcoming Black Friday 2020
 								program will be the day you should not miss, with super sales,
 								deals with huge discounts.</p>
-							<a href="${pageContext.request.contextPath}/view/user/shop" class="primary-btn">Shop Now</a>
+							<a href="${pageContext.request.contextPath}/view/user/shop"
+								class="primary-btn">Shop Now</a>
 						</div>
 					</div>
 					<div class="off-card">
@@ -263,7 +265,8 @@
 						<p>Secs</p>
 					</div>
 				</div>
-				<a href="${pageContext.request.contextPath}/view/user/shop" class="primary-btn">Shop Now</a>
+				<a href="${pageContext.request.contextPath}/view/user/shop"
+					class="primary-btn">Shop Now</a>
 			</div>
 		</div>
 	</section>
@@ -543,7 +546,7 @@
 	<%--Footer of Website --%>
 
 	<jsp:include page="/view/user/template/footer/footer.jsp" flush="true" />
-	
+
 </body>
 
 </html>
