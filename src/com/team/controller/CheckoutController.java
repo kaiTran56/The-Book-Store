@@ -17,6 +17,7 @@ import com.team.dao.impl.UserDaoImpl;
 import com.team.model.Item;
 import com.team.model.Order;
 import com.team.model.Ordered;
+import com.team.model.Product;
 import com.team.model.Transactions;
 import com.team.model.User;
 
@@ -37,6 +38,7 @@ public class CheckoutController extends HttpServlet {
 	 */
 	public CheckoutController() {
 		super();
+		this.productDao = new ProductDaoImpl();
 		// TODO Auto-generated constructor stub
 	}
 
@@ -85,35 +87,27 @@ public class CheckoutController extends HttpServlet {
 		new TransactionDaoImpl().insert(transaction);
 
 		transaction_id = new TransactionDaoImpl().getTheLastest().getTransaction_id();
-		System.out.println("MAXXXXX: " + transaction_id);
-		ordered_id = new OrderedDaoImpl().getMaxId().getOrdered_id();
 
-//		listItems.forEach(p -> {
-//			ordered_id++;
-//			orderTemp = new Ordered(ordered_id, p.getProduct().getProduct_id(), transaction_id, p.getAmount());
-//			new OrderedDaoImpl().insert(orderTemp);
-//		});
+		ordered_id = new OrderedDaoImpl().getMaxId().getOrdered_id();
 
 		for (Item p : listItems) {
 			ordered_id++;
 			orderTemp = new Ordered(ordered_id, p.getProduct().getProduct_id(), transaction_id, p.getAmount());
+
 			int purchaseQuantity = p.getAmount();
-			System.out.println("Checkkk: " + p.getAmount());
 			int previousQuantity = p.getProduct().getQuantity();
-			System.out.println("Check: previousQuantity: " + previousQuantity);
 			int newQuantity = previousQuantity - purchaseQuantity;
 
-			System.out.println("Ordered_Id: " + ordered_id + " : " + newQuantity);
 			new OrderedDaoImpl().insert(orderTemp);
 
+			productDao.updateQuantity(new Product(p.getProduct().getProduct_id(), newQuantity));
 		}
 
 		// Check out status:
 		request.setAttribute("checkTransaction", "Place order successfully!");
 
-		System.out.println("Max: " + transaction_id);
 		session.removeAttribute("order");
-		System.out.println("Successfully!");
+
 		response.sendRedirect(request.getContextPath() + "/view/user/checkout");
 
 	}
