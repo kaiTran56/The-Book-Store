@@ -570,9 +570,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- Related Products Section End -->
 
-	<!-- Partner Logo Section Begin -->
 	<!-- Partner Logo Section End -->
 
 	<!-- Footer Section Begin -->
