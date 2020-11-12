@@ -353,7 +353,9 @@
 										<input type="text" value="1" name="check-quantity">
 
 									</div>
-									<a href="#" class="primary-btn pd-cart">Add To Cart</a>
+									<a
+										href="${pageContext.request.contextPath}/view/user/add-cart?id=${product.product_id}"
+										class="primary-btn pd-cart">Add To Cart</a>
 								</div>
 								<ul class="pd-tags">
 									<li><span>CATEGORIES</span>: More categories, short story
