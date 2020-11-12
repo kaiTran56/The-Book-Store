@@ -139,6 +139,7 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 	public Product get(int id) {
 		connect = super.getConnectionJDBC();
 		String sql = "select * from product where product_id = ?";
+		Product product = null;
 		try {
 			preparedStatement = connect.prepareStatement(sql);
 			preparedStatement.setInt(1, id);
@@ -154,14 +155,38 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 				String image_link = result.getString("image_link");
 				LocalDateTime created = result.getTimestamp("created").toLocalDateTime();
 				int quantity = result.getInt("quantity");
-				return new Product(product_id, catalog_id, name, price, status, description, discount, image_link,
+				product = new Product(product_id, catalog_id, name, price, status, description, discount, image_link,
 						created, quantity);
 			}
+			preparedStatement.close();
+			result.close();
+			connect.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+		return product;
+	}
+
+	@Override
+	public void updateQuantity(Product t) {
+		connect = super.getConnectionJDBC();
+		String sql = "update product set quantity = ? where product_id = ?;";
+		try {
+			preparedStatement = connect.prepareStatement(sql);
+			preparedStatement.setInt(1, t.getQuantity());
+			preparedStatement.setInt(2, t.getProduct_id());
+			preparedStatement.executeUpdate();
+			preparedStatement.close();
+			connect.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+	public static void main(String[] args) {
+		System.out.println(new ProductDaoImpl().get(1).toString());
 	}
 
 }

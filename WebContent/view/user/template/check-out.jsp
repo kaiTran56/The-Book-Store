@@ -29,7 +29,6 @@
 <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
 <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
-
 <body>
 	<!-- Page Preloder -->
 	<div id="preloder">
@@ -222,8 +221,9 @@
 	<!-- Shopping Cart Section Begin -->
 	<section class="checkout-section spad">
 		<div class="container">
-			<form
-				action="${pageContext.request.contextPath}/view/user/checkout"
+
+			<h2 align="center" , style="color: green;">${checkTransaction}</h2>
+			<form action="${pageContext.request.contextPath}/view/user/checkout"
 				class="checkout-form" method="post">
 				<div class="row">
 					<div class="col-lg-6">
@@ -303,11 +303,7 @@
 			</form>
 		</div>
 	</section>
-	<!-- Shopping Cart Section End -->
 
-	<!-- Partner Logo Section Begin -->
-
-	<!-- Partner Logo Section End -->
 
 	<!-- Footer Section Begin -->
 	<jsp:include page="/view/user/template/footer/footer.jsp" flush="true" />

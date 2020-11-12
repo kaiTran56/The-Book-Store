@@ -49,6 +49,12 @@ public class Product {
 		this.image_link = image_link;
 	}
 
+	public Product(int product_id, int quantity) {
+		super();
+		this.product_id = product_id;
+		this.quantity = quantity;
+	}
+
 	public int getProduct_id() {
 		return product_id;
 	}
@@ -140,6 +146,10 @@ public class Product {
 	public void setUrlTemp(String urlTemp) {
 		this.urlTemp = urlTemp;
 	}
-	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return name +" : "+price;
+	}
 
 }

@@ -16,4 +16,6 @@ public interface ProductDao<T> {
 	void delete(int id);
 
 	List<T> searchByName(String keyword);
+	
+	void updateQuantity(T t);
 }
