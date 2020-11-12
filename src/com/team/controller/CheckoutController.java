@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.team.dao.impl.OrderedDaoImpl;
+import com.team.dao.impl.ProductDaoImpl;
 import com.team.dao.impl.TransactionDaoImpl;
 import com.team.dao.impl.UserDaoImpl;
 import com.team.model.Item;
@@ -25,7 +26,7 @@ import com.team.model.User;
 
 public class CheckoutController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	private ProductDaoImpl productDao;
 	private int transaction_id;
 	private int ordered_id;
 
@@ -87,11 +88,26 @@ public class CheckoutController extends HttpServlet {
 		System.out.println("MAXXXXX: " + transaction_id);
 		ordered_id = new OrderedDaoImpl().getMaxId().getOrdered_id();
 
-		listItems.forEach(p -> {
+//		listItems.forEach(p -> {
+//			ordered_id++;
+//			orderTemp = new Ordered(ordered_id, p.getProduct().getProduct_id(), transaction_id, p.getAmount());
+//			new OrderedDaoImpl().insert(orderTemp);
+//		});
+
+		for (Item p : listItems) {
 			ordered_id++;
 			orderTemp = new Ordered(ordered_id, p.getProduct().getProduct_id(), transaction_id, p.getAmount());
+			int purchaseQuantity = p.getAmount();
+			System.out.println("Checkkk: " + p.getAmount());
+			int previousQuantity = p.getProduct().getQuantity();
+			System.out.println("Check: previousQuantity: " + previousQuantity);
+			int newQuantity = previousQuantity - purchaseQuantity;
+
+			System.out.println("Ordered_Id: " + ordered_id + " : " + newQuantity);
 			new OrderedDaoImpl().insert(orderTemp);
-		});
+
+		}
+
 		// Check out status:
 		request.setAttribute("checkTransaction", "Place order successfully!");
 
