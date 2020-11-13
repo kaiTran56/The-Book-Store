@@ -34,7 +34,7 @@ public class UpdateDeniedStatusController extends HttpServlet {
 		String status = "Denied!";
 		int transaction_id = Integer.parseInt(request.getParameter("id"));
 		new TransactionDaoImpl().changeStatus(new Transactions(transaction_id, status));
-		response.sendRedirect(request.getContextPath() + "/admin/list-product");
+		response.sendRedirect(request.getContextPath() + "/admin/list-order");
 	}
 
 }
