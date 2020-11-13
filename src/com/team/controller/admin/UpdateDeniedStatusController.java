@@ -23,6 +23,7 @@ public class UpdateDeniedStatusController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Product productTemp;
 	private ProductDaoImpl productDao;
+	private int recoverQuantity;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -34,8 +35,10 @@ public class UpdateDeniedStatusController extends HttpServlet {
 
 	@Override
 	public void init() throws ServletException {
-		// TODO Auto-generated method stub
+
 		super.init();
+
+		productDao = new ProductDaoImpl();
 	}
 
 	/**
@@ -51,11 +54,14 @@ public class UpdateDeniedStatusController extends HttpServlet {
 		List<Ordered> listQuantityOrder = new OrderedDaoImpl().getQuantityOrdered(transaction_id);
 
 		listQuantityOrder.forEach(p -> {
-			productTemp = new ProductDao;
 
-			new ProductDaoImpl().updateQuantity(productTemp);
+			productTemp = productDao.get(p.getProduct_id());
+
+			recoverQuantity = productTemp.getQuantity() + p.getAmount();
+
+			productDao.updateQuantity(new Product(p.getProduct_id(), recoverQuantity));
 		});
-
+		System.out.println("Successful to update recover quantity when we denied");
 		response.sendRedirect(request.getContextPath() + "/admin/list-order");
 	}
 
