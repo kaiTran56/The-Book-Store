@@ -42,11 +42,16 @@ public class Transactions {
 		this.status = status;
 		this.created = created;
 	}
-	
 
 	public Transactions(int transaction_id) {
 		super();
 		this.transaction_id = transaction_id;
+	}
+
+	public Transactions(int transaction_id, String status) {
+		super();
+		this.transaction_id = transaction_id;
+		this.status = status;
 	}
 
 	public int getTransaction_id() {

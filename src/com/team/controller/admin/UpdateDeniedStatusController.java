@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.team.dao.impl.TransactionDaoImpl;
+import com.team.model.Transactions;
+
 /**
  * Servlet implementation class UpdateDeniedStatusController
  */
@@ -29,6 +32,9 @@ public class UpdateDeniedStatusController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String status = "Denied!";
+		int transaction_id = Integer.parseInt(request.getParameter("id"));
+		new TransactionDaoImpl().changeStatus(new Transactions(transaction_id, status));
+
 	}
 
 }
