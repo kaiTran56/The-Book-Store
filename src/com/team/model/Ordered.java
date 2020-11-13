@@ -40,6 +40,13 @@ public class Ordered {
 		this.price = price;
 	}
 
+	public Ordered(int product_id, int transaction_id, int amount) {
+		super();
+		this.product_id = product_id;
+		this.transaction_id = transaction_id;
+		this.amount = amount;
+	}
+
 	public Ordered(int ordered_id) {
 		super();
 		this.ordered_id = ordered_id;

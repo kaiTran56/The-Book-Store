@@ -115,4 +115,29 @@ public class OrderedDaoImpl extends JDBCConnection implements OrderedDao<Ordered
 		return null;
 	}
 
+	@Override
+	public List<Ordered> getQuantityOrdered(int id) {
+		List<Ordered> listQuantity = new ArrayList<Ordered>();
+		connect = super.getConnectionJDBC();
+		String sql = "select product_id, transaction_id, amount from ordered where transaction_id = ?;";
+		try {
+			statement = connect.prepareStatement(sql);
+			statement.setInt(1, id);
+			result = statement.executeQuery();
+			while (result.next()) {
+				int product_id = result.getInt("product_id");
+				int transaction_id = result.getInt("transaction_id");
+				int amount = result.getInt("amount");
+				listQuantity.add(new Ordered(product_id, transaction_id, amount));
+			}
+			statement.close();
+			result.close();
+			connect.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listQuantity;
+	}
+
 }
