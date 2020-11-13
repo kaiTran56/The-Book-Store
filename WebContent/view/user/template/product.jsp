@@ -338,22 +338,20 @@
 										$${productdetail.price} <span>${productdetail.discount}%</span>
 									</h4>
 								</div>
-								<div class="quantity">
-									<h4>Now:</h4>
-									<div class="pro-qty">
 
-										<input type="text" value="${productdetail.quantity }"
-											name="quantityTemp">
-									</div>
-
-								</div>
 
 
 								<form
 									action="${pageContext.request.contextPath}/view/user/update-quantity"
 									method="get">
-									<input type="text" value="${productdetail.product_id}"
-										name="check_id">
+									ID: <input type="text" value="${productdetail.product_id}"
+										name="check_id" size="2" disabled="disabled">
+									<div>
+										Status: <input type="text" value="${productdetail.quantity }"
+											name="check_id" size="2" disabled="disabled">
+									</div>
+
+
 									<div class="quantity">
 										<div class="pro-qty">
 											<input type="text" value="1" name="purchase-quantity">
@@ -363,7 +361,7 @@
 											href="${pageContext.request.contextPath}/view/user/add-cart?id=${productdetail.product_id}"
 											class="primary-btn pd-cart">Add To Cart</a> --%>
 
-										<button>Run</button>
+										<button class="primary-btn pd-cart">Add To Cart</button>
 									</div>
 
 

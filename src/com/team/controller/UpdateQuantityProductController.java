@@ -44,7 +44,7 @@ public class UpdateQuantityProductController extends HttpServlet {
 		listItems.stream().filter(p -> p.getProduct().getProduct_id() == product_id).forEach(p -> {
 			p.setAmount(checkQuantity);
 
-			p.setPrice(p.getProduct().getPrice());
+			p.setPrice(p.getProduct().getPrice() * checkQuantity);
 
 			System.out.println("Check Quantity and Price: " + p.getAmount() + " : " + p.getPrice());
 
