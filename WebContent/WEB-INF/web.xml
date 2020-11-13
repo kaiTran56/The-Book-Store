@@ -400,7 +400,15 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>UpdateDeniedStatusController</servlet-name>
-		<url-pattern>/admin/order/update-status</url-pattern>
+		<url-pattern>/admin/order/update-denied</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>UpdateFinishedStatusController</servlet-name>
+		<servlet-class>com.team.controller.admin.UpdateFinishedStatusController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateFinishStatusController</servlet-name>
+		<url-pattern>/admin/order/update-finished</url-pattern>
 	</servlet-mapping>
 
 

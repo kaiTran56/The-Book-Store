@@ -46,11 +46,11 @@ if (session.getAttribute("admin-username") == null) {
 											<td>
 												<button class="btn btn-danger">
 													<a
-														href="${pageContext.request.contextPath}/admin/order/update-status?id=${order.transaction_id}">Denied</a>
+														href="${pageContext.request.contextPath}/admin/order/update-denied?id=${order.transaction_id}">Denied</a>
 												</button>
 												<button class="btn btn-success">
 													<a
-														href="${pageContext.request.contextPath}/admin/order/delete?id=${order.transaction_id}">Accept</a>
+														href="${pageContext.request.contextPath}/admin/order/update-finished?id=${order.transaction_id}">Accept</a>
 												</button>
 											</td>
 											<td>${order.user.name}</td>
