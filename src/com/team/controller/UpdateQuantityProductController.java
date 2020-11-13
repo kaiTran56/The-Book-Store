@@ -56,7 +56,7 @@ public class UpdateQuantityProductController extends HttpServlet {
 		session.setAttribute("sumprice", order.getSumPrice());
 		System.out.println("Successfully to update quantity");
 
-		request.getRequestDispatcher("/view/user/template/product.jsp").forward(request, response);
+		response.sendRedirect(request.getContextPath() + "/view/user/shop");
 
 	}
 
