@@ -163,6 +163,14 @@
 		<servlet-name>PlaceOrderController</servlet-name>
 		<url-pattern>/view/user/placeorder</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>UpdateQuantityProductController</servlet-name>
+		<servlet-class>com.team.controller.UpdateQuantityProductController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateQuantityProductController</servlet-name>
+		<url-pattern>/view/user/update-quantity</url-pattern>
+	</servlet-mapping>
 
 
 

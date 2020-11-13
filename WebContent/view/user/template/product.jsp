@@ -348,17 +348,26 @@
 
 								</div>
 
-								<div class="quantity">
-									<div class="pro-qty">
 
-										<input type="text" value="1" name="check-quantity"
-											name="purchase-quantity">
+								<form
+									action="${pageContext.request.contextPath}/view/user/update-quantity"
+									method="get">
+									<input type="text" value="${productdetail.product_id}"
+										name="check_id">
+									<div class="quantity">
+										<div class="pro-qty">
+											<input type="text" value="1" name="purchase-quantity">
 
+										</div>
+										<%-- <a
+											href="${pageContext.request.contextPath}/view/user/add-cart?id=${productdetail.product_id}"
+											class="primary-btn pd-cart">Add To Cart</a> --%>
+
+										<button>Run</button>
 									</div>
-									<a
-										href="${pageContext.request.contextPath}/view/user/add-cart?id=${productdetail.product_id}"
-										class="primary-btn pd-cart">Add To Cart</a>
-								</div>
+
+
+								</form>
 								<ul class="pd-tags">
 									<li><span>CATEGORIES</span>: ${productdetail.quantity}</li>
 									<li><span>TAGS</span>: Nguyen Ngoc Anh</li>
