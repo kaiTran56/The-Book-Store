@@ -43,6 +43,7 @@ public class ProductDetailController extends HttpServlet {
 
 		Product product = new ProductDaoImpl().get(Integer.parseInt(check_id));
 		request.setAttribute("productdetail", product);
+
 		/*
 		 * show the related book
 		 * 

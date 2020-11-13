@@ -318,7 +318,7 @@
 									<i class="fa fa-search-plus"></i>
 								</div>
 							</div>
-							s
+
 						</div>
 						<div class="col-lg-6">
 							<div class="product-details">
@@ -335,7 +335,7 @@
 								<div class="pd-desc">
 									<p>${productdetail.description}</p>
 									<h4>
-										$3.94 <span>4.15</span>
+										$${productdetail.price} <span>${productdetail.discount}%</span>
 									</h4>
 								</div>
 								<div class="quantity">
@@ -350,11 +350,12 @@
 								<div class="quantity">
 									<div class="pro-qty">
 
-										<input type="text" value="1" name="check-quantity">
+										<input type="text" value="1" name="check-quantity"
+											name="purchase-quantity">
 
 									</div>
 									<a
-										href="${pageContext.request.contextPath}/view/user/add-cart?id=${product.product_id}"
+										href="${pageContext.request.contextPath}/view/user/add-cart?id=${productdetail.product_id}"
 										class="primary-btn pd-cart">Add To Cart</a>
 								</div>
 								<ul class="pd-tags">
