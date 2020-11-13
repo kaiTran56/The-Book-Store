@@ -407,7 +407,7 @@
 		<servlet-class>com.team.controller.admin.UpdateFinishedStatusController</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>UpdateFinishStatusController</servlet-name>
+		<servlet-name>UpdateFinishedStatusController</servlet-name>
 		<url-pattern>/admin/order/update-finished</url-pattern>
 	</servlet-mapping>
 
