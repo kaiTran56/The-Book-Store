@@ -26,7 +26,7 @@ if (session.getAttribute("admin-username") == null) {
 							<table class="table table-striped">
 								<thead>
 									<tr>
-
+										<th scope="col">Inspection</th>
 										<th scope="col">User Name</th>
 										<th scope="col">Email</th>
 										<th scope="col">Phone</th>
@@ -43,7 +43,16 @@ if (session.getAttribute("admin-username") == null) {
 								<tbody>
 									<c:forEach items="${order}" var="order">
 										<tr>
-
+											<td>
+												<button class="btn btn-danger">
+													<a
+														href="${pageContext.request.contextPath}/admin/order/delete?id=${order.transaction_id}">Denied</a>
+												</button>
+												<button class="btn btn-success">
+													<a
+														href="${pageContext.request.contextPath}/admin/new/edit?boardnew-id=${boardnew.boardnew_id}">Accept</a>
+												</button>
+											</td>
 											<td>${order.user.name}</td>
 											<td>${order.user.email}</td>
 											<td>${order.user.phone}</td>
@@ -51,14 +60,7 @@ if (session.getAttribute("admin-username") == null) {
 											<td>${order.message}</td>
 											<td>${order.payment}VND</td>
 
-											<td><c:choose>
-													<c:when test="${order.status == NULL}">
-														<c:out value="Finished!" />
-													</c:when>
-													<c:otherwise>
-														<c:out value="Not Finished!" />
-													</c:otherwise>
-												</c:choose></td>
+											<td>${order.status}</td>
 
 
 											<td>${order.created}</td>
@@ -73,6 +75,7 @@ if (session.getAttribute("admin-username") == null) {
 													<a
 														href="${pageContext.request.contextPath}/admin/list-ordereddetail?id=${order.user.user_id}">Details</a>
 												</button>
+
 											</td>
 										</tr>
 									</c:forEach>

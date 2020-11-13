@@ -74,7 +74,7 @@ public class CheckoutController extends HttpServlet {
 		String email = (String) session.getAttribute("username");
 		User user = new UserDaoImpl().get(email);
 
-		String status = "Not Finish!";
+		String status = "Waiting...!";
 
 		Order order = (Order) session.getAttribute("order");
 
