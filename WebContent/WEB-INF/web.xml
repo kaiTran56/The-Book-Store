@@ -396,7 +396,12 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>UpdateDeniedStatusController</servlet-name>
+		<servlet-class>com.team.controller.admin.UpdateDeniedStatusController</servlet-class>
 	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateDeniedStatusController</servlet-name>
+		<url-pattern>/admin/order/update-status</url-pattern>
+	</servlet-mapping>
 
 
 

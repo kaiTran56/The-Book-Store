@@ -184,7 +184,7 @@ public class TransactionDaoImpl extends JDBCConnection implements TransactionDao
 			statement = connect.prepareStatement(sql);
 			statement.setString(1, t.getStatus());
 			statement.setInt(2, t.getTransaction_id());
-			statement.executeQuery();
+			statement.executeUpdate();
 			statement.close();
 			connect.close();
 		} catch (SQLException e) {
