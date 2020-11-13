@@ -269,7 +269,7 @@
 											<td class="qua-col first-row">
 												<div class="quantity">
 													<div class="pro-qty">
-														<input type="text" value="${listitem.product.amount}">
+														<input type="text" value="${listitem.amount}">
 													</div>
 												</div>
 											</td>
