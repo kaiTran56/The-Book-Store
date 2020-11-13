@@ -32,7 +32,7 @@ public class TransactionDaoImpl extends JDBCConnection implements TransactionDao
 			statement = connect.prepareStatement(sql);
 			result = statement.executeQuery();
 			while (result.next()) {
-		
+
 				int transaction_id = result.getInt("transaction_id");
 				int user_id = result.getInt("u.user_id");
 				String name = result.getString("name");
@@ -45,7 +45,7 @@ public class TransactionDaoImpl extends JDBCConnection implements TransactionDao
 				String nameProduct = result.getString("p.name");
 				int amount = result.getInt("amount");
 				LocalDateTime created = result.getTimestamp("created").toLocalDateTime();
-				User user = new User(user_id,name, email, phone, address);
+				User user = new User(user_id, name, email, phone, address);
 				Ordered ordered = new Ordered(amount, nameProduct);
 				Transactions transactions = new Transactions(transaction_id, user, message, payment, status, ordered,
 						created);
@@ -139,7 +139,7 @@ public class TransactionDaoImpl extends JDBCConnection implements TransactionDao
 				String nameProduct = result.getString("p.name");
 				int amount = result.getInt("amount");
 				LocalDateTime created = result.getTimestamp("created").toLocalDateTime();
-				User user = new User(user_id,name, email, phone, address);
+				User user = new User(user_id, name, email, phone, address);
 				Ordered ordered = new Ordered(amount, nameProduct);
 				listTransaction.add(new Transactions(transaction_id, user, message, payment, status, ordered, created));
 
@@ -174,5 +174,23 @@ public class TransactionDaoImpl extends JDBCConnection implements TransactionDao
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	@Override
+	public void changeStatus(Transactions t) {
+		connect = super.getConnectionJDBC();
+		String sql = "update transactions set status = ? where transaction_id = ?;";
+		try {
+			statement = connect.prepareStatement(sql);
+			statement.setString(1, t.getStatus());
+			statement.setInt(2, t.getTransaction_id());
+			statement.executeQuery();
+			statement.close();
+			connect.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 }

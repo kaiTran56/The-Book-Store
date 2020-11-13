@@ -28,7 +28,7 @@ public class UpdateDeniedStatusController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		String status = "Denied!";
 	}
 
 }
