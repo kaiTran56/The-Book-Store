@@ -345,7 +345,7 @@
 									action="${pageContext.request.contextPath}/view/user/update-quantity"
 									method="get">
 									ID: <input type="text" value="${productdetail.product_id}"
-										name="check_id" size="2" disabled="disabled">
+										name="check_id" size="2">
 									<div>
 										Status: <input type="text" value="${productdetail.quantity }"
 											name="check_id" size="2" disabled="disabled">

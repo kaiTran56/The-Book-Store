@@ -251,7 +251,7 @@
 										<th class="p-name">Product Name</th>
 										<th>Price</th>
 										<th>Quantity</th>
-
+										<th>Sum</th>
 										<th>Function</th>
 									</tr>
 								</thead>
@@ -269,11 +269,14 @@
 											<td class="qua-col first-row">
 												<div class="quantity">
 													<div class="pro-qty">
-														<input type="text" value="${listitem.amount}">
+														<input type="text" value="${listitem.amount}"
+															disabled="disabled">
 													</div>
 												</div>
 											</td>
-
+											<td class="cart-title first-row">
+												<h5>${listitem.price}</h5>
+											</td>
 
 
 											<td>
