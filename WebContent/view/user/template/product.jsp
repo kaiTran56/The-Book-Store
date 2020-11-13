@@ -359,12 +359,11 @@
 										class="primary-btn pd-cart">Add To Cart</a>
 								</div>
 								<ul class="pd-tags">
-									<li><span>CATEGORIES</span>: More categories, short story
-									</li>
+									<li><span>CATEGORIES</span>: ${productdetail.quantity}</li>
 									<li><span>TAGS</span>: Nguyen Ngoc Anh</li>
 								</ul>
 								<div class="pd-share">
-									<div class="p-code">Sku : 1007</div>
+
 									<div class="pd-social">
 										<a href="#"><i class="ti-facebook"></i></a> <a href="#"><i
 											class="ti-twitter-alt"></i></a> <a href="#"><i
