@@ -16,4 +16,7 @@ public interface OrderedDao<T> {
 	void delete(String id);
 
 	T getMaxId();
+
+	List<T> getQuantityOrdered(int id);
+
 }
