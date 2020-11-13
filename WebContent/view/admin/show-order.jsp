@@ -50,7 +50,7 @@ if (session.getAttribute("admin-username") == null) {
 												</button>
 												<button class="btn btn-success">
 													<a
-														href="${pageContext.request.contextPath}/admin/new/edit?boardnew-id=${boardnew.boardnew_id}">Accept</a>
+														href="${pageContext.request.contextPath}/admin/order/delete?id=${order.transaction_id}">Accept</a>
 												</button>
 											</td>
 											<td>${order.user.name}</td>

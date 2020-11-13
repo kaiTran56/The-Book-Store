@@ -54,8 +54,8 @@
 		<servlet-name>EditProfileUser</servlet-name>
 		<url-pattern>/view/user/edit</url-pattern>
 	</servlet-mapping>
-	
-	
+
+
 	<servlet>
 		<servlet-name>HomePageController</servlet-name>
 		<servlet-class>com.team.controller.HomePageController</servlet-class>
@@ -394,8 +394,9 @@
 		<servlet-name>RemoveOrderController</servlet-name>
 		<url-pattern>/admin/order/delete</url-pattern>
 	</servlet-mapping>
-
-
+	<servlet>
+		<servlet-name>UpdateDeniedStatusController</servlet-name>
+	</servlet>
 
 
 
