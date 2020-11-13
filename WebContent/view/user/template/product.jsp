@@ -417,7 +417,7 @@
 											<tr>
 												<td class="p-catagory">Price</td>
 												<td>
-													<div class="p-price">$3.94</div>
+													<div class="p-price">$${productdetail.price}</div>
 												</td>
 											</tr>
 											<tr>
@@ -429,16 +429,13 @@
 											<tr>
 												<td class="p-catagory">Availability</td>
 												<td>
-													<div class="p-stock">20 in stock</div>
+													<div class="p-stock">${productdetail.quantity}in
+														stock</div>
 												</td>
 											</tr>
 
-											<tr>
-												<td class="p-catagory">Short Story</td>
-												<td>
-													<div class="p-code">1007</div>
-												</td>
-											</tr>
+
+
 										</table>
 									</div>
 								</div>

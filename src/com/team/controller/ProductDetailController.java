@@ -33,8 +33,7 @@ public class ProductDetailController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-		response.setContentType("text/html;charset=UTF-8");
+
 		/*
 		 * show the detail information about product by product_id
 		 */
@@ -52,6 +51,11 @@ public class ProductDetailController extends HttpServlet {
 		request.setAttribute("listrelate", listRelate);
 
 		request.getRequestDispatcher("/view/user/template/product.jsp").forward(request, response);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
 	}
 
 }
