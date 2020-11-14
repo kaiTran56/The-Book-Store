@@ -6,6 +6,7 @@ public class Product {
 	private int product_id;
 	private int catalog_id;
 	private String name;
+	private String topic;
 	private double price;
 	private String status;
 	private String description;
@@ -14,6 +15,23 @@ public class Product {
 	private LocalDateTime created;
 	private String urlTemp;
 	private int quantity;
+
+	public Product(int product_id, int catalog_id, String name, String topic, double price, String status,
+			String description, int discount, String image_link, LocalDateTime created, String urlTemp, int quantity) {
+		super();
+		this.product_id = product_id;
+		this.catalog_id = catalog_id;
+		this.name = name;
+		this.topic = topic;
+		this.price = price;
+		this.status = status;
+		this.description = description;
+		this.discount = discount;
+		this.image_link = image_link;
+		this.created = created;
+		this.urlTemp = urlTemp;
+		this.quantity = quantity;
+	}
 
 	public Product(int product_id, int catalog_id, String name, double price, String status, String description,
 			int discount, String image_link, LocalDateTime created, int quantity) {
@@ -146,10 +164,11 @@ public class Product {
 	public void setUrlTemp(String urlTemp) {
 		this.urlTemp = urlTemp;
 	}
+
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return name +" : "+price;
+		return name + " : " + price;
 	}
 
 }

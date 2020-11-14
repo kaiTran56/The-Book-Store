@@ -222,4 +222,10 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 
 	}
 
+	@Override
+	public List<Product> searchByKeyTopic(String keyword, String topic) {
+
+		return null;
+	}
+
 }
