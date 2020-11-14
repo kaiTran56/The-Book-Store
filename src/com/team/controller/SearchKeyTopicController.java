@@ -37,10 +37,10 @@ public class SearchKeyTopicController extends HttpServlet {
 
 		List<Product> listProductKeyTopic = new ProductDaoImpl().searchByKeyTopic(keyword, topic);
 		if (listProductKeyTopic.size() == 0) {
-			request.setAttribute("noresult", "Nothing to show!");
+			request.setAttribute("no-result", "Nothing to show!");
 		}
 		request.setAttribute("listproductkey", listProductKeyTopic);
-		request.getRequestDispatcher("/view/user/template/search-key-topic").forward(request, response);
+		request.getRequestDispatcher("/view/user/template/search-result.jsp").forward(request, response);
 	}
 
 }

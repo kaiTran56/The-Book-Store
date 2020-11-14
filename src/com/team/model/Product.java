@@ -6,6 +6,7 @@ public class Product {
 	private int product_id;
 	private int catalog_id;
 	private String name;
+	private String author;
 	private String topic;
 	private double price;
 	private String status;
@@ -99,6 +100,14 @@ public class Product {
 
 	public String getName() {
 		return name;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 
 	public void setName(String name) {
