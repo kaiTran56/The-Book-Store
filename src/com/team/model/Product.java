@@ -17,7 +17,7 @@ public class Product {
 	private int quantity;
 
 	public Product(int product_id, int catalog_id, String name, String topic, double price, String status,
-			String description, int discount, String image_link, LocalDateTime created, String urlTemp, int quantity) {
+			String description, int discount, String image_link, LocalDateTime created, int quantity) {
 		super();
 		this.product_id = product_id;
 		this.catalog_id = catalog_id;
@@ -29,7 +29,7 @@ public class Product {
 		this.discount = discount;
 		this.image_link = image_link;
 		this.created = created;
-		this.urlTemp = urlTemp;
+
 		this.quantity = quantity;
 	}
 
@@ -71,6 +71,14 @@ public class Product {
 		super();
 		this.product_id = product_id;
 		this.quantity = quantity;
+	}
+
+	public String getTopic() {
+		return topic;
+	}
+
+	public void setTopic(String topic) {
+		this.topic = topic;
 	}
 
 	public int getProduct_id() {

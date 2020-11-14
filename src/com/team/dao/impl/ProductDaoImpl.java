@@ -219,13 +219,46 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 	}
 
 	public static void main(String[] args) {
-
+		System.out.println(new ProductDaoImpl().searchByKeyTopic("E", "TextBook"));
 	}
 
 	@Override
 	public List<Product> searchByKeyTopic(String keyword, String topic) {
+		connect = super.getConnectionJDBC();
+		List<Product> listProduct = new ArrayList<Product>();
+		String sql = "select p.product_id, p.catalog_id, p.name,c.name, p.price, p.status, p.description, p.discount, p.image_link, p.created, p.quantity from product as p "
+				+ "inner join catalog as c " + "on p.catalog_id = c.catalog_id" + " where p.name like ? And c.name =?;";
+		try {
+			preparedStatement = connect.prepareStatement(sql);
+			preparedStatement.setString(1, keyword + "%");
+			preparedStatement.setString(2, topic);
+			result = preparedStatement.executeQuery();
+			while (result.next()) {
+				int product_id = result.getInt("p.product_id");
+				int catalog_id = result.getInt("p.catalog_id");
+				String name = result.getString("p.name");
+				String nameTopic = result.getString("c.name");
+				double price = result.getDouble("p.price");
+				String status = result.getString("p.status");
+				String description = result.getString("p.description");
+				int discount = result.getInt("p.discount");
+				String image_link = result.getString("p.image_link");
+				LocalDateTime created = result.getTimestamp("p.created").toLocalDateTime();
+				int quantity = result.getInt("p.quantity");
+				Product product = new Product(product_id, catalog_id, name, nameTopic, price, status, description,
+						discount, image_link, created, quantity);
 
-		return null;
+				listProduct.add(product);
+			}
+			preparedStatement.close();
+			result.close();
+			connect.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return listProduct;
 	}
 
 }
