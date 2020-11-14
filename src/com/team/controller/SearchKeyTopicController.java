@@ -12,16 +12,16 @@ import com.team.dao.impl.ProductDaoImpl;
 import com.team.model.Product;
 
 /**
- * Servlet implementation class SearchByKeyController
+ * Servlet implementation class SearchKeyTopicController
  */
 
-public class SearchByKeyController extends HttpServlet {
+public class SearchKeyTopicController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public SearchByKeyController() {
+	public SearchKeyTopicController() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -32,13 +32,7 @@ public class SearchByKeyController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String searchKey = request.getParameter("search-key");
-		List<Product> listProductByKey = new ProductDaoImpl().getProductByKey(searchKey);
-		if (listProductByKey == null) {
-			request.setAttribute("no-result", "Nothing to show!");
-		}
-		request.setAttribute("listproductkey", listProductByKey);
-		request.getRequestDispatcher("/view/user/template/search-by-key.jsp").forward(request, response);
+		List<Product> listProduct = new ProductDaoImpl().getAll();
 	}
 
 }

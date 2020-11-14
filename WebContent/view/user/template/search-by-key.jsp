@@ -226,6 +226,8 @@
 		<div class="container">
 			<div class="row">
 				<h3 align="center" style="font-size: medium;">Result:</h3>
+
+				<h2 align="center">${requestScope.no-result }</h2>
 				<div class="col-lg-9 order-1 order-lg-2">
 
 					<div class="product-list">
