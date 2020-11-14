@@ -93,11 +93,14 @@
 						<div class="advanced-search">
 							<button type="button" class="category-btn">All
 								Categories</button>
-							<form action="#" class="input-group">
+							<form
+								action="${pageContext.request.contextPath}/view/user/search-key"
+								class="input-group" method="get">
 								<input type="text"
-									placeholder="What kinds of books do you need?">
-								<button type="button">
-									<i class="ti-search"></i>
+									placeholder="What kinds of books do you need?"
+									name="search-key">
+								<button >
+									<i class="ti-search">Search</i>
 								</button>
 							</form>
 						</div>
@@ -188,7 +191,9 @@
 						<li><a href="#">Pages</a>
 							<ul class="dropdown">
 								<li><a href="${ url}/blog-details.jsp">Blog Details</a></li>
-								<li><a href="${pageContext.request.contextPath}/view/user/shopping-cart">Shopping Cart</a></li>
+								<li><a
+									href="${pageContext.request.contextPath}/view/user/shopping-cart">Shopping
+										Cart</a></li>
 								<li><a href="${ url}/check-out.jsp">Checkout</a></li>
 								<li><a
 									href="${pageContext.request.contextPath }/view/user/profile">Profile

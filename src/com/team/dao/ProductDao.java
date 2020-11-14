@@ -5,7 +5,7 @@ import java.util.List;
 public interface ProductDao<T> {
 	List<T> getAll();
 
-	T get(String keyword);
+	List<T> getProductByKey(String keyword);
 	
 	T get(int id);
 

@@ -171,6 +171,16 @@
 		<servlet-name>UpdateQuantityProductController</servlet-name>
 		<url-pattern>/view/user/update-quantity</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>SearchByKeyController</servlet-name>
+		<servlet-class>com.team.controller.SearchByKeyController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SearchByKeyController</servlet-name>
+		<url-pattern>/view/user/search-key</url-pattern>
+	</servlet-mapping>
+
+
 
 
 

@@ -44,6 +44,9 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 
 				listProduct.add(product);
 			}
+			statement.close();
+			result.close();
+			connect.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -53,9 +56,38 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 	}
 
 	@Override
-	public Product get(String keyword) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Product> getProductByKey(String keyword) {
+		connect = super.getConnectionJDBC();
+		List<Product> listProduct = new ArrayList<Product>();
+		String sql = "select product_id, catalog_id, name, price, status, description, discount, image_link, created, quantity from product where name like ?;";
+		try {
+			preparedStatement = connect.prepareStatement(sql);
+			preparedStatement.setString(1, keyword + "%");
+			result = preparedStatement.executeQuery();
+			while (result.next()) {
+				int product_id = result.getInt("product_id");
+				int catalog_id = result.getInt("catalog_id");
+				String name = result.getString("name");
+				double price = result.getDouble("price");
+				String status = result.getString("status");
+				String description = result.getString("description");
+				int discount = result.getInt("discount");
+				String image_link = result.getString("image_link");
+				LocalDateTime created = result.getTimestamp("created").toLocalDateTime();
+				int quantity = result.getInt("quantity");
+				Product product = new Product(product_id, catalog_id, name, price, status, description, discount,
+						image_link, created, quantity);
+
+				listProduct.add(product);
+			}
+			preparedStatement.close();
+			result.close();
+			connect.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listProduct;
 	}
 
 	@Override
@@ -185,8 +217,9 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 		}
 
 	}
+
 	public static void main(String[] args) {
-		System.out.println(new ProductDaoImpl().get(1).toString());
+
 	}
 
 }

@@ -1,41 +1,49 @@
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:url value="/view/user/template" var="url" />
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="description" content="Fashi Template">
+<!DOCTYPE html>
+<html lang="en">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="">
+
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>The Online Book Store</title>
+
 <link
 	href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap"
 	rel="stylesheet">
+<link rel="stylesheet" href="${url}/css/bootstrap.min.css"
+	type="text/css">
+<link rel="stylesheet" href="${url}/css/font-awesome.min.css"
+	type="text/css">
+<link rel="stylesheet" href="${url}/css/themify-icons.css"
+	type="text/css">
+<link rel="stylesheet" href="${url}/css/elegant-icons.css"
+	type="text/css">
+<link rel="stylesheet" href="${url}/css/owl.carousel.min.css"
+	type="text/css">
+<link rel="stylesheet" href="${url}/css/nice-select.css" type="text/css">
+<link rel="stylesheet" href="${url}/css/jquery-ui.min.css"
+	type="text/css">
+<link rel="stylesheet" href="${url}/css/slicknav.min.css"
+	type="text/css">
+<link rel="stylesheet" href="${url}/css/style.css" type="text/css">
 
-<link rel="stylesheet" href="${ url}/css/bootstrap.min.css"
-	type="text/css">
-<link rel="stylesheet" href="${ url}/css/font-awesome.min.css"
-	type="text/css">
-<link rel="stylesheet" href="${ url}/css/themify-icons.css"
-	type="text/css">
-<link rel="stylesheet" href="${ url}/css/elegant-icons.css"
-	type="text/css">
-<link rel="stylesheet" href="${ url}/css/owl.carousel.min.css"
-	type="text/css">
-<link rel="stylesheet" href="${ url}/css/nice-select.css"
-	type="text/css">
-<link rel="stylesheet" href="${ url}/css/jquery-ui.min.css"
-	type="text/css">
-<link rel="stylesheet" href="${ url}/css/slicknav.min.css"
-	type="text/css">
-<link rel="stylesheet" href="${ url}/css/style.css" type="text/css">
+
+
+
 </head>
+
 <body>
 	<div id="preloder">
 		<div class="loader"></div>
 	</div>
-
 
 	<header class="header-section">
 		<div class="header-top">
@@ -49,16 +57,10 @@
 					</div>
 				</div>
 				<div class="ht-right">
-					<c:choose>
-						<c:when test="${sessionScope.username == null }">
-							<a href="${pageContext.request.contextPath}/view/user/login"
-								class="login-panel"><i class="fa fa-user"></i>Login</a>
-						</c:when>
-						<c:otherwise>
-							<a href="${pageContext.request.contextPath}/view/logout"
-								class="login-panel"><i class="fa fa-user"></i>Logout</a>
-						</c:otherwise>
-					</c:choose>
+					<a href="${pageContext.request.contextPath}/view/user/login"
+						class="login-panel"><i class="fa fa-user"></i>Login</a> <a
+						href="${pageContext.request.contextPath}/view/logout"
+						class="login-panel"><i class="fa fa-user"></i>Logout</a>
 					<div class="lan-selector">
 						<select class="language_drop" name="countries" id="countries"
 							style="width: 300px;">
@@ -185,14 +187,14 @@
 								<li><a href="#">English</a></li>
 								<li><a href="#">Vietnamese</a></li>
 							</ul></li>
-						<li><a
-							href="${pageContext.request.contextPath}/view/user/contact">Contact</a></li>
+						<li><a href="${ url}/contact.jsp">Contact</a></li>
 						<li><a href="#">Pages</a>
 							<ul class="dropdown">
 								<li><a href="${ url}/blog-details.jsp">Blog Details</a></li>
-								<li><a href="${ url}/shopping-cart.jsp">Shopping Cart</a></li>
 								<li><a
-									href="${pageContext.request.contextPath}/view/user/checkout">Checkout</a></li>
+									href="${pageContext.request.contextPath}/view/user/shopping-cart">Shopping
+										Cart</a></li>
+								<li><a href="${ url}/check-out.jsp">Checkout</a></li>
 								<li><a
 									href="${pageContext.request.contextPath }/view/user/profile">Profile
 										User</a></li>
@@ -207,5 +209,73 @@
 			</div>
 		</div>
 	</header>
+	<div class="breacrumb-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="breadcrumb-text">
+						<a href="${pageContext.request.contextPath}/view/user/shop"><i
+							class="fa fa-home"></i> Home</a> <span>Shop</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<section class="product-shop spad">
+		<div class="container">
+			<div class="row">
+				<h3 align="center" style="font-size: medium;">Result:</h3>
+				<div class="col-lg-9 order-1 order-lg-2">
+
+					<div class="product-list">
+						<div class="row">
+
+							<c:forEach items="${listproductkey}" var="product">
+
+								<div class="col-lg-4 col-sm-6">
+									<div class="product-item">
+										<div class="pi-pic">
+											<img
+												style="width: 270px; height: 302px; object-fit: cover; border: 1px solid #fff;"
+												src="${pageContext.request.contextPath}/${product.urlTemp}"
+												alt="">
+											<div class="sale pp-sale">${product.discount}%</div>
+
+											<div class="icon">
+												<i class="icon_heart_alt"></i>
+											</div>
+
+											<ul>
+												<li class="w-icon active"><a
+													href="${pageContext.request.contextPath}/view/user/add-cart?id=${product.product_id}"><i
+														class="icon_bag_alt"></i></a></li>
+
+												<li class="quick-view"><a
+													href="${pageContext.request.contextPath}/view/user/product-detail?id=${product.product_id}">+
+														Quick View</a></li>
+											</ul>
+										</div>
+										<div class="pi-text">
+											<div class="catagory-name">Short Story</div>
+											<a
+												href="${pageContext.request.contextPath}/view/user/product-detail?id=${product.product_id}">
+												<h5>${product.name}</h5>
+											</a>
+											<div class="product-price">${product.price}</div>
+										</div>
+									</div>
+								</div>
+
+							</c:forEach>
+
+						</div>
+
+
+					</div>
+				</div>
+	</section>
+	<jsp:include page="/view/user/template/footer/footer.jsp" flush="true" />
 </body>
+
 </html>
