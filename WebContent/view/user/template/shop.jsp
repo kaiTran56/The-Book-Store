@@ -229,28 +229,11 @@
 					class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter">
 					<div class="filter-widget">
 						<h4 class="fw-title">Author</h4>
-						<div class="fw-brand-check">
-							<div class="bc-item">
-								<label for="bc-calvin"> Nguyen Nhat Anh <input
-									type="checkbox" id="bc-calvin"> <span class="checkmark"></span>
-								</label>
-							</div>
-							<div class="bc-item">
-								<label for="bc-diesel"> J. K. Rowling <input
-									type="checkbox" id="bc-diesel"> <span class="checkmark"></span>
-								</label>
-							</div>
-							<div class="bc-item">
-								<label for="bc-polo"> Fujiko Fujio <input
-									type="checkbox" id="bc-polo"> <span class="checkmark"></span>
-								</label>
-							</div>
-							<div class="bc-item">
-								<label for="bc-tommy"> Others <input type="checkbox"
-									id="bc-tommy"> <span class="checkmark"></span>
-								</label>
-							</div>
-						</div>
+						<form
+							action="${pageContext.request.contextPath}/view/user/search-author">
+							<input type="text" name="check-author" placeholder="Your author?">
+							<button>Search</button>
+						</form>
 					</div>
 
 

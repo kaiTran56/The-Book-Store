@@ -241,7 +241,7 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 				+ "inner join catalog as c " + "on p.catalog_id = c.catalog_id" + " where p.name like ? And c.name =?;";
 		try {
 			preparedStatement = connect.prepareStatement(sql);
-			preparedStatement.setString(1, keyword + "%");
+			preparedStatement.setString(1,"%"+ keyword + "%");
 			preparedStatement.setString(2, topic);
 			result = preparedStatement.executeQuery();
 			while (result.next()) {

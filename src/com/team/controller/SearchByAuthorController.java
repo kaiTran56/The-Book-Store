@@ -36,12 +36,9 @@ public class SearchByAuthorController extends HttpServlet {
 		String author = request.getParameter("check-author");
 		List<Product> listProduct = new ProductDaoImpl().getAll().stream().filter(p -> p.getAuthor().equals(author))
 				.collect(Collectors.toList());
-		if (listProduct.size() == 0) {
-			request.setAttribute("no-result", "Nothing to show!");
-		}
 
-		request.setAttribute("listproductkey", listProduct);
-		request.getRequestDispatcher("/view/user/template/search-result.jsp").forward(request, response);
+		request.setAttribute("listproduct", listProduct);
+		request.getRequestDispatcher("/view/user/template/shop.jsp").forward(request, response);
 
 	}
 
