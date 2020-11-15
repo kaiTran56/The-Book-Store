@@ -17,6 +17,24 @@ public class Product {
 	private String urlTemp;
 	private int quantity;
 
+	public Product(int product_id, int catalog_id, String name, String author, String topic, double price,
+			String status, String description, int discount, String image_link, LocalDateTime created, int quantity) {
+		super();
+		this.product_id = product_id;
+		this.catalog_id = catalog_id;
+		this.name = name;
+		this.author = author;
+		this.topic = topic;
+		this.price = price;
+		this.status = status;
+		this.description = description;
+		this.discount = discount;
+		this.image_link = image_link;
+		this.created = created;
+
+		this.quantity = quantity;
+	}
+
 	public Product(int product_id, int catalog_id, String name, String topic, double price, String status,
 			String description, int discount, String image_link, LocalDateTime created, int quantity) {
 		super();

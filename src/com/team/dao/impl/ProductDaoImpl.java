@@ -9,6 +9,7 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.team.JDBC.JDBCConnection;
 import com.team.dao.ProductDao;
@@ -24,7 +25,7 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 	public List<Product> getAll() {
 		connect = super.getConnectionJDBC();
 		List<Product> listProduct = new ArrayList<Product>();
-		String sql = "select p.product_id, p.catalog_id, p.name,c.name, p.price, p.status, p.description, p.discount, p.image_link, p.created, p.quantity from product as p "
+		String sql = "select p.product_id, p.catalog_id, p.name, p.author, c.name, p.price, p.status, p.description, p.discount, p.image_link, p.created, p.quantity from product as p "
 				+ "inner join catalog as c " + "on p.catalog_id = c.catalog_id";
 
 		try {
@@ -35,6 +36,7 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 				int product_id = result.getInt("p.product_id");
 				int catalog_id = result.getInt("p.catalog_id");
 				String name = result.getString("p.name");
+				String author = result.getString("p.author");
 				String nameTopic = result.getString("c.name");
 				double price = result.getDouble("p.price");
 				String status = result.getString("p.status");
@@ -43,8 +45,8 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 				String image_link = result.getString("p.image_link");
 				LocalDateTime created = result.getTimestamp("p.created").toLocalDateTime();
 				int quantity = result.getInt("p.quantity");
-				Product product = new Product(product_id, catalog_id, name, nameTopic, price, status, description,
-						discount, image_link, created, quantity);
+				Product product = new Product(product_id, catalog_id, name, author, nameTopic, price, status,
+						description, discount, image_link, created, quantity);
 
 				listProduct.add(product);
 			}
@@ -223,7 +225,10 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 	}
 
 	public static void main(String[] args) {
-		
+		String topic = "Short story";
+		List<Product> listTopic = new ProductDaoImpl().getAll().stream()
+				.filter(p -> p.getTopic().equalsIgnoreCase(topic)).collect(Collectors.toList());
+		System.out.println(listTopic.toString());
 	}
 
 	@Override

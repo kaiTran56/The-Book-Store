@@ -227,6 +227,14 @@
 		<servlet-name>ViewByTopicController</servlet-name>
 		<url-pattern>/view/user/shop/view-topic</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>ViewByPriceController</servlet-name>
+		<servlet-class>com.team.controller.ViewByPriceController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ViewByPriceController</servlet-name>
+		<url-pattern>/view/user/shop/view-price</url-pattern>
+	</servlet-mapping>
 
 
 
