@@ -211,6 +211,30 @@
 		<servlet-name>SortByYearController</servlet-name>
 		<url-pattern>/view/user/shop/sort-year</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>ViewByYearController</servlet-name>
+		<servlet-class>com.team.controller.ViewByYearController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ViewByYearController</servlet-name>
+		<url-pattern>/view/user/shop/view-year</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ViewByTopicController</servlet-name>
+		<servlet-class>com.team.controller.ViewByTopicController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ViewByTopicController</servlet-name>
+		<url-pattern>/view/user/shop/view-topic</url-pattern>
+	</servlet-mapping>
+
+
+
+
+
+
+
+
 
 
 
