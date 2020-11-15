@@ -225,9 +225,10 @@
 	<section class="product-shop spad">
 		<div class="container">
 			<div class="row">
-				<h3 align="center" style="font-size: medium;">Result:</h3>
+				<h1 align="center" style="font-size: large; font-weight: bold;">Result:</h1>
 
-				<h2 align="center">${requestScope.no-result}</h2>
+
+
 				<div class="col-lg-9 order-1 order-lg-2">
 
 					<div class="product-list">

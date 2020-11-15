@@ -34,9 +34,7 @@ public class SearchByKeyController extends HttpServlet {
 			throws ServletException, IOException {
 		String searchKey = request.getParameter("search-key");
 		List<Product> listProductByKey = new ProductDaoImpl().getProductByKey(searchKey);
-		if (listProductByKey.size() == 0) {
-			request.setAttribute("no-result", "Nothing to show!");
-		}
+
 		request.setAttribute("listproductkey", listProductByKey);
 		request.getRequestDispatcher("/view/user/template/search-result.jsp").forward(request, response);
 	}
