@@ -236,7 +236,14 @@
 		<url-pattern>/view/user/shop/view-price</url-pattern>
 		<url-pattern>/view/user/shop/price</url-pattern>
 	</servlet-mapping>
-
+	<servlet>
+		<servlet-name>DirectionSortController</servlet-name>
+		<servlet-class>com.team.controller.DirectionSortController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DirectionSortController</servlet-name>
+		<url-pattern>/view/user/shop/sort-direction</url-pattern>
+	</servlet-mapping>
 
 
 
