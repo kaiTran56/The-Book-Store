@@ -179,6 +179,22 @@
 		<servlet-name>SearchByKeyController</servlet-name>
 		<url-pattern>/view/user/search-key</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>SearchKeyTopicController</servlet-name>
+		<servlet-class>com.team.controller.SearchKeyTopicController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SearchKeyTopicController</servlet-name>
+		<url-pattern>/view/user/search-key-topic</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>SearchByAuthorController</servlet-name>
+		<servlet-class>com.team.controller.SearchByAuthorController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SearchByAuthorController</servlet-name>
+		<url-pattern>/view/user/search-author</url-pattern>
+	</servlet-mapping>
 
 
 
