@@ -37,7 +37,7 @@ public class ViewByTopicController extends HttpServlet {
 		List<Product> listTopic = new ProductDaoImpl().getAll().stream()
 				.filter(p -> p.getTopic().equalsIgnoreCase(topic)).collect(Collectors.toList());
 		request.setAttribute("listproductkey", listTopic);
-		request.getRequestDispatcher("/view/user/template/search-result.jsp").forward(request, response);
+		request.getRequestDispatcher("/view/user/template/shop.jsp").forward(request, response);
 	}
 
 }

@@ -99,7 +99,7 @@
 								<input type="text"
 									placeholder="What kinds of books do you need?"
 									name="search-key">
-								<button >
+								<button>
 									<i class="ti-search">Search</i>
 								</button>
 							</form>
@@ -252,27 +252,37 @@
 							</div>
 						</div>
 					</div>
-					<div class="filter-widget">
-						<h4 class="fw-title">Price</h4>
-						<div class="filter-range-wrap">
-							<div class="range-slider">
-								<div class="price-input">
-									<input type="text" id="minamount"> <input type="text"
-										id="maxamount">
+
+
+					<form
+						action="${pageContext.request.contextPath}/view/user/shop/view-price"
+						method="get">
+						<div class="filter-widget">
+							<h4 class="fw-title">Price</h4>
+							<div class="filter-range-wrap">
+								<div class="range-slider">
+									<div class="price-input">
+
+										<input type="text" id="minamount" name="pricestart"> <input
+											type="text" id="maxamount" name="priceend">
+									</div>
+								</div>
+								<div
+									class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
+									data-min="0" data-max="98">
+									<div class="ui-slider-range ui-corner-all ui-widget-header"></div>
+									<span tabindex="0"
+										class="ui-slider-handle ui-corner-all ui-state-default"></span>
+									<span tabindex="0"
+										class="ui-slider-handle ui-corner-all ui-state-default"></span>
 								</div>
 							</div>
-							<div
-								class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
-								data-min="0" data-max="98">
-								<div class="ui-slider-range ui-corner-all ui-widget-header"></div>
-								<span tabindex="0"
-									class="ui-slider-handle ui-corner-all ui-state-default"></span>
-								<span tabindex="0"
-									class="ui-slider-handle ui-corner-all ui-state-default"></span>
-							</div>
+							<button href="#" class="filter-btn">Filter</button>
 						</div>
-						<a href="#" class="filter-btn">Filter</a>
-					</div>
+					</form>
+
+
+
 					<div class="filter-widget">
 						<h4 class="fw-title">Year</h4>
 						<div class="fw-tags">
