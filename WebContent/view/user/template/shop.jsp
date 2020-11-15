@@ -264,8 +264,8 @@
 								<div class="range-slider">
 									<div class="price-input">
 
-										$<input type="text" name="price-start" value = "1"> $<input
-											type="text" name="price-end" value = "100">
+										$<input type="text" name="price-start" value="1"> $<input
+											type="text" name="price-end" value="100">
 									</div>
 								</div>
 
@@ -341,10 +341,21 @@
 							</c:forEach>
 
 						</div>
-						<div class="loading-more">
-							<i class="icon_loading"></i> <a href="#"> Loading More </a>
-						</div>
 
+						<!-- <ul class="pagination justify-content-center">
+							<li class="page-item"><a class="page-link" href="#">
+									Previous</a></li>
+							<li class="page-item"><a class="page-link" href="#">1</a></li>
+							<li class="page-item"><a class="page-link" href="#">2</a></li>
+							<li class="page-item"><a class="page-link" href="#">3</a></li>
+
+							<li class="page-item"><a class="page-link" href="#">4</a></li>
+
+							<li class="page-item"><a class="page-link" href="#">5</a></li>
+							<li class="page-item disabled"><a class="page-link" href="#">
+									<span aria-hidden="true">»</span>
+							</a></li>
+						</ul> -->
 					</div>
 				</div>
 	</section>
