@@ -223,7 +223,7 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 	}
 
 	public static void main(String[] args) {
-		System.out.println(new ProductDaoImpl().searchByKeyTopic("E", "TextBook"));
+		System.out.println(new ProductDaoImpl().getAll());
 	}
 
 	@Override
