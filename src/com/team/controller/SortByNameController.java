@@ -1,11 +1,15 @@
 package com.team.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.team.dao.impl.ProductDaoImpl;
+import com.team.model.Product;
 
 /**
  * Servlet implementation class SortByNameController
@@ -28,8 +32,10 @@ public class SortByNameController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		List<Product> listProduct = new ProductDaoImpl().getAll();
+		listProduct.sort((p1, p2) -> p1.getName().compareTo(p2.getName()));
+		request.setAttribute("listproduct", listProduct);
+		request.getRequestDispatcher("/view/user/template/shop.jsp").forward(request, response);
 	}
 
 }
