@@ -280,8 +280,15 @@
 						<div class="row">
 							<div class="col-lg-7 col-md-7">
 								<div class="select-option">
-									<select class="sorting">
+									<select class="sorting" name="option-sort">
+
 										<option value="">Default Sorting</option>
+										<option
+											value="${pageContext.request.contextPath}/view/user/shop/sort-name">Sort
+											By Name</option>
+										<option
+											value="${pageContext.request.contextPath}/view/user/shop/sort-year">Sort
+											By Date</option>
 									</select> <select class="p-show">
 										<option value="">Show:</option>
 									</select>
