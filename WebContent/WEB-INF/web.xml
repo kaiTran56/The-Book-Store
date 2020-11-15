@@ -195,10 +195,22 @@
 		<servlet-name>SearchByAuthorController</servlet-name>
 		<url-pattern>/view/user/search-author</url-pattern>
 	</servlet-mapping>
-
-
-
-
+	<servlet>
+		<servlet-name>SortByNameController</servlet-name>
+		<servlet-class>com.team.controller.SortByNameController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SortByNameController</servlet-name>
+		<url-pattern>/view/user/shop/sort-name</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>SortByYearController</servlet-name>
+		<servlet-class>com.team.controller.SortByYearController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SortByYearController</servlet-name>
+		<url-pattern>/view/user/shop/sort-year</url-pattern>
+	</servlet-mapping>
 
 
 
