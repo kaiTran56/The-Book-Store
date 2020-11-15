@@ -33,12 +33,14 @@ public class ViewByPriceController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		int priceStart = Integer.parseInt(request.getParameter("price-start"));
-		int priceEnd = Integer.parseInt(request.getParameter("price-end"));
+		double priceStart = Double.parseDouble(request.getParameter("price-start"));
+		System.out.println("Check Price-Start: " + priceStart);
+		double priceEnd = Double.parseDouble(request.getParameter("price-end"));
+		System.out.println("Check Price-End: " + priceEnd);
 
 		List<Product> listPrice = new ProductDaoImpl().getAll().stream()
 				.filter(p -> p.getPrice() >= priceStart && p.getPrice() <= priceEnd).collect(Collectors.toList());
-		request.setAttribute("listproductkey", listPrice);
+		request.setAttribute("listproduct", listPrice);
 		request.getRequestDispatcher("/view/user/template/shop.jsp").forward(request, response);
 	}
 

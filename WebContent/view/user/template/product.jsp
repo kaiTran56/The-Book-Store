@@ -367,8 +367,8 @@
 
 								</form>
 								<ul class="pd-tags">
-									<li><span>CATEGORIES</span>: ${productdetail.quantity}</li>
-									<li><span>TAGS</span>: Nguyen Ngoc Anh</li>
+									<li><span>CATEGORIES</span>: ${productdetail.topic}</li>
+									<li><span>TAGS</span>: ${productdetail.author}</li>
 								</ul>
 								<div class="pd-share">
 
