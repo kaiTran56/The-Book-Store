@@ -24,23 +24,27 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 	public List<Product> getAll() {
 		connect = super.getConnectionJDBC();
 		List<Product> listProduct = new ArrayList<Product>();
-		String sql = "select product_id, catalog_id, name, price, status, description, discount, image_link, created, quantity from product;";
+		String sql = "select p.product_id, p.catalog_id, p.name,c.name, p.price, p.status, p.description, p.discount, p.image_link, p.created, p.quantity from product as p "
+				+ "inner join catalog as c " + "on p.catalog_id = c.catalog_id";
+
 		try {
 			statement = connect.createStatement();
+
 			result = statement.executeQuery(sql);
 			while (result.next()) {
-				int product_id = result.getInt("product_id");
-				int catalog_id = result.getInt("catalog_id");
-				String name = result.getString("name");
-				double price = result.getDouble("price");
-				String status = result.getString("status");
-				String description = result.getString("description");
-				int discount = result.getInt("discount");
-				String image_link = result.getString("image_link");
-				LocalDateTime created = result.getTimestamp("created").toLocalDateTime();
-				int quantity = result.getInt("quantity");
-				Product product = new Product(product_id, catalog_id, name, price, status, description, discount,
-						image_link, created, quantity);
+				int product_id = result.getInt("p.product_id");
+				int catalog_id = result.getInt("p.catalog_id");
+				String name = result.getString("p.name");
+				String nameTopic = result.getString("c.name");
+				double price = result.getDouble("p.price");
+				String status = result.getString("p.status");
+				String description = result.getString("p.description");
+				int discount = result.getInt("p.discount");
+				String image_link = result.getString("p.image_link");
+				LocalDateTime created = result.getTimestamp("p.created").toLocalDateTime();
+				int quantity = result.getInt("p.quantity");
+				Product product = new Product(product_id, catalog_id, name, nameTopic, price, status, description,
+						discount, image_link, created, quantity);
 
 				listProduct.add(product);
 			}
