@@ -33,8 +33,8 @@ public class ViewByYearController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		/* int year = Integer.parseInt(request.getParameter("view-year")); */
-		int year = 2019;
+		int year = Integer.parseInt(request.getParameter("viewyear"));
+
 		List<Product> listYear = new ProductDaoImpl().getAll().stream().filter(p -> p.getCreated().getYear() == year)
 				.collect(Collectors.toList());
 		;

@@ -279,11 +279,18 @@
 					<div class="filter-widget">
 						<h4 class="fw-title">Year</h4>
 						<div class="fw-tags">
-							<a href="#">2020</a> <a href="#">2019</a> <a href="#">2018</a> <a
-								href="#">2017</a> <a href="#">2016</a> <a href="#">2015</a> <a
-								href="#">Older</a>
+							<a
+								href="${pageContext.request.contextPath}/view/user/shop/view-year?viewyear=2020">2020</a>
+							<a
+								href="${pageContext.request.contextPath}/view/user/shop/view-year?viewyear=2019">2019</a>
+							<a
+								href="${pageContext.request.contextPath}/view/user/shop/view-year?viewyear=2018">2018</a>
+							<a href="${pageContext.request.contextPath}/view/user/shop">Older</a>
 						</div>
 					</div>
+
+
+
 				</div>
 				<div class="col-lg-9 order-1 order-lg-2">
 					<div class="product-show-option">
