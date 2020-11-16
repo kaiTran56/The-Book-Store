@@ -50,6 +50,7 @@ public class AddProductController extends HttpServlet {
 		int product_id = Integer.parseInt(request.getParameter("product-id"));
 
 		String name = request.getParameter("product-name");
+		String author = request.getParameter("product-author");
 		int catalog_id = Integer.parseInt(request.getParameter("product-cate"));
 		double price = Double.parseDouble(request.getParameter("product-price"));
 		String status = request.getParameter("product-status");
@@ -57,7 +58,8 @@ public class AddProductController extends HttpServlet {
 		String description = request.getParameter("product-desc");
 		LocalDateTime created = LocalDateTime.now();
 		int quantity = Integer.parseInt(request.getParameter("product-quantity"));
-		Product product = new Product(catalog_id, name, price, status, description, discount, created, quantity);
+		Product product = new Product(catalog_id, name, author, price, status, description, discount, created,
+				quantity);
 		session.setAttribute("productTemp", product);
 		System.out.println("Product-id: " + product.getProduct_id());
 		session.setAttribute("idproduct", product_id);

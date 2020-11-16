@@ -77,15 +77,6 @@ public class AddCartController extends HttpServlet {
 			Order order = (Order) session.getAttribute("order");
 			listItems = order.getItems();
 
-			listItems.stream().forEach(p -> {
-				if (p.getProduct().getProduct_id() == product.getProduct_id()) {
-					p.setPrice(p.getPrice() - (p.getProduct().getPrice() * p.getProduct().getDiscount()) / 100);
-					p.setAmount(p.getAmount() + quantity);
-					order.setSumPrice(order.getSumPrice());
-					check = true;
-				}
-			});
-
 			if (check == false) {
 				Item item = new Item();
 				item.setAmount(quantity);

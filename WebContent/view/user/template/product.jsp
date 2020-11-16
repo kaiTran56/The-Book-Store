@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <c:url value="/view/user/template" var="url" />
 <!DOCTYPE html>
 <html lang="en">
@@ -242,70 +243,52 @@
 			<div class="row">
 				<div class="col-lg-3">
 					<div class="filter-widget">
-						<h4 class="fw-title">Categories</h4>
-						<ul class="filter-catagories">
-							<li><a href="#">Textbook</a></li>
-							<li><a href="#">Novel</a></li>
-							<li><a href="#">Comic</a></li>
-							<li><a href="#">Reference Book</a></li>
-							<li><a href="#">Theriller Book</a></li>
-							<li><a href="#">Short Story</a></li>
-							<li><a href="#">Science Fiction Book</a></li>
-						</ul>
+						<h4 class="fw-title">Author</h4>
+
+
+						<form
+							action="${pageContext.request.contextPath}/view/user/search-author">
+							<input type="text" name="check-author" placeholder="Your author?">
+							<button>Search</button>
+						</form>
+
 					</div>
+					<div class="filter-widget"></div>
 					<div class="filter-widget">
-						<h4 class="fw-title">Brand</h4>
-						<div class="fw-brand-check">
-							<div class="bc-item">
-								<label for="bc-calvin"> Nguyen Nhat Anh <input
-									type="checkbox" id="bc-calvin"> <span class="checkmark"></span>
-								</label>
-							</div>
-							<div class="bc-item">
-								<label for="bc-diesel"> J. K. Rowling <input
-									type="checkbox" id="bc-diesel"> <span class="checkmark"></span>
-								</label>
-							</div>
-							<div class="bc-item">
-								<label for="bc-polo"> Fujiko Fujio <input
-									type="checkbox" id="bc-polo"> <span class="checkmark"></span>
-								</label>
-							</div>
-							<div class="bc-item">
-								<label for="bc-tommy"> Other <input type="checkbox"
-									id="bc-tommy"> <span class="checkmark"></span>
-								</label>
-							</div>
-						</div>
-					</div>
-					<div class="filter-widget">
-						<h4 class="fw-title">Price</h4>
-						<div class="filter-range-wrap">
-							<div class="range-slider">
-								<div class="price-input">
-									<input type="text" id="minamount"> <input type="text"
-										id="maxamount">
+
+						<form
+							action="${pageContext.request.contextPath}/view/user/shop/view-price"
+							method="get">
+							<div class="filter-widget">
+								<h4 class="fw-title">Price</h4>
+								<div class="filter-range-wrap">
+
+									<div class="range-slider">
+										<div class="price-input">
+
+											$<input type="text" name="price-start" value="1"> $<input
+												type="text" name="price-end" value="100">
+										</div>
+									</div>
+
 								</div>
+								<button class="filter-btn">Filter</button>
 							</div>
-							<div
-								class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
-								data-min="33" data-max="98">
-								<div class="ui-slider-range ui-corner-all ui-widget-header"></div>
-								<span tabindex="0"
-									class="ui-slider-handle ui-corner-all ui-state-default"></span>
-								<span tabindex="0"
-									class="ui-slider-handle ui-corner-all ui-state-default"></span>
-							</div>
-						</div>
-						<a href="#" class="filter-btn">Filter</a>
+						</form>
+
+
 					</div>
 
 					<div class="filter-widget">
-						<h4 class="fw-title">Tags</h4>
+						<h4 class="fw-title">Year</h4>
 						<div class="fw-tags">
-							<a href="#">Story</a> <a href="#">Phim</a> <a href="#">Chuyen
-								ngan</a> <a href="#">Nguyen Nhat Anh</a> <a href="#">Ha Lan</a>
-
+							<a
+								href="${pageContext.request.contextPath}/view/user/shop/view-year?viewyear=2020">2020</a>
+							<a
+								href="${pageContext.request.contextPath}/view/user/shop/view-year?viewyear=2019">2019</a>
+							<a
+								href="${pageContext.request.contextPath}/view/user/shop/view-year?viewyear=2018">2018</a>
+							<a href="${pageContext.request.contextPath}/view/user/shop">Older</a>
 						</div>
 					</div>
 				</div>
@@ -335,7 +318,7 @@
 										class="fa fa-star"></i> <span>(5)</span>
 								</div>
 								<div class="pd-desc">
-									<p>${productdetail.description}</p>
+									<%-- <p>${productdetail.description}</p> --%>
 									<h4>
 										$${productdetail.price} <span>${productdetail.discount}%</span>
 									</h4>
@@ -359,12 +342,20 @@
 											<input type="text" value="1" name="purchase-quantity">
 
 										</div>
+										<button class="primary-btn pd-cart" style="size: 10">Add
+											To Cart</button>
 										<%-- <a
 											href="${pageContext.request.contextPath}/view/user/add-cart?id=${productdetail.product_id}"
 											class="primary-btn pd-cart">Add To Cart</a> --%>
 
-										<button class="primary-btn pd-cart">Add To Cart</button>
+
 									</div>
+									<li><a
+										href="${pageContext.request.contextPath}/view/user/add-cart?id=${productdetail.product_id}"><i
+											class="icon_bag_alt"></i></a></li>
+
+
+
 
 
 								</form>

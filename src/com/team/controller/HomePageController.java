@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.team.dao.impl.CategoryDaoImpl;
+import com.team.dao.impl.ProductDaoImpl;
 import com.team.model.Category;
+import com.team.model.Product;
 
 /**
  * Servlet implementation class HomePageController
@@ -34,8 +36,12 @@ public class HomePageController extends HttpServlet {
 			throws ServletException, IOException {
 
 		List<Category> listCategory = new CategoryDaoImpl().getAll();
-
 		request.setAttribute("listcategory", listCategory);
+
+		List<Product> listPorduct = new ProductDaoImpl().getAll();
+
+		request.setAttribute("listproduct", listPorduct);
+
 		request.getRequestDispatcher("/view/user/template/index.jsp").forward(request, response);
 
 	}

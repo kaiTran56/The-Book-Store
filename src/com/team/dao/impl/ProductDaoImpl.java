@@ -99,7 +99,7 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 	@Override
 	public void insert(Product t) {
 		connect = super.getConnectionJDBC();
-		String sql = "insert into product (product_id, catalog_id, name, price, status, description, discount, image_link, created, quantity) value(?,?,?,?,?,?,?,?,?, ?);";
+		String sql = "insert into product (product_id, catalog_id, name, price, status, description, discount, image_link, created, quantity, author) value(?,?,?,?,?,?,?,?,?, ?, ?);";
 		try {
 			preparedStatement = connect.prepareStatement(sql);
 			preparedStatement.setInt(1, t.getProduct_id());
@@ -112,6 +112,7 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 			preparedStatement.setString(8, t.getImage_link());
 			preparedStatement.setTimestamp(9, Timestamp.valueOf(t.getCreated()));
 			preparedStatement.setInt(10, t.getQuantity());
+			preparedStatement.setString(11, t.getAuthor());
 			preparedStatement.executeUpdate();
 			System.out.println("insert product successfull");
 			preparedStatement.close();
@@ -126,7 +127,7 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 	@Override
 	public void edit(Product t) {
 		connect = super.getConnectionJDBC();
-		String sql = "update product set product_id = ?,catalog_id = ?, name = ?, price = ?, status = ? , description=?, discount = ? , image_link = ?, created = ?, quantity = ? where product_id = ?;";
+		String sql = "update product set product_id = ?,catalog_id = ?, name = ?, price = ?, status = ? , description=?, discount = ? , image_link = ?, created = ?, quantity = ?where product_id = ?;";
 		try {
 			preparedStatement = connect.prepareStatement(sql);
 			preparedStatement.setInt(1, t.getProduct_id());
@@ -176,25 +177,31 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 	@Override
 	public Product get(int id) {
 		connect = super.getConnectionJDBC();
-		String sql = "select * from product where product_id = ?";
+
 		Product product = null;
+		String sql = "select p.product_id, p.catalog_id, p.name, p.author, c.name, p.price, p.status, p.description, p.discount, p.image_link, p.created, p.quantity from product as p "
+				+ "inner join catalog as c " + "on p.catalog_id = c.catalog_id where p.product_id = ?";
+
 		try {
 			preparedStatement = connect.prepareStatement(sql);
 			preparedStatement.setInt(1, id);
 			result = preparedStatement.executeQuery();
 			while (result.next()) {
-				int product_id = result.getInt("product_id");
-				int catalog_id = result.getInt("catalog_id");
-				String name = result.getString("name");
-				double price = result.getDouble("price");
-				String status = result.getString("status");
-				String description = result.getString("description");
-				int discount = result.getInt("discount");
-				String image_link = result.getString("image_link");
-				LocalDateTime created = result.getTimestamp("created").toLocalDateTime();
-				int quantity = result.getInt("quantity");
-				product = new Product(product_id, catalog_id, name, price, status, description, discount, image_link,
-						created, quantity);
+				int product_id = result.getInt("p.product_id");
+				int catalog_id = result.getInt("p.catalog_id");
+				String name = result.getString("p.name");
+				String author = result.getString("p.author");
+				String nameTopic = result.getString("c.name");
+				double price = result.getDouble("p.price");
+				String status = result.getString("p.status");
+				String description = result.getString("p.description");
+				int discount = result.getInt("p.discount");
+				String image_link = result.getString("p.image_link");
+				LocalDateTime created = result.getTimestamp("p.created").toLocalDateTime();
+				int quantity = result.getInt("p.quantity");
+				product = new Product(product_id, catalog_id, name, author, nameTopic, price, status, description,
+						discount, image_link, created, quantity);
+
 			}
 			preparedStatement.close();
 			result.close();
@@ -203,6 +210,7 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 		return product;
 	}
 
@@ -226,8 +234,8 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 
 	public static void main(String[] args) {
 		String topic = "Textbook";
-		List<Product> listTopic = new ProductDaoImpl().getAll().stream()
-				.filter(p -> p.getTopic().equals(topic)).collect(Collectors.toList());
+		List<Product> listTopic = new ProductDaoImpl().getAll().stream().filter(p -> p.getTopic().equals(topic))
+				.collect(Collectors.toList());
 		System.out.println(listTopic.toString());
 	}
 
@@ -239,7 +247,7 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 				+ "inner join catalog as c " + "on p.catalog_id = c.catalog_id" + " where p.name like ? And c.name =?;";
 		try {
 			preparedStatement = connect.prepareStatement(sql);
-			preparedStatement.setString(1,"%"+ keyword + "%");
+			preparedStatement.setString(1, "%" + keyword + "%");
 			preparedStatement.setString(2, topic);
 			result = preparedStatement.executeQuery();
 			while (result.next()) {

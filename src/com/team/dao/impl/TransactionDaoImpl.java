@@ -27,7 +27,7 @@ public class TransactionDaoImpl extends JDBCConnection implements TransactionDao
 		String sql = "select t.transaction_id, u.user_id, u.name, u.email, u.phone, u.address, t.message, t.payment, t.status, p.name, o.amount, t.created from user as u "
 				+ " inner join transactions as t " + " on u.user_id = t.user_id " + " inner join ordered as o "
 				+ " on o.transaction_id = t.transaction_id " + " inner join product as p "
-				+ " on p.product_id = o.product_id;";
+				+ " on p.product_id = o.product_id order by t.created desc;";
 		try {
 			statement = connect.prepareStatement(sql);
 			result = statement.executeQuery();

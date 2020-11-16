@@ -145,91 +145,44 @@
 						</ul>
 					</div>
 					<div class="product-slider owl-carousel">
-						<div class="product-item">
-							<div class="pi-pic">
-								<img src="${ url}/img/products/women-1.jpg" alt="">
-								<div class="sale">Sale</div>
-								<div class="icon">
-									<i class="icon_heart_alt"></i>
+						<c:forEach items="${listproduct}" var="product">
+
+
+
+
+							<div class="product-item">
+								<div class="pi-pic">
+									<img
+										style="width: 270px; height: 302px; object-fit: cover; border: 1px solid #fff;"
+										src="${pageContext.request.contextPath}/${product.urlTemp}"
+										alt="">
+									<div class="icon">
+										<i class="icon_heart_alt"></i>
+									</div>
+									<ul>
+										<li class="w-icon active"><a
+											href="${pageContext.request.contextPath}/view/user/add-cart?id=${product.product_id}"><i
+												class="icon_bag_alt"></i></a></li>
+										<li class="quick-view"><a
+											href="${pageContext.request.contextPath}/view/user/product-detail?id=${product.product_id}">+
+												Quick View</a></li>
+										<li class="w-icon"><a href="#"><i
+												class="fa fa-random"></i></a></li>
+									</ul>
 								</div>
-								<ul>
-									<li class="w-icon active"><a href="#"><i
-											class="icon_bag_alt"></i></a></li>
-									<li class="quick-view"><a href="#">+ Quick View</a></li>
-									<li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-								</ul>
-							</div>
-							<div class="pi-text">
-								<div class="catagory-name">Short Story</div>
-								<a href="#">
-									<h5>Mắt Biếc</h5>
-								</a>
-								<div class="product-price">$3.94</div>
-							</div>
-						</div>
-						<div class="product-item">
-							<div class="pi-pic">
-								<img src="${ url}/img/products/women-2.jpg" alt="">
-								<div class="icon">
-									<i class="icon_heart_alt"></i>
+								<div class="pi-text">
+									<div class="catagory-name">${product.topic}</div>
+									<a href="#">
+										<h5>${product.name}</h5>
+									</a>
+									<div class="product-price">${product.price}</div>
 								</div>
-								<ul>
-									<li class="w-icon active"><a href="#"><i
-											class="icon_bag_alt"></i></a></li>
-									<li class="quick-view"><a href="#">+ Quick View</a></li>
-									<li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-								</ul>
 							</div>
-							<div class="pi-text">
-								<div class="catagory-name">Novel</div>
-								<a href="#">
-									<h5>The World That We Knew</h5>
-								</a>
-								<div class="product-price">$10.99</div>
-							</div>
-						</div>
-						<div class="product-item">
-							<div class="pi-pic">
-								<img src="${ url}/img/products/women-3.jpg" alt="">
-								<div class="icon">
-									<i class="icon_heart_alt"></i>
-								</div>
-								<ul>
-									<li class="w-icon active"><a href="#"><i
-											class="icon_bag_alt"></i></a></li>
-									<li class="quick-view"><a href="#">+ Quick View</a></li>
-									<li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-								</ul>
-							</div>
-							<div class="pi-text">
-								<div class="catagory-name">Novel</div>
-								<a href="#">
-									<h5>Charlotte's Web</h5>
-								</a>
-								<div class="product-price">$18.95</div>
-							</div>
-						</div>
-						<div class="product-item">
-							<div class="pi-pic">
-								<img src="${ url}/img/products/women-4.jpg" alt="">
-								<div class="icon">
-									<i class="icon_heart_alt"></i>
-								</div>
-								<ul>
-									<li class="w-icon active"><a href="#"><i
-											class="icon_bag_alt"></i></a></li>
-									<li class="quick-view"><a href="#">+ Quick View</a></li>
-									<li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-								</ul>
-							</div>
-							<div class="pi-text">
-								<div class="catagory-name">Nonfiction</div>
-								<a href="#">
-									<h5>The Little Book of Happiness</h5>
-								</a>
-								<div class="product-price">$11.64</div>
-							</div>
-						</div>
+
+						</c:forEach>
+
+
+
 					</div>
 				</div>
 			</div>
@@ -284,91 +237,41 @@
 						</ul>
 					</div>
 					<div class="product-slider owl-carousel">
-						<div class="product-item">
-							<div class="pi-pic">
-								<img src="${ url}/img/products/man-1.jpg" alt="">
-								<div class="sale">Sale</div>
-								<div class="icon">
-									<i class="icon_heart_alt"></i>
+
+
+						<c:forEach items="${listproduct}" var="product">
+
+							<div class="product-item">
+								<div class="pi-pic">
+									<img
+										style="width: 270px; height: 302px; object-fit: cover; border: 1px solid #fff;"
+										src="${pageContext.request.contextPath}/${product.urlTemp}"
+										alt="">
+									<div class="icon">
+										<i class="icon_heart_alt"></i>
+									</div>
+									<ul>
+										<li class="w-icon active"><a
+											href="${pageContext.request.contextPath}/view/user/add-cart?id=${product.product_id}"><i
+												class="icon_bag_alt"></i></a></li>
+										<li class="quick-view"><a
+											href="${pageContext.request.contextPath}/view/user/product-detail?id=${product.product_id}">+
+												Quick View</a></li>
+										<li class="w-icon"><a href="#"><i
+												class="fa fa-random"></i></a></li>
+									</ul>
 								</div>
-								<ul>
-									<li class="w-icon active"><a href="#"><i
-											class="icon_bag_alt"></i></a></li>
-									<li class="quick-view"><a href="#">+ Quick View</a></li>
-									<li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-								</ul>
-							</div>
-							<div class="pi-text">
-								<div class="catagory-name">Reference Book</div>
-								<a href="#">
-									<h5>Oford Reference Grammar</h5>
-								</a>
-								<div class="product-price">$2.9</div>
-							</div>
-						</div>
-						<div class="product-item">
-							<div class="pi-pic">
-								<img src="${ url}/img/products/man-2.jpg" alt="">
-								<div class="icon">
-									<i class="icon_heart_alt"></i>
+								<div class="pi-text">
+									<div class="catagory-name">${product.topic}</div>
+									<a href="#">
+										<h5>${product.name}</h5>
+									</a>
+									<div class="product-price">${product.price}</div>
 								</div>
-								<ul>
-									<li class="w-icon active"><a href="#"><i
-											class="icon_bag_alt"></i></a></li>
-									<li class="quick-view"><a href="#">+ Quick View</a></li>
-									<li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-								</ul>
 							</div>
-							<div class="pi-text">
-								<div class="catagory-name">Novel</div>
-								<a href="#">
-									<h5>The Lord Of The Rings</h5>
-								</a>
-								<div class="product-price">$12.5</div>
-							</div>
-						</div>
-						<div class="product-item">
-							<div class="pi-pic">
-								<img src="${ url}/img/products/man-3.jpg" alt="">
-								<div class="icon">
-									<i class="icon_heart_alt"></i>
-								</div>
-								<ul>
-									<li class="w-icon active"><a href="#"><i
-											class="icon_bag_alt"></i></a></li>
-									<li class="quick-view"><a href="#">+ Quick View</a></li>
-									<li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-								</ul>
-							</div>
-							<div class="pi-text">
-								<div class="catagory-name">Thriller Book</div>
-								<a href="#">
-									<h5>Take On Me</h5>
-								</a>
-								<div class="product-price">$3.99</div>
-							</div>
-						</div>
-						<div class="product-item">
-							<div class="pi-pic">
-								<img src="${ url}/img/products/man-4.jpg" alt="">
-								<div class="icon">
-									<i class="icon_heart_alt"></i>
-								</div>
-								<ul>
-									<li class="w-icon active"><a href="#"><i
-											class="icon_bag_alt"></i></a></li>
-									<li class="quick-view"><a href="#">+ Quick View</a></li>
-									<li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-								</ul>
-							</div>
-							<div class="pi-text">
-								<div class="catagory-name">Novel</div>
-								<a href="#">
-									<h5>The Art of Holding On and Letting Go</h5>
-								</a>
-								<div class="product-price">$10.19</div>
-							</div>
-						</div>
+
+						</c:forEach>
+
 					</div>
 				</div>
 				<div class="col-lg-3 offset-lg-1">

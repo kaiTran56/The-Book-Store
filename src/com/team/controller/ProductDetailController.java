@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.team.dao.impl.CategoryDaoImpl;
 import com.team.dao.impl.ProductDaoImpl;
+import com.team.model.Category;
 import com.team.model.Product;
 
 /**
@@ -34,6 +36,10 @@ public class ProductDetailController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		List<Category> listCategory = new CategoryDaoImpl().getAll();
+
+		request.setAttribute("listcategory", listCategory);
+		
 
 		/*
 		 * show the detail information about product by product_id

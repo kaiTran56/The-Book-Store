@@ -92,6 +92,20 @@ public class Product {
 		this.quantity = quantity;
 	}
 
+	public Product(int catalog_id, String name, String author, double price, String status, String description,
+			int discount, LocalDateTime created, int quantity) {
+		super();
+		this.catalog_id = catalog_id;
+		this.name = name;
+		this.author = author;
+		this.price = price;
+		this.status = status;
+		this.description = description;
+		this.discount = discount;
+		this.created = created;
+		this.quantity = quantity;
+	}
+
 	public String getTopic() {
 		return topic;
 	}

@@ -9,8 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.team.dao.impl.CategoryDaoImpl;
 import com.team.dao.impl.TransactionDaoImpl;
 import com.team.dao.impl.UserDaoImpl;
+import com.team.model.Category;
 import com.team.model.Transactions;
 import com.team.model.User;
 
@@ -41,6 +43,9 @@ public class ProfileUser extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		List<Category> listCategory = new CategoryDaoImpl().getAll();
+
+		request.setAttribute("listcategory", listCategory);
 		HttpSession session = request.getSession();
 		String email = (String) session.getAttribute("username");
 		if (email != null) {

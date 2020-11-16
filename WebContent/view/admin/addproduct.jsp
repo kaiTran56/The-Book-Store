@@ -24,7 +24,11 @@
 									class="form-control" id="input-1" placeholder="Name"
 									name="product-name">
 							</div>
-
+							<div class="form-group">
+								<label for="input-1">Author</label> <input type="text"
+									class="form-control" id="input-1" placeholder="Price"
+									name="product-author">
+							</div>
 
 							<div class="form-group">
 								<label for="input-2">Topic</label>
