@@ -96,7 +96,7 @@
 							<div class="advanced-search">
 
 								<select class="sorting" name="option-topic">
-									<option value="default">Default Topic</option>
+									<option value="default">All</option>
 									<c:forEach items="${listcategory}" var="cate">
 										<option value="${cate.name}">${cate.name}</option>
 									</c:forEach>
@@ -189,19 +189,11 @@
 							href="${pageContext.request.contextPath}/view/user/homepage">Home</a></li>
 						<li><a
 							href="${pageContext.request.contextPath}/view/user/shop">Shop</a></li>
-						<li><a href="#">Language of Book</a>
-							<ul class="dropdown">
-								<li><a href="#">English</a></li>
-								<li><a href="#">Vietnamese</a></li>
-							</ul></li>
+						<li><a href="#">Best sellers</a></li>
 						<li><a href="${ url}/contact.jsp">Contact</a></li>
-						<li><a href="#">Pages</a>
+						<li><a href="${ url}/blog-details.jsp">	Blog</a></li>
+						<li><a href="#">User</a>
 							<ul class="dropdown">
-								<li><a href="${ url}/blog-details.jsp">Blog Details</a></li>
-								<li><a
-									href="${pageContext.request.contextPath}/view/user/shopping-cart">Shopping
-										Cart</a></li>
-								<li><a href="${ url}/check-out.jsp">Checkout</a></li>
 								<li><a
 									href="${pageContext.request.contextPath }/view/user/profile">Profile
 										User</a></li>
@@ -248,7 +240,7 @@
 						action="${pageContext.request.contextPath}/view/user/shop/view-price"
 						method="get">
 						<div class="filter-widget">
-							<h4 class="fw-title">Price</h4>
+							<h4 class="fw-title">Prices</h4>
 							<div class="filter-range-wrap">
 
 								<div class="range-slider">
@@ -267,7 +259,7 @@
 
 
 					<div class="filter-widget">
-						<h4 class="fw-title">Year</h4>
+						<h4 class="fw-title">Publication date</h4>
 						<div class="fw-tags">
 							<a
 								href="${pageContext.request.contextPath}/view/user/shop/view-year?viewyear=2020">2020</a>
