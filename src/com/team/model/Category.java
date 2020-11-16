@@ -41,5 +41,10 @@ public class Category {
 	public void setParent_id(String parent_id) {
 		this.parent_id = parent_id;
 	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return name;
+	}
 
 }

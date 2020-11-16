@@ -34,6 +34,8 @@ public class DirectionSortController extends HttpServlet {
 
 		} else if (optionSort.equals("date-sort")) {
 			request.getRequestDispatcher("/view/user/shop/sort-year").forward(request, response);
+		} else {
+			request.getRequestDispatcher("/view/user/shop").forward(request, response);
 		}
 	}
 

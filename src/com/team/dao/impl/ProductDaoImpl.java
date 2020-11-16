@@ -225,12 +225,10 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 	}
 
 	public static void main(String[] args) {
-		double priceStart = 10;
-		double priceEnd = 12;
-		List<Product> listPrice = new ProductDaoImpl().getAll().stream()
-				.filter(p -> p.getPrice() >= priceStart && p.getPrice() <= priceEnd).collect(Collectors.toList());
-
-		System.out.println(listPrice.toString());
+		String topic = "Textbook";
+		List<Product> listTopic = new ProductDaoImpl().getAll().stream()
+				.filter(p -> p.getTopic().equals(topic)).collect(Collectors.toList());
+		System.out.println(listTopic.toString());
 	}
 
 	@Override

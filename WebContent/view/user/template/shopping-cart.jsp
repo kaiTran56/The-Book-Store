@@ -174,13 +174,10 @@
 					<div class="depart-btn">
 						<i class="ti-menu"></i> <span>All departments</span>
 						<ul class="depart-hover">
-							<li class="active"><a href="#">Textbook </a></li>
-							<li><a href="#">Novel</a></li>
-							<li><a href="#">Comic</a></li>
-							<li><a href="#">Reference Book</a></li>
-							<li><a href="#">Thriller Book</a></li>
-							<li><a href="#">Short Story</a></li>
-							<li><a href="#">Science Fiction Book</a></li>
+							<c:forEach items="${listcategory}" var="cate">
+								<li><a
+									href="${pageContext.request.contextPath}/view/user/shop/view-topic?check-topic=${cate.name}">${cate.name}</a></li>
+							</c:forEach>
 						</ul>
 					</div>
 				</div>

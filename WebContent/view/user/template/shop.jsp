@@ -90,20 +90,28 @@
 						</div>
 					</div>
 					<div class="col-lg-7 col-md-7">
-						<div class="advanced-search">
-							<button type="button" class="category-btn">All
-								Categories</button>
-							<form
-								action="${pageContext.request.contextPath}/view/user/search-key"
-								class="input-group" method="get">
-								<input type="text"
+						<form
+							action="${pageContext.request.contextPath}/view/user/search-key-topic"
+							class="input-group" method="get">
+							<div class="advanced-search">
+
+								<select class="sorting" name="option-topic">
+									<option value="default">Default Topic</option>
+									<c:forEach items="${listcategory}" var="cate">
+										<option value="${cate.name}">${cate.name}</option>
+									</c:forEach>
+
+
+
+								</select> <input type="text" size="40"
 									placeholder="What kinds of books do you need?"
 									name="search-key">
 								<button>
 									<i class="ti-search">Search</i>
 								</button>
-							</form>
-						</div>
+
+							</div>
+						</form>
 					</div>
 					<div class="col-lg-3 text-right col-md-3">
 						<ul class="nav-right">
@@ -166,13 +174,12 @@
 					<div class="depart-btn">
 						<i class="ti-menu"></i> <span>All departments</span>
 						<ul class="depart-hover">
-							<li class="active"><a href="#">Textbook </a></li>
-							<li><a href="#">Novel</a></li>
-							<li><a href="#">Comic</a></li>
-							<li><a href="#">Reference Book</a></li>
-							<li><a href="#">Thriller Book</a></li>
-							<li><a href="#">Short Story</a></li>
-							<li><a href="#">Science Fiction Book</a></li>
+							<c:forEach items="${listcategory}" var="cate">
+								<li><a
+									href="${pageContext.request.contextPath}/view/user/shop/view-topic?check-topic=${cate.name}">${cate.name}</a></li>
+							</c:forEach>
+
+
 						</ul>
 					</div>
 				</div>

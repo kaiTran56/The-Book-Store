@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.team.dao.impl.CategoryDaoImpl;
 import com.team.dao.impl.ProductDaoImpl;
+import com.team.model.Category;
 import com.team.model.Product;
 
 /**
@@ -32,11 +34,14 @@ public class ViewByTopicController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// String author = request.getParameter("check-author");
-		String topic = "Short story";
-		List<Product> listTopic = new ProductDaoImpl().getAll().stream()
-				.filter(p -> p.getTopic().equalsIgnoreCase(topic)).collect(Collectors.toList());
-		request.setAttribute("listproductkey", listTopic);
+		String topic = request.getParameter("check-topic");
+		List<Category> listCategory = new CategoryDaoImpl().getAll();
+
+		request.setAttribute("listcategory", listCategory);
+
+		List<Product> listTopic = new ProductDaoImpl().getAll().stream().filter(p -> p.getTopic().equals(topic))
+				.collect(Collectors.toList());
+		request.setAttribute("listproduct", listTopic);
 		request.getRequestDispatcher("/view/user/template/shop.jsp").forward(request, response);
 	}
 

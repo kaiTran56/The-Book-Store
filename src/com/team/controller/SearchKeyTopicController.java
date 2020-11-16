@@ -32,15 +32,23 @@ public class SearchKeyTopicController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String keyword = request.getParameter("check-keyword");
-		String topic = request.getParameter("check-topic");
+		String keyword = request.getParameter("search-key");
+		String topic = request.getParameter("option-topic");
 
-		List<Product> listProductKeyTopic = new ProductDaoImpl().searchByKeyTopic(keyword, topic);
-		if (listProductKeyTopic.size() == 0) {
-			request.setAttribute("no-result", "Nothing to show!");
+		if (topic.equals("default")) {
+			List<Product> listProductByKey = new ProductDaoImpl().getProductByKey(keyword);
+
+			request.setAttribute("listproductkey", listProductByKey);
+			request.getRequestDispatcher("/view/user/template/search-result.jsp").forward(request, response);
+		} else {
+			List<Product> listProductKeyTopic = new ProductDaoImpl().searchByKeyTopic(keyword, topic);
+			if (listProductKeyTopic.size() == 0) {
+				request.setAttribute("no-result", "Nothing to show!");
+			}
+			request.setAttribute("listproductkey", listProductKeyTopic);
+			request.getRequestDispatcher("/view/user/template/search-result.jsp").forward(request, response);
 		}
-		request.setAttribute("listproductkey", listProductKeyTopic);
-		request.getRequestDispatcher("/view/user/template/search-result.jsp").forward(request, response);
+
 	}
 
 }
