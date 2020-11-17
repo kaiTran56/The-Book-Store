@@ -325,7 +325,7 @@
 											</ul>
 										</div>
 										<div class="pi-text">
-											<div class="catagory-name">Short Story</div>
+											<div class="catagory-name">${product.topic}</div>
 											<a
 												href="${pageContext.request.contextPath}/view/user/product-detail?id=${product.product_id}">
 												<h5>${product.name}</h5>

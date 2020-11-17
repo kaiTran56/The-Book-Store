@@ -186,11 +186,10 @@
 						<li><a href="${url}/index.jsp">Home</a></li>
 						<li><a
 							href="${pageContext.request.contextPath}/view/user/shop">Shop</a></li>
-						<li><a href="#">Best sellers</a>
-							</li>
+						<li><a href="#">Best sellers</a></li>
 						<li><a
 							href="${pageContext.request.contextPath}/view/user/contact">Contact</a></li>
-						<li><a href="${ url}/blog-details.jsp">	Blog</a></li>
+						<li><a href="${ url}/blog-details.jsp"> Blog</a></li>
 						<li><a href="#">User</a>
 							<ul class="dropdown">
 								<li><a
@@ -200,7 +199,8 @@
 									href="${pageContext.request.contextPath }/view/register">Register</a></li>
 								<li><a
 									href="${pageContext.request.contextPath }/view/user/login">Login</a></li>
-							</ul></li>					</ul>
+							</ul></li>
+					</ul>
 				</nav>
 				<div id="mobile-menu-wrap"></div>
 			</div>
@@ -274,11 +274,12 @@
 							<h4>Your Order</h4>
 							<div class="order-total">
 								<ul class="order-table">
-									<li>Product <span>Total</span></li>
+									<li>Product <span>Total</span>
+									</li>
 									<c:forEach items="${order.items}" var="list">
 
 										<li class="fw-normal">${list.product.name}<span>$${list.product.price}</span></li>
-
+										<li class="fw-normal" style>Quantity: ${list.amount}<span>$${list.price}</span></li>
 									</c:forEach>
 
 
