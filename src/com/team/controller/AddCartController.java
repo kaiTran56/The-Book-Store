@@ -37,7 +37,7 @@ public class AddCartController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doPos(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		List<Item> listItems = new ArrayList<Item>();
@@ -101,6 +101,79 @@ public class AddCartController extends HttpServlet {
 		System.out.println("Number: " + n);
 		System.out.println("Successfully Done add to cart!");
 		response.sendRedirect(request.getContextPath() + "/view/user/shop");
+
+	}
+
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		int n = 0;
+		int quantity = 1;
+		int product_id;
+		if (request.getParameter("id") != null) {
+			product_id = Integer.parseInt(request.getParameter("id"));
+			this.product = productDao.get(product_id);
+			if (product != null) {
+				if (request.getParameter("quantity") != null) {
+					quantity = Integer.parseInt(request.getParameter("quantity"));
+				}
+				HttpSession session = request.getSession();
+				if (session.getAttribute("order") == null) {
+					Order order = new Order();
+					List<Item> listItems = new ArrayList<Item>();
+					Item item = new Item();
+					item.setAmount(quantity);
+					item.setId(product.getProduct_id() + "");
+					item.setProduct(product);
+					item.setPrice(product.getPrice() - (product.getPrice() * product.getDiscount()) / 100);
+
+					order.setSumPrice(0);
+					order.setSumPrice(order.getSumPrice() + item.getPrice());
+					listItems.add(item);
+
+					order.setItems(listItems);
+					n = listItems.size();
+
+					session.setAttribute("length-order", n);
+					session.setAttribute("order", order);
+					session.setAttribute("sumprice", order.getSumPrice());
+				} else {
+					Order order = (Order) session.getAttribute("order");
+					List<Item> listItems = order.getItems();
+					boolean check = false;
+					for (Item item : listItems) {
+						if (item.getProduct().getProduct_id() == product.getProduct_id()) {
+							item.setAmount(item.getAmount() + quantity);
+							order.setSumPrice(order.getSumPrice() + item.getPrice());
+							item.setPrice(product.getPrice() - (product.getPrice() * product.getDiscount()) / 100);
+							check = true;
+						}
+					}
+					if (check == false) {
+						Item item = new Item();
+						item.setAmount(quantity);
+						item.setId(product.getProduct_id() + "");
+						item.setProduct(product);
+						item.setPrice(product.getPrice() - (product.getPrice() * product.getDiscount()) / 100);
+						order.setSumPrice(order.getSumPrice() + (item.getProduct().getPrice()
+								- (item.getProduct().getPrice() * item.getProduct().getDiscount() / 100)));
+						listItems.add(item);
+					}
+
+					int sizeTemp = listItems.size();
+					session.setAttribute("length", sizeTemp);
+
+					session.setAttribute("order", order);
+					session.setAttribute("sumprice", order.getSumPrice());
+				}
+			}
+
+			response.sendRedirect(request.getContextPath() + "/view/user/shop");
+
+		} else {
+			response.sendRedirect(request.getContextPath() + "/view/user/shop");
+
+		}
 
 	}
 
