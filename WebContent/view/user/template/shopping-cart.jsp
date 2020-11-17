@@ -113,7 +113,6 @@
 
 
 								</select> <input type="text" size="40"
-						
 									placeholder="What kinds of books do you need?"
 									name="search-key">
 								<button>
@@ -123,7 +122,7 @@
 							</div>
 						</form>
 					</div>
-					
+
 					<div class="col-lg-3 text-right col-md-3">
 						<ul class="nav-right">
 							<li class="heart-icon"><a href="#"> <i
@@ -199,11 +198,10 @@
 						<li><a href="${url}/index.jsp">Home</a></li>
 						<li><a
 							href="${pageContext.request.contextPath}/view/user/shop">Shop</a></li>
-						<li><a href="#">Best sellers</a>
-							</li>
+						<li><a href="#">Best sellers</a></li>
 						<li><a
 							href="${pageContext.request.contextPath}/view/user/contact">Contact</a></li>
-						<li><a href="${ url}/blog-details.jsp">	Blog</a></li>
+						<li><a href="${ url}/blog-details.jsp"> Blog</a></li>
 						<li><a href="#">User</a>
 							<ul class="dropdown">
 								<li><a
@@ -214,7 +212,7 @@
 								<li><a
 									href="${pageContext.request.contextPath }/view/user/login">Login</a></li>
 							</ul></li>
-												</ul>
+					</ul>
 				</nav>
 				<div id="mobile-menu-wrap"></div>
 			</div>
@@ -271,14 +269,7 @@
 												<h5>${listitem.product.name}</h5>
 											</td>
 											<td class="p-price first-row">$${listitem.product.price}</td>
-											<td class="qua-col first-row">
-												<div class="quantity">
-													<div class="pro-qty">
-														<input type="text" value="${listitem.amount}"
-															disabled="disabled">
-													</div>
-												</div>
-											</td>
+											<td class="qua-col first-row">${listitem.amount}</td>
 											<td class="cart-title first-row">
 												<h5>${listitem.price}</h5>
 											</td>
