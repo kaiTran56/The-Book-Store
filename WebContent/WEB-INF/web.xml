@@ -496,7 +496,14 @@
 		<servlet-name>UpdateFinishedStatusController</servlet-name>
 		<url-pattern>/admin/order/update-finished</url-pattern>
 	</servlet-mapping>
-
+<servlet>
+	<servlet-name>ListBestSellerController</servlet-name>
+	<servlet-class>com.team.controller.ListBestSellerController</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>ListBestSellerController</servlet-name>
+	<url-pattern>/view/user/shop/best-sold</url-pattern>
+</servlet-mapping>
 
 
 

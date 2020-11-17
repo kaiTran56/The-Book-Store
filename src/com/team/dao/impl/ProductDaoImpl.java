@@ -127,7 +127,7 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 	@Override
 	public void edit(Product t) {
 		connect = super.getConnectionJDBC();
-		String sql = "update product set product_id = ?,catalog_id = ?, name = ?, price = ?, status = ? , description=?, discount = ? , image_link = ?, created = ?, quantity = ?where product_id = ?;";
+		String sql = "update product set product_id = ?,catalog_id = ?, name = ?, price = ?, status = ? , description=?, discount = ? , image_link = ?, created = ?, quantity = ?, author =? where product_id = ?;";
 		try {
 			preparedStatement = connect.prepareStatement(sql);
 			preparedStatement.setInt(1, t.getProduct_id());
@@ -140,7 +140,8 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 			preparedStatement.setString(8, t.getImage_link());
 			preparedStatement.setTimestamp(9, Timestamp.valueOf(t.getCreated()));
 			preparedStatement.setInt(10, t.getQuantity());
-			preparedStatement.setInt(11, t.getProduct_id());
+			preparedStatement.setString(11, t.getAuthor());
+			preparedStatement.setInt(12, t.getProduct_id());
 			preparedStatement.executeUpdate();
 			System.out.println("Edit product successfull");
 			preparedStatement.close();

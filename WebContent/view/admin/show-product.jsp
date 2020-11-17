@@ -32,9 +32,10 @@ if (session.getAttribute("admin-username") == null) {
 										<th scope="col">#</th>
 										<th scope="col">Name</th>
 										<th scope="col">Image</th>
+										<th scope="col">Status</th>
 										<th scope="col">Topic</th>
 										<th scope="col">Prices</th>
-										<th scope="col">Status</th>
+
 										<th scope="col">Sale</th>
 										<th scope="col">Quantity</th>
 										<th scope="col">Created Day</th>
@@ -50,8 +51,6 @@ if (session.getAttribute("admin-username") == null) {
 												style="width: 110px; height: 67px; object-fit: cover; border: 1px solid #fff;"
 												src="${pageContext.request.contextPath}/${product.urlTemp}"
 												alt="${product.name}"></td>
-											<td>${product.catalog_id }</td>
-											<td>${product.price }</td>
 											<td><c:choose>
 													<c:when test="${product.status == 1}">
 														<c:out value="On" />
@@ -60,6 +59,9 @@ if (session.getAttribute("admin-username") == null) {
 														<c:out value="Out" />
 													</c:otherwise>
 												</c:choose></td>
+											<td>${product.catalog_id }</td>
+											<td>${product.price }</td>
+
 											<td>${product.discount}%</td>
 											<td>${product.quantity }</td>
 											<td>${product.created }</td>

@@ -28,12 +28,13 @@ if (session.getAttribute("admin-username") == null) {
 									<tr>
 										<th scope="col">Inspection</th>
 										<th scope="col">User Name</th>
+										<th scope="col">Status</th>
 										<th scope="col">Email</th>
 										<th scope="col">Phone</th>
 										<th scope="col">Address</th>
 										<th scope="col">Note</th>
 										<th scope="col">Payment</th>
-										<th scope="col">Status</th>
+
 
 										<th scope="col">Created Day</th>
 										<th scope="col">Actions</th>
@@ -54,13 +55,14 @@ if (session.getAttribute("admin-username") == null) {
 												</button>
 											</td>
 											<td>${order.user.name}</td>
+											<td>${order.status}</td>
 											<td>${order.user.email}</td>
 											<td>${order.user.phone}</td>
 											<td>${order.user.address}</td>
 											<td>${order.message}</td>
 											<td>${order.payment}VND</td>
 
-											<td>${order.status}</td>
+
 
 
 											<td>${order.created}</td>

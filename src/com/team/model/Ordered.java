@@ -8,6 +8,8 @@ public class Ordered {
 	private String name;
 	private double price;
 	private String username;
+	private int total_purchase;
+	private int total_product;
 
 	public Ordered(int ordered_id, int product_id, int transaction_id, int amount) {
 		super();
@@ -45,6 +47,35 @@ public class Ordered {
 		this.product_id = product_id;
 		this.transaction_id = transaction_id;
 		this.amount = amount;
+	}
+	
+	/*
+	 * Object for the best seller include: product_id + name_product +
+	 * total_purchase + total_product
+	 */
+
+	public Ordered(int product_id, String name, int total_purchase, int total_product) {
+		super();
+		this.product_id = product_id;
+		this.name = name;
+		this.total_purchase = total_purchase;
+		this.total_product = total_product;
+	}
+
+	public int getTotal_purchase() {
+		return total_purchase;
+	}
+
+	public void setTotal_purchase(int total_purchase) {
+		this.total_purchase = total_purchase;
+	}
+
+	public int getTotal_product() {
+		return total_product;
+	}
+
+	public void setTotal_product(int total_product) {
+		this.total_product = total_product;
 	}
 
 	public Ordered(int ordered_id) {

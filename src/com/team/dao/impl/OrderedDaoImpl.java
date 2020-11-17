@@ -140,4 +140,30 @@ public class OrderedDaoImpl extends JDBCConnection implements OrderedDao<Ordered
 		return listQuantity;
 	}
 
+	@Override
+	public List<Ordered> getBestSeller() {
+		List<Ordered> listBestSeller = new ArrayList<Ordered>();
+		connect = super.getConnectionJDBC();
+		String sql = " select  o.product_id ,p.name, count(o.product_id) as total_purchase, sum(o.amount) as total_product from ordered o inner join product p on o.product_id = p.product_id group by product_id order by ( total_product) desc limit 10;";
+		try {
+			statement = connect.prepareStatement(sql);
+			result = statement.executeQuery();
+			while (result.next()) {
+				int product_id = result.getInt("product_id");
+				String name = result.getString("name");
+				int totalPurchase = result.getInt("total_purchase");
+				int totalProduct = result.getInt("total_product");
+				listBestSeller.add(new Ordered(product_id, name, totalPurchase, totalProduct));
+			}
+			statement.close();
+			result.close();
+			connect.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return listBestSeller;
+	}
+
 }

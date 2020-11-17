@@ -18,5 +18,7 @@ public interface OrderedDao<T> {
 	T getMaxId();
 
 	List<T> getQuantityOrdered(int id);
+	
+	List<T> getBestSeller();
 
 }
