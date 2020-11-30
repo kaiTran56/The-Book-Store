@@ -34,7 +34,12 @@ public class HomePageController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		goHomepage();
+		
 
+	}
+	protected void goHomepage(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException{
 		List<Category> listCategory = new CategoryDaoImpl().getAll();
 		request.setAttribute("listcategory", listCategory);
 
@@ -43,7 +48,6 @@ public class HomePageController extends HttpServlet {
 		request.setAttribute("listproduct", listPorduct);
 
 		request.getRequestDispatcher("/view/user/template/index.jsp").forward(request, response);
-
+		
 	}
-
 }
